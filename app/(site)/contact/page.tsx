@@ -1,21 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, CalendarCheck, Sparkles } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CalendarCheck, Send, Sparkles } from "lucide-react";
 
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
-import { services } from "@/lib/services";
 
 export const metadata = createPageMetadata({
-  title: "Book a Treatment",
+  title: "Contact Us",
   description:
-    "Book a massage treatment at Aurelian Massage in Bath city centre. Contact us by phone or email, or use the enquiry form and we will get back to you promptly.",
+    "Get in touch with Aurelian Massage in Bath city centre. Call, email, or send us a message — we will get back to you promptly. Book treatments online via Fresha.",
   path: "/contact",
   keywords: [
-    "book massage Bath",
     "contact Aurelian Massage",
-    "massage appointment Bath",
-    "book massage therapy Bath",
+    "massage Bath enquiry",
+    "Aurelian Massage Bath",
+    "massage therapy Bath contact",
   ],
 });
 
@@ -76,32 +75,28 @@ export default function ContactPage() {
           </p>
 
           <h1 className="mt-4 max-w-2xl font-serif text-5xl font-semibold leading-tight tracking-tight text-gold-champagne sm:text-6xl">
-            Book a Treatment
+            Get in Touch
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-neutral-mid">
-            Ready to experience the golden standard in massage therapy? Get in
-            touch and we will arrange your session — individually tailored to
-            your body&apos;s needs.
+            Have a question about a treatment, or not sure which session is
+            right for you? Send us a message and we will get back to you
+            promptly. Ready to book? Head straight to Fresha.
           </p>
 
-          {/* Quick contact pills */}
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={`tel:${siteConfig.phone}`}
-              className="inline-flex items-center gap-2.5 rounded-full border border-gold-accent/35 px-5 py-2.5 text-sm font-medium text-neutral-mid transition-all duration-200 hover:border-gold-accent hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+            <Link
+              href={siteConfig.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+              style={{ background: "#C5A556" }}
             >
-              <Phone size={14} aria-hidden="true" />
-              {siteConfig.phone}
-            </a>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-2.5 rounded-full border border-gold-accent/35 px-5 py-2.5 text-sm font-medium text-neutral-mid transition-all duration-200 hover:border-gold-accent hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
-            >
-              <Mail size={14} aria-hidden="true" />
-              {siteConfig.email}
-            </a>
+              <CalendarCheck size={14} aria-hidden="true" />
+              Book online via Fresha
+            </Link>
           </div>
+
           </div>
 
           {/* Right — logo */}
@@ -128,17 +123,18 @@ export default function ContactPage() {
       <div className="mx-auto max-w-6xl px-6 py-14 lg:py-18">
         <div className="grid gap-12 lg:grid-cols-[1fr_380px] lg:items-start">
 
-          {/* ── Enquiry form ── */}
+          {/* ── Contact form ── */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-accent">
-              Send an enquiry
+              Send a message
             </p>
             <h2 className="mt-3 font-serif text-3xl font-semibold text-gold-champagne">
-              Request your appointment
+              How can we help?
             </h2>
             <p className="mt-4 text-base leading-7 text-neutral-mid">
-              Fill in the form below and we will get back to you within one
-              business day to confirm your booking.
+              Questions about treatments, availability, or anything else — fill
+              in the form below and we will get back to you within one business
+              day.
             </p>
 
             <form
@@ -224,58 +220,20 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label htmlFor="treatment" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-neutral-mid/70">
-                  Treatment of interest
-                </label>
-                <select
-                  id="treatment"
-                  name="treatment"
-                  className="w-full rounded-xl px-4 py-3 text-sm text-neutral-light outline-none transition-all duration-200 focus:ring-2 focus:ring-gold-accent focus:ring-offset-2 focus:ring-offset-purple-royal"
-                  style={{
-                    background: "#2C1E42",
-                    border: "1px solid rgba(122,80,176,0.30)",
-                  }}
-                >
-                  <option value="">Not sure yet</option>
-                  {services.map((s) => (
-                    <option key={s.slug} value={s.slug}>
-                      {s.name} — {s.duration} min · £{s.price}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
                 <label htmlFor="message" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-neutral-mid/70">
-                  Anything we should know?
+                  Your message <span className="text-gold-accent" aria-hidden="true">*</span>
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  rows={4}
+                  rows={5}
+                  required
                   className="w-full rounded-xl px-4 py-3 text-sm text-neutral-light placeholder-neutral-mid/40 outline-none transition-all duration-200 focus:ring-2 focus:ring-gold-accent focus:ring-offset-2 focus:ring-offset-purple-royal resize-none"
                   style={{
                     background: "#2C1E42",
                     border: "1px solid rgba(122,80,176,0.30)",
                   }}
-                  placeholder="Any health considerations, preferred times, or questions for us…"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="discount" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-neutral-mid/70">
-                  Discount code
-                </label>
-                <input
-                  id="discount"
-                  name="discount"
-                  type="text"
-                  className="w-full rounded-xl px-4 py-3 text-sm text-neutral-light placeholder-neutral-mid/40 outline-none transition-all duration-200 focus:ring-2 focus:ring-gold-accent focus:ring-offset-2 focus:ring-offset-purple-royal"
-                  style={{
-                    background: "#2C1E42",
-                    border: "1px solid rgba(122,80,176,0.30)",
-                  }}
-                  placeholder="e.g. WELCOME10"
+                  placeholder="Tell us what you'd like to know — questions about treatments, health considerations, or anything else…"
                 />
               </div>
 
@@ -287,8 +245,8 @@ export default function ContactPage() {
                   boxShadow: "0 0 24px rgba(197,165,86,0.30), 0 4px 16px rgba(32,21,46,0.4)",
                 }}
               >
-                <CalendarCheck size={16} aria-hidden="true" />
-                Send enquiry
+                <Send size={16} aria-hidden="true" />
+                Send message
               </button>
             </form>
           </div>
@@ -379,7 +337,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Discount reminder */}
+            {/* Book via Fresha */}
             <div
               className="rounded-2xl p-5 text-center"
               style={{
@@ -388,14 +346,24 @@ export default function ContactPage() {
               }}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-accent">
-                New client offer
+                Ready to book?
               </p>
-              <p className="mt-2 font-serif text-2xl font-semibold text-gold-champagne">
-                WELCOME10
+              <p className="mt-2 font-serif text-lg font-semibold text-neutral-light">
+                Book online via Fresha
               </p>
               <p className="mt-2 text-xs text-neutral-mid/60">
-                10% off your first treatment. Add the code to your enquiry above.
+                Choose your treatment, pick a time, and confirm your appointment instantly.
               </p>
+              <Link
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+                style={{ background: "#C5A556" }}
+              >
+                <CalendarCheck size={13} aria-hidden="true" />
+                Book now
+              </Link>
             </div>
           </div>
         </div>
