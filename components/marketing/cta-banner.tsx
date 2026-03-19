@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarCheck, Phone } from "lucide-react";
+import { CalendarCheck } from "lucide-react";
 
 import { siteConfig } from "@/lib/site-config";
 
@@ -63,13 +63,6 @@ export function CtaBanner() {
             <CalendarCheck size={16} aria-hidden="true" />
             Book a treatment
           </Link>
-          <a
-            href={`tel:${siteConfig.phone}`}
-            className="inline-flex items-center gap-2 rounded-full border border-gold-accent/65 px-8 py-3.5 text-sm font-medium text-neutral-mid transition-all duration-300 hover:border-gold-accent hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
-          >
-            <Phone size={15} aria-hidden="true" />
-            {siteConfig.phone}
-          </a>
         </div>
 
         {/* Divider */}

@@ -9,7 +9,12 @@ export const homepageFaqs: FaqItem[] = [
   {
     question: "Do I need to book in advance?",
     answer:
-      "Yes, all treatments are by appointment only. We recommend booking ahead to secure your preferred time, particularly at weekends or during busy periods. You can book through our contact page or by calling us directly.",
+      "Yes, all treatments are by appointment only. We recommend booking ahead to secure your preferred time, particularly at weekends or during busy periods. Book online through Fresha using the Book now links on this site. If you have a question before you book, use our contact form or email us.",
+  },
+  {
+    question: "What is your payment policy when booking?",
+    answer:
+      "The same payment policy applies to all clients and all services when you book through our online system: you will be charged a 25% deposit upfront at the time of booking. Deposits are non-refundable. You will see the full payment steps when you confirm your appointment on Fresha.",
   },
   {
     question: "What should I wear to my massage?",
@@ -34,7 +39,7 @@ export const homepageFaqs: FaqItem[] = [
   {
     question: "What is your cancellation policy?",
     answer:
-      "We ask that you give at least 24 hours notice if you need to cancel or rearrange your appointment. This allows us to offer your slot to other clients. Late cancellations or missed appointments without notice may incur a charge. Please contact us as soon as possible if your plans change.",
+      "We ask that you give at least 24 hours notice if you need to cancel or rearrange your appointment so we can offer your slot to other clients. Your booking deposit (25% upfront) is non-refundable. Late cancellations or missed appointments without notice may incur further charges according to the terms shown when you book on Fresha. Please contact us as soon as possible if your plans change.",
   },
 ];
 

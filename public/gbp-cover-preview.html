@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurelian Massage — Google Business Profile cover (1200×675)</title>
+  <!-- Fonts match app/globals.css + tailwind: sans = Arial, serif = Georgia -->
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      padding: 24px;
+      min-height: 100vh;
+    }
+    .instructions {
+      max-width: 720px;
+      margin: 0 auto 20px;
+      color: #aaa;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .instructions strong { color: #e8e8e8; }
+    /* GBP cover artboard — 16:9, sharp for upload (keep under 5MB as JPG/PNG) */
+    .gbp-cover {
+      position: relative;
+      width: 1200px;
+      height: 675px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #20152e;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    }
+    .gbp-cover__bg {
+      position: absolute;
+      inset: -5%;
+      background-image: url("./hero-massage.png");
+      background-size: cover;
+      background-position: center center;
+    }
+    .gbp-cover__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(32, 21, 46, 0.92) 0%,
+        rgba(32, 21, 46, 0.78) 45%,
+        rgba(32, 21, 46, 0.88) 100%
+      );
+    }
+    .gbp-cover__glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(
+        ellipse 70% 45% at 50% 0%,
+        rgba(197, 165, 86, 0.14) 0%,
+        transparent 60%
+      );
+    }
+    .gbp-cover__content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 120px;
+    }
+    .gbp-cover__logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 28px;
+      filter: drop-shadow(0 4px 24px rgba(197, 165, 86, 0.25));
+    }
+    .gbp-cover__eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(197, 165, 86, 0.85); /* gold-accent */
+      margin-bottom: 16px;
+    }
+    .gbp-cover__title {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 52px;
+      font-weight: 300;
+      line-height: 1.12;
+      color: #f7f7f7; /* neutral-light */
+      max-width: 900px;
+    }
+    .gbp-cover__title span {
+      font-weight: 600;
+      /* matches tailwind gradient-gold */
+      background: linear-gradient(135deg, #c5a556 0%, #dfc98a 50%, #c5a556 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gbp-cover__subtitle {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 24px;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.35;
+      color: rgba(212, 210, 216, 0.9); /* neutral-mid */
+      margin-top: 20px;
+      max-width: 720px;
+    }
+    .gbp-cover__footer {
+      font-family: Arial, Helvetica, sans-serif;
+      position: absolute;
+      bottom: 36px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: rgba(212, 210, 216, 0.55);
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="instructions">
+    <strong>How to use:</strong> Open this file from the <code>public</code> folder so images load.
+    Screenshot only the purple frame below (1200×675). Save as PNG or JPG under 5MB for Google Business Profile.
+    See <a href="https://support.google.com/business/answer/6103862" style="color:#c5a556;">Google photo guidelines</a>.
+  </div>
+
+  <div class="gbp-cover" id="gbp-cover" aria-label="Google Business Profile cover preview">
+    <div class="gbp-cover__bg" aria-hidden="true"></div>
+    <div class="gbp-cover__overlay" aria-hidden="true"></div>
+    <div class="gbp-cover__glow" aria-hidden="true"></div>
+    <div class="gbp-cover__content">
+      <img class="gbp-cover__logo" src="./logo.svg" alt="" width="200" height="73" />
+      <p class="gbp-cover__eyebrow">Bath City Centre · 16 St Peters Terrace</p>
+      <h1 class="gbp-cover__title"><span>Aurelian Massage</span></h1>
+      <p class="gbp-cover__subtitle">Swedish &amp; aromatherapy massage therapy in Bath</p>
+    </div>
+    <p class="gbp-cover__footer">Book online · aurelianmassage.com</p>
+  </div>
+</body>
+</html>
