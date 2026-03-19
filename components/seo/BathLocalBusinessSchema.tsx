@@ -23,10 +23,10 @@ const BATH_LANDMARKS = [
   { name: "Thermae Bath Spa", url: "https://www.thermaebathspa.com" },
 ];
 
-/** Schema.org JSON-LD shape for the massage business. Uses LocalBusiness (core schema.org) for validator compatibility; Service.provider must reference Organization/Person. */
+/** Schema.org JSON-LD shape for the massage business. HealthAndBeautyBusiness (core schema.org) fits spa/wellness; subtype of LocalBusiness so Service.provider remains valid. */
 export type MassageBusiness = {
   "@context": "https://schema.org";
-  "@type": "LocalBusiness";
+  "@type": "HealthAndBeautyBusiness";
   "@id": string;
   name: string;
   legalName: string;
@@ -78,7 +78,7 @@ function buildBathLocalBusinessSchema(): MassageBusiness {
 
   const schema: MassageBusiness = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "HealthAndBeautyBusiness",
     "@id": MAIN_ENTITY_ID,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
