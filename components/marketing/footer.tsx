@@ -145,9 +145,22 @@ export function Footer() {
       </div>
 
       <div className="border-t border-gold-accent/10">
-        <p className="mx-auto max-w-6xl px-6 py-4 text-center text-xs text-neutral-mid/60">
-          © {year} {siteConfig.name}. All rights reserved.
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-4 sm:flex-row">
+          <p className="text-center text-xs text-neutral-mid/60">
+            © {year} {siteConfig.name}. All rights reserved.
+          </p>
+          <p className="text-center text-xs text-neutral-mid/40">
+            Website designed &amp; built by{" "}
+            <a
+              href="https://seo-kings.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-mid/60 transition-colors hover:text-gold-accent focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-accent rounded"
+            >
+              SEO Kings
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
