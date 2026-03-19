@@ -56,17 +56,17 @@ export type MassageBusiness = {
   knowsAbout: { "@type": "Place"; name: string; url: string }[];
   openingHours: string[];
   sameAs?: string[];
-  service: {
-    "@type": "Service";
-    "@id": string;
-    name: string;
-    description: string;
-    provider: { "@id": string };
-    offers?: {
-      "@type": "Offer";
-      price: number;
-      priceCurrency: "GBP";
+  makesOffer: {
+    "@type": "Offer";
+    itemOffered: {
+      "@type": "Service";
+      "@id": string;
+      name: string;
+      description: string;
+      provider: { "@id": string };
     };
+    price: number;
+    priceCurrency: "GBP";
   }[];
 };
 
@@ -112,17 +112,17 @@ function buildBathLocalBusinessSchema(): MassageBusiness {
     })),
     openingHours: siteConfig.openingHours.map((h) => h.schema),
     sameAs: siteConfig.socialProfiles.map((p) => p.href),
-    service: services.map((service) => ({
-      "@type": "Service",
-      "@id": `${SCHEMA_BASE_URL}/#service-${service.slug}`,
-      name: service.name,
-      description: service.description.split(".")[0] + ".",
-      provider: { "@id": MAIN_ENTITY_ID },
-      offers: {
-        "@type": "Offer",
-        price: service.price,
-        priceCurrency: "GBP",
+    makesOffer: services.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        "@id": `${SCHEMA_BASE_URL}/#service-${service.slug}`,
+        name: service.name,
+        description: service.description.split(".")[0] + ".",
+        provider: { "@id": MAIN_ENTITY_ID },
       },
+      price: service.price,
+      priceCurrency: "GBP",
     })),
   };
 
