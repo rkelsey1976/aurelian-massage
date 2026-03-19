@@ -12,10 +12,14 @@ type HeroProps = {
   primaryCta: {
     href: string;
     label: string;
+    target?: string;
+    rel?: string;
   };
   secondaryCta: {
     href: string;
     label: string;
+    target?: string;
+    rel?: string;
   };
 };
 
@@ -79,20 +83,6 @@ export function Hero({
       >
         {/* Left — headline content */}
         <div className="space-y-7">
-          {/* Logo on mobile/tablet (desktop has it on the right) */}
-          <motion.div
-            className="flex justify-center lg:hidden"
-            variants={fadeUp()}
-          >
-            <Image
-              src="/logo.svg"
-              alt="Aurelian Massage logo"
-              width={200}
-              height={200}
-              className="h-auto w-full max-w-[200px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
-              priority
-            />
-          </motion.div>
           <motion.p
             className="text-sm font-medium tracking-[0.3em] uppercase text-gold-accent"
             variants={fadeUp()}
@@ -126,6 +116,8 @@ export function Hero({
           <motion.div className="flex flex-wrap gap-4 pt-2" variants={fadeUp()}>
             <Link
               href={primaryCta.href}
+              target={primaryCta.target}
+              rel={primaryCta.rel}
               className="rounded-full px-8 py-3.5 text-sm font-semibold text-purple-dark transition-all duration-300 hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
               style={{
                 background: "#C5A556",
@@ -138,6 +130,8 @@ export function Hero({
             {/* border-gold-accent/65 gives ~3.4:1 contrast against the dark hero bg, meeting WCAG 1.4.11 */}
             <Link
               href={secondaryCta.href}
+              target={secondaryCta.target}
+              rel={secondaryCta.rel}
               className="rounded-full border border-gold-accent/65 px-8 py-3.5 text-sm font-medium text-neutral-mid transition-all duration-300 hover:border-gold-accent hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
             >
               {secondaryCta.label}

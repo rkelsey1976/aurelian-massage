@@ -138,7 +138,7 @@ export function DiscountModal() {
               type="button"
               onClick={() => dismiss(false)}
               aria-label="Close offer"
-              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-neutral-mid/50 transition-all duration-200 hover:bg-white/10 hover:text-neutral-light focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+              className="absolute right-4 top-4 flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full text-neutral-mid/70 transition-all duration-200 hover:bg-white/10 hover:text-neutral-light focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
             >
               <X size={16} aria-hidden="true" />
             </button>
@@ -219,7 +219,7 @@ export function DiscountModal() {
               {/* CTAs */}
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/services"
+                  href="/treatments"
                   onClick={() => dismiss(true)}
                   className="flex flex-1 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-purple-dark transition-all duration-300 hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                   style={{
@@ -239,7 +239,7 @@ export function DiscountModal() {
               </div>
 
               {/* Fine print */}
-              <p className="mt-5 text-center text-[11px] leading-5 text-neutral-mid/40">
+              <p className="mt-5 text-center text-[11px] leading-5 text-neutral-mid/60">
                 One use per customer. Cannot be combined with other offers.
                 <br />
                 Present code at time of booking.

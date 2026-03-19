@@ -95,7 +95,8 @@ function ServiceCarouselCard({ service }: { service: Service }) {
         {/* CTA */}
         <div className="mt-5">
           <Link
-            href={`/services/${slug}`}
+            href={`/treatments/${slug}`}
+            aria-label={`View ${name} treatment`}
             className="inline-flex items-center gap-2 rounded-full border border-gold-accent/65 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-accent transition-all duration-300 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
           >
             View treatment
@@ -189,15 +190,20 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
               aria-selected={i === activeIndex}
               aria-label={`Go to ${s.name}`}
               onClick={() => scrollTo(i)}
-              className="h-2 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
-              style={{
-                width: i === activeIndex ? "24px" : "8px",
-                background:
-                  i === activeIndex
-                    ? "#C5A556"
-                    : "rgba(197, 165, 86, 0.3)",
-              }}
-            />
+              className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+            >
+              <span
+                aria-hidden="true"
+                className="h-2 rounded-full transition-all duration-300"
+                style={{
+                  width: i === activeIndex ? "24px" : "8px",
+                  background:
+                    i === activeIndex
+                      ? "#C5A556"
+                      : "rgba(197, 165, 86, 0.3)",
+                }}
+              />
+            </button>
           ))}
         </div>
 
@@ -206,7 +212,7 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
           <button
             onClick={prev}
             aria-label="Previous treatment"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gold-accent/40 text-gold-accent transition-all duration-200 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+            className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full border border-gold-accent/40 text-gold-accent transition-all duration-200 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
           >
             <svg
               aria-hidden="true"
@@ -226,7 +232,7 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
           <button
             onClick={next}
             aria-label="Next treatment"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gold-accent/40 text-gold-accent transition-all duration-200 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+            className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full border border-gold-accent/40 text-gold-accent transition-all duration-200 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
           >
             <svg
               aria-hidden="true"

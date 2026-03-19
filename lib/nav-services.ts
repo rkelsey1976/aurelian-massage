@@ -25,14 +25,14 @@ export const navServiceGroups: NavServiceGroup[] = [
     services: [
       {
         label: "Back, Neck & Shoulder Release",
-        href: "/services/back-neck-shoulder-release",
+        href: "/treatments/back-neck-shoulder-release",
         description: "Targeted upper body relief",
         duration: 30,
         price: 30,
       },
       {
         label: "Traveller's Recovery Massage",
-        href: "/services/travellers-recovery-massage",
+        href: "/treatments/travellers-recovery-massage",
         description: "Refresh after long journeys",
         duration: 45,
         price: 48,
@@ -44,21 +44,21 @@ export const navServiceGroups: NavServiceGroup[] = [
     services: [
       {
         label: "Signature Swedish Full Body",
-        href: "/services/signature-swedish-full-body",
+        href: "/treatments/signature-swedish-full-body",
         description: "Classic relaxation head to toe",
         duration: 60,
         price: 60,
       },
       {
         label: "Aurelian Signature Massage",
-        href: "/services/aurelian-signature-massage",
+        href: "/treatments/aurelian-signature-massage",
         description: "Our definitive treatment",
         duration: 75,
         price: 72,
       },
       {
         label: "Ultimate Relaxation Massage",
-        href: "/services/ultimate-relaxation-massage",
+        href: "/treatments/ultimate-relaxation-massage",
         description: "Deeply indulgent full body session",
         duration: 90,
         price: 90,
@@ -70,14 +70,14 @@ export const navServiceGroups: NavServiceGroup[] = [
     services: [
       {
         label: "Revitalising Aromatherapy",
-        href: "/services/revitalising-aromatherapy-massage",
+        href: "/treatments/revitalising-aromatherapy-massage",
         description: "Energise and restore vitality",
         duration: 60,
         price: 68,
       },
       {
         label: "Deep Calm Aromatherapy",
-        href: "/services/deep-calm-aromatherapy-massage",
+        href: "/treatments/deep-calm-aromatherapy-massage",
         description: "Soothe the mind, promote rest",
         duration: 60,
         price: 68,
@@ -92,5 +92,5 @@ export const megaMenuFeatured: MegaMenuFeatured = {
   description:
     "Not sure which session to choose? Browse all treatments or get in touch and we will help you find the perfect fit.",
   cta: { label: "Book now", href: "/contact" },
-  secondaryCta: { label: "All treatments", href: "/services" },
+  secondaryCta: { label: "All treatments", href: "/treatments" },
 };

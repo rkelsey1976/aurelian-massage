@@ -81,7 +81,7 @@ function Block({ block }: { block: ContentBlock }) {
             {block.text}
           </p>
           <Link
-            href="/services"
+            href="/treatments"
             className="mt-5 inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
             style={{ background: "#C5A556" }}
           >
@@ -150,17 +150,6 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1fr_auto] lg:items-end lg:py-20">
           {/* Left — content */}
           <div className="flex max-w-3xl flex-col justify-end">
-            {/* Logo on mobile (desktop has it on the right) */}
-            <div className="mb-8 flex justify-center lg:hidden">
-              <Image
-                src="/logo.svg"
-                alt="Aurelian Massage logo"
-                width={180}
-                height={180}
-                className="h-auto w-full max-w-[180px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
-                priority
-              />
-            </div>
             <nav aria-label="Breadcrumb" className="mb-6">
             <Link
               href="/blog"

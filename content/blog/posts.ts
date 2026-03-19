@@ -243,7 +243,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-03-10",
     readingTime: "5 min read",
     category: "Bath & Wellness",
-    image: "/hot-stones.png",
+    image: "/spa-setup.png",
     blocks: [
       {
         type: "paragraph",
@@ -774,7 +774,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-02-10",
     readingTime: "4 min read",
     category: "Bath & Wellness",
-    image: "/intro-1.png",
+    image: "/intro-4.png",
     blocks: [
       {
         type: "paragraph",

@@ -9,7 +9,7 @@ export const metadata = createPageMetadata({
   title: "Massage Treatments in Bath",
   description:
     "Browse all massage treatments at Aurelian Massage in Bath city centre. From a 30-minute shoulder release to a 90-minute ultimate relaxation — every session is individually tailored.",
-  path: "/services",
+  path: "/treatments",
   keywords: [
     "massage treatments Bath",
     "Swedish massage Bath",
@@ -24,7 +24,7 @@ const stats = [
   { value: "From £30", label: "Per session" },
 ];
 
-export default function ServicesPage() {
+export default function TreatmentsPage() {
   return (
     <>
       {/* ── Hero ── */}
@@ -63,17 +63,6 @@ export default function ServicesPage() {
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1fr_auto] lg:items-center lg:py-28">
           {/* Left — content */}
           <div className="flex flex-col justify-center">
-            {/* Logo on mobile (desktop has it on the right) */}
-            <div className="mb-8 flex justify-center lg:hidden">
-              <Image
-                src="/logo.svg"
-                alt="Aurelian Massage logo"
-                width={200}
-                height={200}
-                className="h-auto w-full max-w-[200px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
-                priority
-              />
-            </div>
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-2 text-xs text-neutral-mid/50">
@@ -172,7 +161,8 @@ export default function ServicesPage() {
           {services.map((service) => (
             <Link
               key={service.slug}
-              href={`/services/${service.slug}`}
+              href={`/treatments/${service.slug}`}
+              aria-label={`View ${service.name} treatment`}
               className="group relative flex flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
               style={{
                 border: service.featured

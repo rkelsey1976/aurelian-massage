@@ -116,7 +116,7 @@ export function buildLocalBusinessSchema() {
  */
 export function buildServicePageSchema(service: Service) {
   const serviceId = `${SCHEMA_BASE_URL}/#service-${service.slug}`;
-  const serviceUrl = getCanonicalUrl(`/services/${service.slug}`);
+  const serviceUrl = getCanonicalUrl(`/treatments/${service.slug}`);
 
   return {
     "@context": "https://schema.org",
@@ -138,7 +138,7 @@ export function buildServicePageSchema(service: Service) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
-          { "@type": "ListItem", position: 2, name: "Treatments", item: getCanonicalUrl("/services") },
+          { "@type": "ListItem", position: 2, name: "Treatments", item: getCanonicalUrl("/treatments") },
           { "@type": "ListItem", position: 3, name: service.name, item: serviceUrl },
         ],
       },

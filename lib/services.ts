@@ -113,7 +113,7 @@ export const services: Service[] = [
     name: "Signature Swedish Full Body Massage",
     duration: 60,
     price: 60,
-    image: "/hot-stones.png",
+    image: "/therapist-hero.png",
     gradient:
       "linear-gradient(160deg, rgba(60,40,10,0.55) 0%, rgba(160,110,30,0.75) 100%)",
     description:
@@ -159,7 +159,7 @@ export const services: Service[] = [
     duration: 75,
     price: 72,
     featured: true,
-    image: "/intro-1.png",
+    image: "/intro-2.png",
     gradient:
       "linear-gradient(160deg, rgba(32,21,46,0.45) 0%, rgba(197,165,86,0.70) 100%)",
     description:

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import type { Service } from "@/lib/services";
+import { siteConfig } from "@/lib/site-config";
 
 type ServiceCardProps = {
   service: Service;
@@ -72,8 +73,10 @@ export function ServiceCard({ service }: ServiceCardProps) {
       {/* CTA */}
       <div className="mt-6">
         <Link
-          href={`/contact?service=${slug}`}
-          className="inline-flex items-center gap-2 rounded-full border border-gold-premium/65 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-premium transition-all duration-300 hover:border-gold-premium hover:bg-gold-premium hover:text-purple-royal focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-premium focus-visible:ring-offset-2 focus-visible:ring-offset-purple-royal"
+          href={siteConfig.bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-gold-accent/65 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-accent transition-all duration-300 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
         >
           Book this treatment
           <svg

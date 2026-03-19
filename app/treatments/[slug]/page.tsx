@@ -7,6 +7,7 @@ import { FaqAccordion } from "@/components/marketing/faq-accordion";
 import { buildFaqSchema } from "@/lib/faqs";
 import { buildServicePageSchema, createPageMetadata } from "@/lib/seo";
 import { services } from "@/lib/services";
+import { siteConfig } from "@/lib/site-config";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props) {
   return createPageMetadata({
     title: service.name,
     description: service.description.slice(0, 160),
-    path: `/services/${service.slug}`,
+    path: `/treatments/${service.slug}`,
     keywords: [
       `${service.name} Bath`,
       `${service.name.toLowerCase()} Bath city centre`,
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: Props) {
   });
 }
 
-export default async function ServicePage({ params }: Props) {
+export default async function TreatmentPage({ params }: Props) {
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
@@ -69,20 +70,9 @@ export default async function ServicePage({ params }: Props) {
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1fr_auto] lg:items-end lg:py-24">
           {/* Left — content */}
           <div className="flex max-w-3xl flex-col justify-end">
-            {/* Logo on mobile (desktop has it on the right) */}
-            <div className="mb-8 flex justify-center lg:hidden">
-              <Image
-                src="/logo.svg"
-                alt="Aurelian Massage logo"
-                width={200}
-                height={200}
-                className="h-auto w-full max-w-[200px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
-                priority
-              />
-            </div>
             <nav aria-label="Breadcrumb" className="mb-6">
             <Link
-              href="/services"
+              href="/treatments"
               className="inline-flex items-center gap-2 text-sm text-neutral-mid/70 transition-colors hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent rounded"
             >
               <ArrowLeft size={14} aria-hidden="true" />
@@ -277,7 +267,10 @@ export default async function ServicePage({ params }: Props) {
               </div>
               <div className="mt-7 h-px bg-gold-accent/15" />
               <Link
-                href={`/contact?service=${service.slug}`}
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Book now: ${name}`}
                 className="mt-7 flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                 style={{
                   background: "#C5A556",
@@ -325,7 +318,7 @@ export default async function ServicePage({ params }: Props) {
               {related.map((s) => (
                 <Link
                   key={s.slug}
-                  href={`/services/${s.slug}`}
+                  href={`/treatments/${s.slug}`}
                   className="group relative overflow-hidden rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
                   style={{ border: "1px solid rgba(197,165,86,0.18)" }}
                 >

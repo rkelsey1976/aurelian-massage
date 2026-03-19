@@ -9,18 +9,19 @@ import { Section } from "@/components/marketing/section";
 import { homepageFaqs, buildFaqSchema } from "@/lib/faqs";
 import { createPageMetadata } from "@/lib/seo";
 import { services } from "@/lib/services";
+import { siteConfig } from "@/lib/site-config";
 import { testimonials } from "@/lib/testimonials";
 
 export const metadata = createPageMetadata({
-  title: "Luxury Holistic & Deep Tissue Massage in Bath",
+  title: "Swedish & Aromatherapy Massage in Bath | Aurelian Massage",
   description:
-    "Step into a space of total restoration at Aurelian Massage. Specialist remedial and deep tissue massage therapy in Bath city centre, uniquely adapted to your body's needs.",
+    "Swedish and aromatherapy massage therapy in Bath city centre. Every session individually tailored to your body's needs at Aurelian Massage.",
   path: "/",
   keywords: [
-    "luxury massage Bath",
-    "holistic massage Bath",
-    "deep tissue massage Bath",
-    "remedial massage Somerset",
+    "Swedish massage Bath",
+    "aromatherapy massage Bath",
+    "relaxation massage Bath",
+    "massage therapy Bath",
     "Aurelian Massage",
   ],
 });
@@ -30,10 +31,10 @@ export default function HomePage() {
     <>
       <Hero
         eyebrow="Aurelian Massage • Bath City Centre"
-        title="Luxury Holistic & Deep Tissue Massage in Bath"
-        description={`Step into a space of total restoration at Aurelian Massage. Inspired by the Latin "Aureus," meaning golden, we bring a premium touch to every session in Bath city centre. Our specialist therapists focus on remedial techniques and stress relief, ensuring every treatment is uniquely adapted to your body's needs. Discover why we are the golden choice for professional massage therapy in Somerset.`}
-        primaryCta={{ href: "/services", label: "Explore treatments" }}
-        secondaryCta={{ href: "/contact", label: "See contact page" }}
+        title="Swedish & Aromatherapy Massage in Bath"
+        description={`Step into a space of total restoration at Aurelian Massage. Inspired by the Latin "Aureus," meaning golden, we bring a premium touch to every session in Bath city centre. Our specialist therapists offer Swedish and aromatherapy massage treatments, ensuring every session is uniquely adapted to your body's needs. Discover why we are the golden choice for professional massage therapy in Bath.`}
+        primaryCta={{ href: "/treatments", label: "Explore treatments" }}
+        secondaryCta={{ href: siteConfig.bookingUrl, label: "Book a treatment", target: "_blank", rel: "noopener noreferrer" }}
       />
 
       {/* Introduction */}
@@ -59,7 +60,7 @@ export default function HomePage() {
                 {
                   icon: <UserCheck size={28} strokeWidth={1.5} aria-hidden="true" />,
                   label: "Specialist Therapists",
-                  body: "Our therapists are trained in a range of remedial and holistic techniques, ensuring each treatment is both effective and deeply relaxing.",
+                  body: "Our therapists are trained in Swedish and aromatherapy massage, ensuring each treatment is both effective and deeply relaxing.",
                 },
                 {
                   icon: <Sparkles size={28} strokeWidth={1.5} aria-hidden="true" />,
@@ -78,8 +79,8 @@ export default function HomePage() {
                       i === 0
                         ? "text-gold-accent"
                         : i === 1
-                          ? "text-purple-mid"
-                          : "text-purple-plum"
+                          ? "text-purple-primary"
+                          : "text-purple-primary"
                     }`}
                     style={
                       i === 0
@@ -105,8 +106,8 @@ export default function HomePage() {
           {/* Right — parallax photo grid */}
           <ParallaxPhotoGrid
             photos={[
-              { src: "/back-massage.png", alt: "Deep tissue back massage treatment at Aurelian Massage, Bath city centre" },
-              { src: "/hot-stones.png", alt: "Hot stone therapy treatment at Aurelian Massage in Bath, Somerset" },
+              { src: "/back-massage.png", alt: "Swedish back massage treatment at Aurelian Massage, Bath city centre" },
+              { src: "/therapist-hero.png", alt: "Therapist delivering Swedish back and neck massage at Aurelian Massage, Bath" },
               { src: "/aromatherapy-oil.png", alt: "Aromatherapy oil massage at Aurelian Massage, Bath city centre" },
               { src: "/spa-setup.png", alt: "Luxury treatment room at Aurelian Massage, Bath city centre" },
             ]}
@@ -118,15 +119,15 @@ export default function HomePage() {
         eyebrow="Our treatments"
         title="Massage Therapy in Bath"
         description="Every treatment at Aurelian Massage is individually tailored to your body's needs. Choose the session that is right for you."
-        cta={{ href: "/services", label: "View all treatments" }}
+        cta={{ href: "/treatments", label: "View all treatments" }}
       >
         <ServiceCarousel services={services} />
       </Section>
 
       <Section
         eyebrow="What our clients say"
-        title="Trusted by Guests in Bath & Beyond"
-        description="Real experiences from people who've visited Aurelian Massage. We're proud of every session we deliver."
+        title="Real Reviews from Real Clients"
+        description="Hear directly from people who have visited Aurelian Massage at 16 St Peters Terrace, Bath."
       >
         <Testimonials items={testimonials} />
       </Section>

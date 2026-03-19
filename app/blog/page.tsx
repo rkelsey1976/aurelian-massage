@@ -22,7 +22,7 @@ export default function BlogIndexPage() {
       {/* ── Hero ── */}
       <div className="relative overflow-hidden" style={{ minHeight: "460px" }}>
         <Image
-          src="/intro-1.png"
+          src="/intro-2.png"
           alt="Massage therapy advice and wellness guides from Aurelian Massage, Bath"
           fill
           sizes="100vw"
@@ -51,17 +51,6 @@ export default function BlogIndexPage() {
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1fr_auto] lg:items-center lg:py-28">
           {/* Left — content */}
           <div className="flex flex-col justify-center">
-            {/* Logo on mobile (desktop has it on the right) */}
-            <div className="mb-8 flex justify-center lg:hidden">
-              <Image
-                src="/logo.svg"
-                alt="Aurelian Massage logo"
-                width={200}
-                height={200}
-                className="h-auto w-full max-w-[200px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
-                priority
-              />
-            </div>
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-2 text-xs text-neutral-mid/50">
@@ -260,7 +249,7 @@ export default function BlogIndexPage() {
                       </span>
                     </div>
 
-                    <h2 className="mt-3 font-serif text-xl font-semibold leading-snug text-neutral-light transition-colors group-hover:text-gold-champagne">
+                    <h2 className="mt-3 font-serif text-xl font-semibold leading-snug text-neutral-light transition-colors group-hover:text-neutral-light">
                       <Link
                         href={`/blog/${post.slug}`}
                         className="focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-accent rounded"

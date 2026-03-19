@@ -28,6 +28,14 @@ function GoogleIcon({ className }: { className?: string }) {
   );
 }
 
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="#1877F2">
+      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+    </svg>
+  );
+}
+
 function StarRating({ rating }: { rating: number }) {
   return (
     <div className="flex items-center gap-0.5" aria-label={`${rating} out of 5 stars`}>
@@ -59,7 +67,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       <Quote
         size={28}
         aria-hidden="true"
-        className="mb-4 text-purple-mid/60"
+        className="mb-4 text-purple-primary/60"
         strokeWidth={1.5}
       />
 
@@ -86,6 +94,12 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           <div className="flex flex-col items-center gap-1">
             <GoogleIcon className="h-5 w-5 flex-shrink-0" />
             <span className="text-[10px] text-neutral-mid/40">Google</span>
+          </div>
+        )}
+        {testimonial.platform === "Facebook" && (
+          <div className="flex flex-col items-center gap-1">
+            <FacebookIcon className="h-5 w-5 flex-shrink-0" />
+            <span className="text-[10px] text-neutral-mid/40">Facebook</span>
           </div>
         )}
       </footer>
@@ -161,12 +175,17 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
                 });
                 setActiveIndex(i);
               }}
-              className={`h-1.5 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent ${
-                i === activeIndex
-                  ? "w-6 bg-gold-accent"
-                  : "w-1.5 bg-neutral-mid/30 hover:bg-neutral-mid/60"
-              }`}
-            />
+              className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+            >
+              <span
+                aria-hidden="true"
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === activeIndex
+                    ? "w-6 bg-gold-accent"
+                    : "w-1.5 bg-neutral-mid/40 hover:bg-neutral-mid/60"
+                }`}
+              />
+            </button>
           ))}
         </div>
 
@@ -175,14 +194,14 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
           <button
             onClick={() => scroll("prev")}
             aria-label="Previous testimonial"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-accent/25 text-neutral-mid/60 transition-all duration-200 hover:border-gold-accent/60 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+            className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full border border-gold-accent/25 text-neutral-mid/70 transition-all duration-200 hover:border-gold-accent/60 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
           >
             <ChevronLeft size={16} aria-hidden="true" />
           </button>
           <button
             onClick={() => scroll("next")}
             aria-label="Next testimonial"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-accent/25 text-neutral-mid/60 transition-all duration-200 hover:border-gold-accent/60 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+            className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full border border-gold-accent/25 text-neutral-mid/70 transition-all duration-200 hover:border-gold-accent/60 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
           >
             <ChevronRight size={16} aria-hidden="true" />
           </button>

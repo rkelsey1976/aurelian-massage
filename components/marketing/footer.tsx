@@ -103,7 +103,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gold-accent/25 text-neutral-mid/60 transition-all duration-300 hover:border-gold-accent/60 hover:text-gold-accent hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+                  className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full border border-gold-accent/25 text-neutral-mid/70 transition-all duration-300 hover:border-gold-accent/60 hover:text-gold-accent hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -145,7 +145,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-gold-accent/10">
-        <p className="mx-auto max-w-6xl px-6 py-4 text-center text-xs text-neutral-mid/40">
+        <p className="mx-auto max-w-6xl px-6 py-4 text-center text-xs text-neutral-mid/60">
           © {year} {siteConfig.name}. All rights reserved.
         </p>
       </div>

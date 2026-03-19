@@ -3,6 +3,7 @@ import Link from "next/link";
 import { UserCheck, Sparkles, MapPin, Heart } from "lucide-react";
 
 import { createPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = createPageMetadata({
   title: "About Aurelian Massage",
@@ -12,8 +13,8 @@ export const metadata = createPageMetadata({
   keywords: [
     "about Aurelian Massage",
     "massage therapist Bath",
-    "holistic therapy Bath",
-    "remedial massage Bath",
+    "Swedish massage therapist Bath",
+    "aromatherapy massage Bath",
   ],
 });
 
@@ -21,7 +22,7 @@ const values = [
   {
     icon: UserCheck,
     title: "Specialist Therapists",
-    body: "Every therapist at Aurelian Massage is trained in a range of remedial and holistic techniques. We combine clinical knowledge with a deeply intuitive touch to deliver treatments that are both effective and profoundly relaxing.",
+    body: "Every therapist at Aurelian Massage is trained in Swedish and aromatherapy massage. We combine clinical knowledge with a deeply intuitive touch to deliver treatments that are both effective and profoundly relaxing.",
   },
   {
     icon: Sparkles,
@@ -46,8 +47,8 @@ export default function AboutPage() {
       {/* ── Hero ── */}
       <div className="relative overflow-hidden" style={{ minHeight: "500px" }}>
         <Image
-          src="/hot-stones.png"
-          alt="Hot stone massage therapy at Aurelian Massage, Bath city centre"
+          src="/therapist-hero.png"
+          alt="Therapist delivering Swedish massage at Aurelian Massage, Bath city centre"
           fill
           sizes="100vw"
           className="object-cover object-center"
@@ -75,17 +76,6 @@ export default function AboutPage() {
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1fr_auto] lg:items-center lg:py-28">
           {/* Left — content */}
           <div className="flex flex-col justify-center">
-            {/* Logo on mobile (desktop has it on the right) */}
-            <div className="mb-8 flex justify-center lg:hidden">
-              <Image
-                src="/logo.svg"
-                alt="Aurelian Massage logo"
-                width={200}
-                height={200}
-                className="h-auto w-full max-w-[200px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
-                priority
-              />
-            </div>
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-2 text-xs text-neutral-mid/50">
@@ -171,7 +161,7 @@ export default function AboutPage() {
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/services"
+                href="/treatments"
                 className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-purple-dark transition-all duration-300 hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
                 style={{ background: "#C5A556", boxShadow: "0 0 20px rgba(197,165,86,0.25)" }}
               >
@@ -258,7 +248,9 @@ export default function AboutPage() {
           session. One use per customer.
         </p>
         <Link
-          href="/contact"
+          href={siteConfig.bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-8 inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-purple-dark transition-all duration-300 hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
           style={{ background: "#C5A556", boxShadow: "0 0 24px rgba(197,165,86,0.30)" }}
         >

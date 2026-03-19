@@ -48,7 +48,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body>
         <BathLocalBusinessSchema />
-          <div className="min-h-screen bg-purple-royal">
+          <div className="min-h-screen bg-purple-dark">
           <Header />
           <main>{children}</main>
           <Footer />

@@ -13,13 +13,14 @@ export const siteConfig = {
   legalName: "Aurelian Massage",
   tagline: "A modern sanctuary inspired by the timeless healing traditions of the City of Bath.",
   description:
-    "Luxury holistic and deep tissue massage therapy in Bath city centre. Specialist remedial techniques and stress relief, individually tailored to your body's needs.",
+    "Swedish and aromatherapy massage therapy in Bath city centre. Every session individually tailored to your body's needs at Aurelian Massage.",
   url: "https://www.aurelianmassage.co.uk",
-  email: "hello@aurelianmassage.co.uk",
+  bookingUrl: "https://www.fresha.com/book-now/aurelian-massage-x0r1utrz/all-offer?share=true&pId=2823885",
+  email: "ross@aurelianmassage.com",
   phone: "+44 1225 000000",
   defaultOgImage: "/api/og",
   address: {
-    street: "Bath City Centre",
+    street: "16 St Peters Terrace",
     city: "Bath",
     region: "Somerset",
     postalCode: "BA1",
@@ -31,12 +32,16 @@ export const siteConfig = {
   },
   openingHours: [
     {
-      label: "Monday–Saturday 9:00 AM to 7:00 PM",
-      schema: "Mo-Sa 09:00-19:00",
+      label: "Tuesday 10:00 AM to 9:00 PM",
+      schema: "Tu 10:00-21:00",
     },
     {
-      label: "Sunday 10:00 AM to 5:00 PM",
-      schema: "Su 10:00-17:00",
+      label: "Wednesday 10:00 AM to 9:00 PM",
+      schema: "We 10:00-21:00",
+    },
+    {
+      label: "Sunday 10:00 AM to 6:00 PM",
+      schema: "Su 10:00-18:00",
     },
   ] satisfies BusinessHours[],
   serviceAreas: [
@@ -66,10 +71,10 @@ export const siteConfig = {
     },
   ],
   defaultKeywords: [
-    "luxury massage Bath",
-    "holistic massage Bath",
-    "deep tissue massage Bath",
-    "remedial massage Somerset",
+    "Swedish massage Bath",
+    "aromatherapy massage Bath",
+    "relaxation massage Bath",
+    "massage therapy Bath",
     "Aurelian Massage",
   ],
 };
@@ -77,7 +82,7 @@ export const siteConfig = {
 export const navigationItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Treatments" },
+  { href: "/treatments", label: "Treatments" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];

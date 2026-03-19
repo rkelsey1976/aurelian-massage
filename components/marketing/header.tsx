@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CalendarCheck, ChevronDown, Menu, X } from "lucide-react";
+import { CalendarCheck, ChevronDown, Menu, Phone, X } from "lucide-react";
 
 import { MegaMenu } from "@/components/marketing/mega-menu";
 import { navServiceGroups } from "@/lib/nav-services";
@@ -74,12 +74,12 @@ export function Header() {
         className="sticky top-0 z-40 border-b border-gold-accent/20 backdrop-blur"
         style={{ background: "rgba(32, 21, 46, 0.93)" }}
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          {/* Logo / brand */}
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:gap-6 sm:px-6 sm:py-4">
+          {/* Logo / brand — smaller on mobile, name hidden on smallest screens */}
           <Link
             href="/"
             onClick={closeMobile}
-            className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+            className="flex min-w-0 flex-shrink-0 items-center gap-2 sm:gap-3 transition-opacity duration-300 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
             aria-label={`${siteConfig.name} — Home`}
           >
             <Image
@@ -87,10 +87,10 @@ export function Header() {
               alt=""
               width={200}
               height={72}
-              className="h-14 w-auto sm:h-16 md:h-[4.5rem]"
+              className="h-9 w-auto sm:h-14 md:h-16 lg:h-[4.5rem]"
               priority
             />
-            <span className="font-serif text-lg font-semibold tracking-tight text-gold-accent sm:text-xl">
+            <span className="font-serif text-base font-semibold tracking-tight text-gold-accent sm:text-lg md:text-xl">
               {siteConfig.name}
             </span>
           </Link>
@@ -133,15 +133,27 @@ export function Header() {
             </ul>
           </nav>
 
-          {/* Desktop book CTA — hidden below lg */}
-          <Link
-            href="/contact"
-            className="hidden lg:inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
-            style={{ background: "#C5A556" }}
-          >
-            <CalendarCheck size={14} aria-hidden="true" />
-            Book now
-          </Link>
+          {/* Desktop phone + book CTA — hidden below lg */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="inline-flex items-center gap-2 text-sm font-medium text-neutral-mid transition-colors duration-200 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent rounded"
+              aria-label={`Call us on ${siteConfig.phone}`}
+            >
+              <Phone size={14} aria-hidden="true" className="text-gold-accent" />
+              {siteConfig.phone}
+            </a>
+            <Link
+              href={siteConfig.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+              style={{ background: "#C5A556" }}
+            >
+              <CalendarCheck size={14} aria-hidden="true" />
+              Book now
+            </Link>
+          </div>
 
           {/* Hamburger — visible below lg */}
           <button
@@ -150,7 +162,7 @@ export function Header() {
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             onClick={() => setMobileOpen((prev) => !prev)}
-            className="lg:hidden flex h-10 w-10 items-center justify-center rounded-lg text-neutral-mid transition-colors duration-200 hover:bg-white/10 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+            className="lg:hidden flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-lg text-neutral-mid transition-colors duration-200 hover:bg-white/10 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
           >
             {mobileOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
           </button>
@@ -176,18 +188,18 @@ export function Header() {
               onClick={closeMobile}
             />
 
-            {/* Drawer panel */}
-            <motion.nav
+            {/* Drawer panel — use div with role=dialog so nav landmark is not mixed with dialog role */}
+            <motion.div
               key="mobile-nav"
               id="mobile-nav"
-              aria-label="Mobile navigation"
               role="dialog"
               aria-modal="true"
+              aria-label="Mobile navigation"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="fixed right-0 top-0 z-50 flex h-full w-[300px] flex-col overflow-y-auto lg:hidden"
+              className="fixed right-0 top-0 z-50 flex h-full w-full flex-col overflow-y-auto lg:hidden"
               style={{
                 background: "rgba(28, 18, 40, 0.98)",
                 backdropFilter: "blur(16px)",
@@ -196,23 +208,23 @@ export function Header() {
             >
               {/* Drawer header */}
               <div
-                className="flex items-center justify-between px-6 py-4"
+                className="flex items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4"
                 style={{ borderBottom: "1px solid rgba(197,165,86,0.12)" }}
               >
                 <Link
                   href="/"
                   onClick={closeMobile}
-                  className="flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+                  className="flex min-w-0 flex-shrink-0 items-center gap-2 transition-opacity duration-300 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                   aria-label={`${siteConfig.name} — Home`}
                 >
                   <Image
                     src="/logo.svg"
                     alt=""
-                    width={160}
-                    height={58}
-                    className="h-12 w-auto"
+                    width={120}
+                    height={44}
+                    className="h-10 w-auto sm:h-11"
                   />
-                  <span className="font-serif text-base font-semibold text-gold-accent">
+                  <span className="font-serif text-sm font-semibold text-gold-accent sm:text-base">
                     {siteConfig.name}
                   </span>
                 </Link>
@@ -220,14 +232,15 @@ export function Header() {
                   type="button"
                   aria-label="Close menu"
                   onClick={closeMobile}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-neutral-mid transition-colors hover:bg-white/10 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+                  className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-lg text-neutral-mid transition-colors hover:bg-white/10 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
                 >
                   <X size={20} aria-hidden="true" />
                 </button>
               </div>
 
               {/* Nav links */}
-              <ul className="flex-1 px-4 py-6 space-y-1">
+              <nav aria-label="Main links" className="flex-1 px-4 py-6">
+              <ul className="space-y-1">
                 {navigationItems.map((item) =>
                   item.label === "Treatments" ? (
                     <li key={item.href}>
@@ -291,7 +304,7 @@ export function Header() {
                               ))}
 
                               <Link
-                                href="/services"
+                                href="/treatments"
                                 onClick={closeMobile}
                                 className="mt-1 flex w-full items-center justify-center rounded-lg border border-gold-accent/30 py-2 text-xs font-medium text-gold-accent transition-all duration-200 hover:border-gold-accent hover:bg-gold-accent/10 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-accent"
                               >
@@ -315,6 +328,7 @@ export function Header() {
                   ),
                 )}
               </ul>
+              </nav>
 
               {/* Drawer footer — Book CTA */}
               <div
@@ -322,7 +336,9 @@ export function Header() {
                 style={{ borderTop: "1px solid rgba(197,165,86,0.12)" }}
               >
                 <Link
-                  href="/contact"
+                  href={siteConfig.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={closeMobile}
                   className="flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                   style={{
@@ -333,11 +349,11 @@ export function Header() {
                   <CalendarCheck size={16} aria-hidden="true" />
                   Book a treatment
                 </Link>
-                <p className="mt-3 text-center text-[11px] text-neutral-mid/40">
+                <p className="mt-3 text-center text-[11px] text-neutral-mid/50">
                   {siteConfig.openingHours[0].label}
                 </p>
               </div>
-            </motion.nav>
+            </motion.div>
           </>
         )}
       </AnimatePresence>
