@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, CalendarCheck, Send, Sparkles } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CalendarCheck, Sparkles } from "lucide-react";
 
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
+import { ContactForm } from "@/components/marketing/contact-form";
 
 export const metadata = createPageMetadata({
   title: "Contact Us",
@@ -137,118 +138,9 @@ export default function ContactPage() {
               day.
             </p>
 
-            <form
-              className="mt-8 space-y-5"
-              action="mailto:ross@aurelianmassage.com"
-              method="post"
-              encType="text/plain"
-            >
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="first-name" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-neutral-mid/70">
-                    First name <span className="text-gold-accent" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    id="first-name"
-                    name="first-name"
-                    type="text"
-                    required
-                    autoComplete="given-name"
-                    className="w-full rounded-xl px-4 py-3 text-sm text-neutral-light placeholder-neutral-mid/40 outline-none transition-all duration-200 focus:ring-2 focus:ring-gold-accent focus:ring-offset-2 focus:ring-offset-purple-royal"
-                    style={{
-                      background: "#2C1E42",
-                      border: "1px solid rgba(122,80,176,0.30)",
-                    }}
-                    placeholder="Jane"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="last-name" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-neutral-mid/70">
-                    Last name <span className="text-gold-accent" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    id="last-name"
-                    name="last-name"
-                    type="text"
-                    required
-                    autoComplete="family-name"
-                    className="w-full rounded-xl px-4 py-3 text-sm text-neutral-light placeholder-neutral-mid/40 outline-none transition-all duration-200 focus:ring-2 focus:ring-gold-accent focus:ring-offset-2 focus:ring-offset-purple-royal"
-                    style={{
-                      background: "#2C1E42",
-                      border: "1px solid rgba(122,80,176,0.30)",
-                    }}
-                    placeholder="Smith"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-neutral-mid/70">
-                  Email address <span className="text-gold-accent" aria-hidden="true">*</span>
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  className="w-full rounded-xl px-4 py-3 text-sm text-neutral-light placeholder-neutral-mid/40 outline-none transition-all duration-200 focus:ring-2 focus:ring-gold-accent focus:ring-offset-2 focus:ring-offset-purple-royal"
-                  style={{
-                    background: "#2C1E42",
-                    border: "1px solid rgba(122,80,176,0.30)",
-                  }}
-                  placeholder="jane@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-neutral-mid/70">
-                  Phone number
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  autoComplete="tel"
-                  className="w-full rounded-xl px-4 py-3 text-sm text-neutral-light placeholder-neutral-mid/40 outline-none transition-all duration-200 focus:ring-2 focus:ring-gold-accent focus:ring-offset-2 focus:ring-offset-purple-royal"
-                  style={{
-                    background: "#2C1E42",
-                    border: "1px solid rgba(122,80,176,0.30)",
-                  }}
-                  placeholder="+44 7700 000000"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-neutral-mid/70">
-                  Your message <span className="text-gold-accent" aria-hidden="true">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full rounded-xl px-4 py-3 text-sm text-neutral-light placeholder-neutral-mid/40 outline-none transition-all duration-200 focus:ring-2 focus:ring-gold-accent focus:ring-offset-2 focus:ring-offset-purple-royal resize-none"
-                  style={{
-                    background: "#2C1E42",
-                    border: "1px solid rgba(122,80,176,0.30)",
-                  }}
-                  placeholder="Tell us what you'd like to know — questions about treatments, health considerations, or anything else…"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-purple-dark transition-all duration-300 hover:scale-[1.02] hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-royal"
-                style={{
-                  background: "#C5A556",
-                  boxShadow: "0 0 24px rgba(197,165,86,0.30), 0 4px 16px rgba(32,21,46,0.4)",
-                }}
-              >
-                <Send size={16} aria-hidden="true" />
-                Send message
-              </button>
-            </form>
+            <div className="mt-8">
+              <ContactForm />
+            </div>
           </div>
 
           {/* ── Sidebar: info cards ── */}
