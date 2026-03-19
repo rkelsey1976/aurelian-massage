@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         <ol className="flex flex-wrap items-center gap-2 text-xs text-neutral-mid/50">
           <li>
             <Link
-              href="/home"
+              href="/"
               className="rounded transition-colors hover:text-gold-accent focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-accent"
             >
               Home
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
             Contact us
           </Link>
           {" · "}
-          <Link href="/home" className="text-gold-accent hover:underline">
+          <Link href="/" className="text-gold-accent hover:underline">
             Back to home
           </Link>
         </p>
