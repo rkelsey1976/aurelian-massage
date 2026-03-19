@@ -145,3 +145,17 @@ export function buildServicePageSchema(service: Service) {
     ],
   };
 }
+
+/** Build BreadcrumbList schema. path empty/undefined = Home (site root). */
+export function buildBreadcrumbListSchema(items: { name: string; path?: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem" as const,
+      position: i + 1,
+      name: item.name,
+      item: item.path === undefined || item.path === "" ? siteConfig.url : getCanonicalUrl(item.path),
+    })),
+  };
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactElement } from "react";
 
 import { navigationItems, siteConfig } from "@/lib/site-config";
@@ -51,9 +52,22 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1.5fr_1fr_1fr]">
         {/* Brand column */}
         <div className="space-y-4">
-          <p className="font-serif text-xl font-semibold text-gold-accent">
-            {siteConfig.name}
-          </p>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-3 transition-opacity duration-300 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#180F24]"
+            aria-label={`${siteConfig.name} — Home`}
+          >
+            <Image
+              src="/logo.svg"
+              alt=""
+              width={220}
+              height={80}
+              className="h-16 w-auto sm:h-[4.5rem]"
+            />
+            <span className="font-serif text-xl font-semibold text-gold-accent sm:text-2xl">
+              {siteConfig.name}
+            </span>
+          </Link>
           <p className="max-w-md text-sm leading-6 text-neutral-mid">
             {siteConfig.tagline}
           </p>

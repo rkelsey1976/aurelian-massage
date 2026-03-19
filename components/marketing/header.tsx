@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CalendarCheck, ChevronDown, Menu, X } from "lucide-react";
@@ -78,9 +79,20 @@ export function Header() {
           <Link
             href="/"
             onClick={closeMobile}
-            className="font-serif text-lg font-semibold tracking-tight text-gold-accent transition-all duration-300 hover:text-neutral-light focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+            className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+            aria-label={`${siteConfig.name} — Home`}
           >
-            {siteConfig.name}
+            <Image
+              src="/logo.svg"
+              alt=""
+              width={200}
+              height={72}
+              className="h-14 w-auto sm:h-16 md:h-[4.5rem]"
+              priority
+            />
+            <span className="font-serif text-lg font-semibold tracking-tight text-gold-accent sm:text-xl">
+              {siteConfig.name}
+            </span>
           </Link>
 
           {/* Desktop nav — hidden below lg */}
@@ -190,9 +202,19 @@ export function Header() {
                 <Link
                   href="/"
                   onClick={closeMobile}
-                  className="font-serif text-base font-semibold text-gold-accent"
+                  className="flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+                  aria-label={`${siteConfig.name} — Home`}
                 >
-                  {siteConfig.name}
+                  <Image
+                    src="/logo.svg"
+                    alt=""
+                    width={160}
+                    height={58}
+                    className="h-12 w-auto"
+                  />
+                  <span className="font-serif text-base font-semibold text-gold-accent">
+                    {siteConfig.name}
+                  </span>
                 </Link>
                 <button
                   type="button"

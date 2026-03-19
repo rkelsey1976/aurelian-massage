@@ -66,8 +66,21 @@ export default async function ServicePage({ params }: Props) {
           }}
         />
 
-        <div className="relative mx-auto flex max-w-6xl flex-col justify-end px-6 py-16 lg:py-24">
-          <nav aria-label="Breadcrumb" className="mb-6">
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1fr_auto] lg:items-end lg:py-24">
+          {/* Left — content */}
+          <div className="flex max-w-3xl flex-col justify-end">
+            {/* Logo on mobile (desktop has it on the right) */}
+            <div className="mb-8 flex justify-center lg:hidden">
+              <Image
+                src="/logo.svg"
+                alt="Aurelian Massage logo"
+                width={200}
+                height={200}
+                className="h-auto w-full max-w-[200px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
+                priority
+              />
+            </div>
+            <nav aria-label="Breadcrumb" className="mb-6">
             <Link
               href="/services"
               className="inline-flex items-center gap-2 text-sm text-neutral-mid/70 transition-colors hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent rounded"
@@ -102,6 +115,19 @@ export default async function ServicePage({ params }: Props) {
               <PoundSterling size={14} aria-hidden="true" />
               {price}
             </span>
+          </div>
+          </div>
+
+          {/* Right — logo */}
+          <div className="hidden lg:flex lg:items-center lg:justify-center">
+            <Image
+              src="/logo.svg"
+              alt="Aurelian Massage logo"
+              width={300}
+              height={300}
+              className="h-auto w-full max-w-[300px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
+              priority
+            />
           </div>
         </div>
       </div>

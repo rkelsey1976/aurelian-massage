@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Clock, Tag, BookOpen, Sparkles } from "lucide-react";
 
 import { getAllBlogPosts } from "@/lib/blog";
-import { createPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbListSchema, createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Massage Advice & Guides for Bath",
@@ -48,9 +48,22 @@ export default function BlogIndexPage() {
         {/* Vignette */}
         <div aria-hidden="true" className="vignette absolute inset-0" />
 
-        <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-6 py-20 lg:py-28">
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-8">
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1fr_auto] lg:items-center lg:py-28">
+          {/* Left — content */}
+          <div className="flex flex-col justify-center">
+            {/* Logo on mobile (desktop has it on the right) */}
+            <div className="mb-8 flex justify-center lg:hidden">
+              <Image
+                src="/logo.svg"
+                alt="Aurelian Massage logo"
+                width={200}
+                height={200}
+                className="h-auto w-full max-w-[200px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
+                priority
+              />
+            </div>
+            {/* Breadcrumb */}
+            <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-2 text-xs text-neutral-mid/50">
               <li>
                 <Link
@@ -88,6 +101,19 @@ export default function BlogIndexPage() {
             </span>
             <span aria-hidden="true" className="text-neutral-mid/20">·</span>
             <span>Written by the Aurelian Massage team</span>
+          </div>
+          </div>
+
+          {/* Right — logo */}
+          <div className="hidden lg:flex lg:items-center lg:justify-center">
+            <Image
+              src="/logo.svg"
+              alt="Aurelian Massage logo"
+              width={340}
+              height={340}
+              className="h-auto w-full max-w-[340px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
+              priority
+            />
           </div>
         </div>
 
@@ -263,6 +289,13 @@ export default function BlogIndexPage() {
           </>
         )}
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildBreadcrumbListSchema([{ name: "Home" }, { name: "Blog", path: "/blog" }])),
+        }}
+      />
     </>
   );
 }

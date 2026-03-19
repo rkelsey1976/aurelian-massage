@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, Tag } from "lucide-react";
 
-import { createPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbListSchema, createPageMetadata } from "@/lib/seo";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/blog";
 import type { ContentBlock } from "@/content/blog/posts";
 
@@ -147,8 +147,21 @@ export default async function BlogPostPage({ params }: Props) {
           />
         )}
 
-        <div className="relative mx-auto flex max-w-3xl flex-col justify-end px-6 py-16 lg:py-20">
-          <nav aria-label="Breadcrumb" className="mb-6">
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[1fr_auto] lg:items-end lg:py-20">
+          {/* Left — content */}
+          <div className="flex max-w-3xl flex-col justify-end">
+            {/* Logo on mobile (desktop has it on the right) */}
+            <div className="mb-8 flex justify-center lg:hidden">
+              <Image
+                src="/logo.svg"
+                alt="Aurelian Massage logo"
+                width={180}
+                height={180}
+                className="h-auto w-full max-w-[180px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
+                priority
+              />
+            </div>
+            <nav aria-label="Breadcrumb" className="mb-6">
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-sm text-neutral-mid/70 transition-colors hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent rounded"
@@ -179,6 +192,19 @@ export default async function BlogPostPage({ params }: Props) {
           <p className="mt-4 text-base leading-7 text-neutral-mid/80 sm:text-lg">
             {post.description}
           </p>
+          </div>
+
+          {/* Right — logo */}
+          <div className="hidden lg:flex lg:items-center lg:justify-center">
+            <Image
+              src="/logo.svg"
+              alt="Aurelian Massage logo"
+              width={280}
+              height={280}
+              className="h-auto w-full max-w-[280px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
+              priority
+            />
+          </div>
         </div>
       </div>
 
@@ -224,6 +250,18 @@ export default async function BlogPostPage({ params }: Props) {
         )}
       </div>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbListSchema([
+              { name: "Home" },
+              { name: "Blog", path: "/blog" },
+              { name: post.title, path: `/blog/${post.slug}` },
+            ]),
+          ),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}

@@ -79,6 +79,20 @@ export function Hero({
       >
         {/* Left — headline content */}
         <div className="space-y-7">
+          {/* Logo on mobile/tablet (desktop has it on the right) */}
+          <motion.div
+            className="flex justify-center lg:hidden"
+            variants={fadeUp()}
+          >
+            <Image
+              src="/logo.svg"
+              alt="Aurelian Massage logo"
+              width={200}
+              height={200}
+              className="h-auto w-full max-w-[200px] drop-shadow-[0_0_40px_rgba(197,165,86,0.35)]"
+              priority
+            />
+          </motion.div>
           <motion.p
             className="text-sm font-medium tracking-[0.3em] uppercase text-gold-accent"
             variants={fadeUp()}
@@ -147,7 +161,7 @@ export function Hero({
           }}
         >
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="Aurelian Massage logo"
             width={340}
             height={340}
