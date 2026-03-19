@@ -17,7 +17,7 @@ export const siteConfig = {
   url: "https://www.aurelianmassage.co.uk",
   bookingUrl: "https://www.fresha.com/book-now/aurelian-massage-x0r1utrz/all-offer?share=true&pId=2823885",
   email: "ross@aurelianmassage.com",
-  phone: "+44 1225 000000",
+  phone: "07388 007570",
   defaultOgImage: "/api/og",
   address: {
     street: "16 St Peters Terrace",
