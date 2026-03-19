@@ -21,26 +21,45 @@ export const metadata = createPageMetadata({
 
 export default function ComingSoonPage() {
   return (
-    <main
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-16"
-      style={{ background: "#20152E" }}
-    >
-      {/* Subtle radial glow */}
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-16">
+
+      {/* Hero background image */}
+      <Image
+        src="/hero-massage.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+        priority
+        aria-hidden="true"
+      />
+
+      {/* Dark overlay */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(160deg, rgba(32,21,46,0.92) 0%, rgba(32,21,46,0.80) 50%, rgba(32,21,46,0.90) 100%)",
+        }}
+      />
+
+      {/* Gold glow accent */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(197,165,86,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 50% 100%, rgba(122,80,176,0.12) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(197,165,86,0.12) 0%, transparent 65%)",
         }}
       />
 
       <div className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center">
 
-        {/* Logo */}
+        {/* SVG Logo */}
         <Link href="/" aria-label={`${siteConfig.name} — Home`}>
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt={`${siteConfig.name} logo`}
             width={220}
             height={80}
