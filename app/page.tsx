@@ -125,12 +125,6 @@ export default function ComingSoonPage() {
           >
             Book in advance via Fresha
           </Link>
-          <a
-            href={`tel:${siteConfig.phone}`}
-            className="inline-flex items-center gap-2 rounded-full border border-gold-accent/40 px-8 py-3.5 text-sm font-medium text-neutral-mid transition-all duration-200 hover:border-gold-accent/70 hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
-          >
-            {siteConfig.phone}
-          </a>
         </div>
 
         {/* Social links */}
