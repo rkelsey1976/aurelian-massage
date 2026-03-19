@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { CookieBanner } from "@/components/marketing/cookie-banner";
 import { BathLocalBusinessSchema } from "@/components/seo/BathLocalBusinessSchema";
 import { siteConfig } from "@/lib/site-config";
 
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <BathLocalBusinessSchema />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

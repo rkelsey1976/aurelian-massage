@@ -148,6 +148,13 @@ export function Footer() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-4 sm:flex-row">
           <p className="text-center text-xs text-neutral-mid/60">
             © {year} {siteConfig.name}. All rights reserved.
+            {" · "}
+            <Link
+              href="/privacy"
+              className="transition-colors hover:text-gold-accent focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-accent rounded"
+            >
+              Privacy &amp; cookies
+            </Link>
           </p>
           <p className="text-center text-xs text-neutral-mid/40">
             Website designed &amp; built by{" "}
