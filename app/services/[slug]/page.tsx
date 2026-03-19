@@ -5,7 +5,7 @@ import { Clock, PoundSterling, ArrowLeft, CalendarCheck, CheckCircle2, Sparkles 
 
 import { FaqAccordion } from "@/components/marketing/faq-accordion";
 import { buildFaqSchema } from "@/lib/faqs";
-import { createPageMetadata } from "@/lib/seo";
+import { buildServicePageSchema, createPageMetadata } from "@/lib/seo";
 import { services } from "@/lib/services";
 
 type Props = {
@@ -330,8 +330,14 @@ export default async function ServicePage({ params }: Props) {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(faqs)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildServicePageSchema(service)) }}
       />
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(faqs)) }}
+        />
+      )}
     </>
   );
 }

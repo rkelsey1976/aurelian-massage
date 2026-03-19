@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 
+import type { Service } from "@/lib/services";
 import { siteConfig } from "@/lib/site-config";
+
+const SCHEMA_BASE_URL = siteConfig.url.replace(/\/$/, "");
+const MAIN_ENTITY_ID = `${SCHEMA_BASE_URL}/#local-business`;
 
 type PageMetadataInput = {
   title: string;
@@ -103,5 +107,41 @@ export function buildLocalBusinessSchema() {
     })),
     openingHours: siteConfig.openingHours.map((hours) => hours.schema),
     sameAs: siteConfig.socialProfiles,
+  };
+}
+
+/**
+ * Page-level schema for an individual treatment page: Service (this treatment) + BreadcrumbList.
+ * Use alongside the site-wide HealthAndBeautyBusiness from layout.
+ */
+export function buildServicePageSchema(service: Service) {
+  const serviceId = `${SCHEMA_BASE_URL}/#service-${service.slug}`;
+  const serviceUrl = getCanonicalUrl(`/services/${service.slug}`);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: service.name,
+        description: service.description.split(".")[0] + ".",
+        url: serviceUrl,
+        provider: { "@id": MAIN_ENTITY_ID },
+        offers: {
+          "@type": "Offer",
+          price: service.price,
+          priceCurrency: "GBP",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+          { "@type": "ListItem", position: 2, name: "Treatments", item: getCanonicalUrl("/services") },
+          { "@type": "ListItem", position: 3, name: service.name, item: serviceUrl },
+        ],
+      },
+    ],
   };
 }
