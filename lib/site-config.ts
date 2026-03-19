@@ -14,7 +14,8 @@ export const siteConfig = {
   tagline: "A modern sanctuary inspired by the timeless healing traditions of the City of Bath.",
   description:
     "Swedish and aromatherapy massage therapy in Bath city centre. Every session individually tailored to your body's needs at Aurelian Massage.",
-  url: "https://www.aurelianmassage.co.uk",
+  // When custom domain DNS is live, switch to e.g. https://www.aurelianmassage.com
+  url: "https://aurelian-massage.netlify.app",
   bookingUrl: "https://www.fresha.com/book-now/aurelian-massage-x0r1utrz/all-offer?share=true&pId=2823885",
   /** Google Maps place URL (verified listing) — used in JSON-LD sameAs and hasMap */
   googleMapsUrl:
