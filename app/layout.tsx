@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-import { DiscountModal } from "@/components/marketing/discount-modal";
-import { Footer } from "@/components/marketing/footer";
-import { Header } from "@/components/marketing/header";
 import { BathLocalBusinessSchema } from "@/components/seo/BathLocalBusinessSchema";
 import { siteConfig } from "@/lib/site-config";
 
@@ -48,12 +45,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body>
         <BathLocalBusinessSchema />
-          <div className="min-h-screen bg-purple-dark">
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <DiscountModal />
-        </div>
+        {children}
       </body>
     </html>
   );
