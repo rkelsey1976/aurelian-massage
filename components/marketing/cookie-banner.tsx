@@ -76,8 +76,11 @@ export function CookieBanner() {
           id="cookie-banner-desc"
           className="mt-3 text-sm leading-7 text-neutral-mid sm:text-[0.9375rem] sm:leading-8"
         >
-          We use essential cookies so the site works (for example, remembering this choice). With your
-          permission we may also use cookies to understand how visitors use the site. See our{" "}
+          We use essential cookies so the site works (for example, remembering this choice). If you
+          choose <strong className="text-neutral-light">Accept all cookies</strong>, we load{" "}
+          <strong className="text-neutral-light">Google Analytics</strong> to understand how the site is
+          used (aggregated statistics). We never load Google Analytics if you choose essential cookies only.
+          See our{" "}
           <Link
             href="/privacy"
             className="font-medium text-gold-accent underline decoration-gold-accent/40 underline-offset-2 transition-colors hover:decoration-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent rounded"

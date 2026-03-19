@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { ConsentGatedGoogleAnalytics } from "@/components/analytics/google-analytics-consent";
 import { CookieBanner } from "@/components/marketing/cookie-banner";
 import { BathLocalBusinessSchema } from "@/components/seo/BathLocalBusinessSchema";
 import { siteConfig } from "@/lib/site-config";
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <BathLocalBusinessSchema />
         {children}
         <CookieBanner />
+        <ConsentGatedGoogleAnalytics />
       </body>
     </html>
   );

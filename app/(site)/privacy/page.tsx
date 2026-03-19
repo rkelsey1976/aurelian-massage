@@ -54,10 +54,24 @@ export default function PrivacyPage() {
             function — for example, to remember your cookie choices.
           </p>
           <p className="mt-4 text-base leading-8">
-            If you choose <strong className="text-neutral-light">Accept all cookies</strong>, we may use
-            additional cookies or similar technologies in line with this notice to help us understand how
-            the site is used (for example aggregated analytics). You can change your mind by clearing site
-            data for this domain in your browser and revisiting the site; the banner will appear again.
+            If you choose <strong className="text-neutral-light">Accept all cookies</strong>, we load{" "}
+            <strong className="text-neutral-light">Google Analytics</strong> (Google LLC) using cookies and
+            similar technologies to collect aggregated information about how visitors use this website (for
+            example pages viewed and general location at country/city level). Google&apos;s privacy policy
+            applies to how Google processes that data:{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-gold-accent underline decoration-gold-accent/40 underline-offset-2 hover:decoration-gold-accent"
+            >
+              policies.google.com/privacy
+            </a>
+            . We do not load Google Analytics if you choose essential cookies only.
+          </p>
+          <p className="mt-4 text-base leading-8">
+            You can change your mind by clearing site data for this domain in your browser and revisiting
+            the site; the cookie banner will appear again.
           </p>
           <p className="mt-4 text-base leading-8">
             Online booking is provided by a third party (Fresha). Their site may set its own cookies when
