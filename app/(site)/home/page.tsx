@@ -60,7 +60,7 @@ export default function HomePage() {
                 {
                   icon: <UserCheck size={28} strokeWidth={1.5} aria-hidden="true" />,
                   label: "Specialist Therapists",
-                  body: "Our therapists are trained in Swedish and aromatherapy massage, ensuring each treatment is both effective and deeply relaxing.",
+                  body: "Our therapists specialise in Swedish massage, ensuring each treatment is both effective and deeply relaxing.",
                 },
                 {
                   icon: <Sparkles size={28} strokeWidth={1.5} aria-hidden="true" />,
