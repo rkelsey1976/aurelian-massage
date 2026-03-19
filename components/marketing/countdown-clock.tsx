@@ -23,7 +23,7 @@ function getTimeLeft(target: Date): TimeLeft {
   };
 }
 
-const OPENING_DATE = new Date("2026-05-01T10:00:00");
+const OPENING_DATE = new Date("2026-05-21T10:00:00");
 
 function Unit({ value, label }: { value: string; label: string }) {
   return (

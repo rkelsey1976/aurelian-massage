@@ -209,7 +209,7 @@ export const blogPosts: BlogPost[] = [
         type: "list",
         items: [
           "Look for studios that carry out a pre-treatment consultation — this is a sign the therapist intends to personalise the session.",
-          "Ask whether the therapist specialises in the type of treatment you need. A remedial specialist will produce different results to a general relaxation therapist.",
+          "Ask whether the therapist tailors each session to individual needs — a personalised approach will always produce better results than a fixed routine.",
           "Read reviews that mention specific therapeutic outcomes — relief from a particular type of tension, improved sleep, or reduced pain — rather than just a pleasant experience.",
           "Prioritise therapists who offer a range of techniques and are willing to adjust pressure, pace, and focus during the session.",
         ],
@@ -314,10 +314,10 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
-    slug: "deep-tissue-vs-swedish-massage-which-is-right-for-you",
-    title: "Deep Tissue vs Swedish Massage: Which Treatment Is Right for You?",
+    slug: "swedish-vs-aromatherapy-massage-which-is-right-for-you",
+    title: "Swedish vs Aromatherapy Massage: Which Treatment Is Right for You?",
     description:
-      "Two of the most popular massage styles — but which one suits your needs? We break down the differences between deep tissue and Swedish massage to help you choose the right treatment in Bath.",
+      "Both Swedish and aromatherapy massage offer genuine therapeutic benefit — but they suit different needs and deliver different experiences. Here is how to choose the right treatment at Aurelian Massage in Bath.",
     publishedAt: "2026-03-08",
     readingTime: "6 min read",
     category: "Treatment Guide",
@@ -325,7 +325,7 @@ export const blogPosts: BlogPost[] = [
     blocks: [
       {
         type: "paragraph",
-        text: "When people search for massage therapy in Bath, two styles come up most often: Swedish massage and deep tissue massage. Both are highly effective, both have a long track record of delivering genuine physical benefit — and yet they work quite differently and suit different needs. Understanding the distinction can help you choose the right treatment and get far more from your session.",
+        text: "When it comes to booking a massage in Bath, two styles consistently stand out: Swedish massage and aromatherapy massage. Both are rooted in the same flowing, rhythmic techniques — but they offer different experiences and suit different goals. Understanding what each one does well can help you choose the right treatment and get far more from your session.",
       },
       {
         type: "heading",
@@ -337,7 +337,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "The pressure in a Swedish massage is typically moderate, though a skilled therapist will adjust this to your preference and your body's needs on the day. The primary aim is not to resolve specific structural issues, but to create a sense of whole-body ease, calm the nervous system, and leave the recipient feeling light, supple, and thoroughly restored.",
+        text: "The pressure in a Swedish massage is typically moderate, though a skilled therapist will adjust this throughout the session based on your preference and what your body needs on the day. The primary aim is to create a sense of whole-body ease, calm the nervous system, and leave you feeling light, supple, and thoroughly restored.",
       },
       {
         type: "paragraph",
@@ -345,48 +345,37 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "heading",
-        text: "Deep Tissue Massage: Targeted and Therapeutic",
+        text: "Aromatherapy Massage: Swedish Techniques with a Sensory Dimension",
       },
       {
         type: "paragraph",
-        text: "Deep tissue massage uses slower, more deliberate techniques and firmer pressure to reach the deeper layers of muscle and connective tissue. It is particularly effective for addressing chronic muscular tension, knots, and areas of restricted movement that have built up over time.",
+        text: "Aromatherapy massage builds on the same Swedish foundation but adds the therapeutic power of essential oils — carefully selected blends that interact with the body through absorption and inhalation throughout the session. The oils enhance and deepen the effects of the massage in ways that vary depending on the blend chosen.",
       },
       {
         type: "paragraph",
-        text: "Where Swedish massage moves across the whole body with a broadly relaxing intention, deep tissue work tends to be more targeted — focusing sustained attention on specific areas where tension has become ingrained. This might be a chronically tight trapezius, recurring lower back stiffness, or a shoulder joint that has gradually lost its full range of movement.",
+        text: "An invigorating blend — using oils such as citrus, peppermint, or rosemary — can stimulate the senses, lift energy, and leave you feeling refreshed and mentally clear. A calming blend — using lavender, chamomile, or frankincense — works with the nervous system to ease anxiety, quiet an overactive mind, and prepare the body for deep rest.",
       },
       {
         type: "paragraph",
-        text: "Deep tissue massage can involve some discomfort during the treatment — particularly when working through areas of significant restriction — but it should never be painful. A good therapist will work with your body's tolerance, not against it.",
+        text: "Aromatherapy massage is particularly well suited to those managing stress or sleep difficulties, those who want a more immersive sensory experience, and anyone looking for the physical benefits of Swedish massage combined with something that goes further into mood and mental state.",
       },
       {
         type: "heading",
         text: "Which Is Right for You?",
       },
       {
-        type: "paragraph",
-        text: "The honest answer is that the distinction between the two is less absolute than it might appear. At Aurelian Massage in Bath, our approach to every treatment is inherently hybrid: we use the techniques that your body needs on the day, adjusting pressure and method as the session progresses. Many of our clients come in expecting a relaxation massage and find that one shoulder is carrying far more tension than the other — so we work with that. Others arrive expecting deep work and find their body is asking for something gentler.",
-      },
-      {
         type: "list",
         items: [
-          "Choose Swedish-style treatment if: you want general relaxation, stress relief, improved sleep, or a restorative experience.",
-          "Choose deep tissue-focused treatment if: you have specific areas of chronic tension, restricted movement, or muscular knots that need resolving.",
-          "Not sure? Our 60-minute Signature Swedish Full Body Massage adapts to your needs on the day — a great starting point.",
-          "For targeted upper body work, the Back, Neck and Shoulder Release (30 min) is an efficient and effective option.",
+          "Choose Swedish massage if: you want full-body relaxation, stress relief, improved circulation, or a restorative session without a specific sensory focus.",
+          "Choose aromatherapy massage if: you want to support your mood, ease anxiety, improve sleep, or enjoy a more immersive experience enhanced by essential oils.",
+          "Not sure? The Signature Swedish Full Body Massage (60 min) is a great starting point and adapts to your needs on the day.",
+          "For a calming aromatherapy experience, try the Deep Calm Aromatherapy Massage (60 min) — ideal for stress and sleep.",
+          "For an uplifting aromatherapy experience, try the Revitalising Aromatherapy Massage (60 min) — ideal for energy and mental clarity.",
         ],
       },
       {
-        type: "heading",
-        text: "What About Aromatherapy Massage?",
-      },
-      {
-        type: "paragraph",
-        text: "Aromatherapy massage combines Swedish techniques with carefully selected essential oils, adding a sensory and therapeutic dimension to the treatment. The oils used — whether invigorating or deeply calming — interact with the body through absorption and inhalation, enhancing the physical effects of the massage. If your priority is stress relief, improving sleep, or simply a more immersive sensory experience, our aromatherapy options are worth exploring.",
-      },
-      {
         type: "callout",
-        text: "Not sure which treatment to book? Contact the team at Aurelian Massage in Bath city centre and we will help you choose the session that best suits what your body needs right now.",
+        text: "Not sure which treatment to book? Get in touch with Aurelian Massage in Bath city centre and we will help you choose the session that best suits what your body needs right now.",
       },
     ],
   },
@@ -870,7 +859,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "The timing of massage in the final week before a half marathon is important. A firm, deep treatment in the two to three days immediately before the race can leave the muscles feeling temporarily heavy or tender — not ideal when you need to feel fresh on the start line. If you want a pre-race massage, book it for five to seven days before race day, and ask for lighter, more stimulating work rather than deep tissue.",
+        text: "The timing of massage in the final week before a half marathon is important. A firm, intensive treatment in the two to three days immediately before the race can leave the muscles feeling temporarily heavy or tender — not ideal when you need to feel fresh on the start line. If you want a pre-race massage, book it for five to seven days before race day, and ask for lighter, more stimulating work rather than a deep, intensive session.",
       },
       {
         type: "paragraph",
@@ -1026,7 +1015,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "For lower back pain, a combination of Swedish and deeper remedial techniques tends to produce the best results. The treatment should address not just the immediate site of pain but the surrounding structures that contribute to it — the glutes, hip flexors, hamstrings, and thoracic spine all play a role in how the lower back functions and feels.",
+        text: "For lower back pain, Swedish massage with adjusted pressure and a therapist-led focus on specific problem areas tends to produce the best results. The treatment should address not just the immediate site of pain but the surrounding structures that contribute to it — the glutes, hip flexors, hamstrings, and thoracic spine all play a role in how the lower back functions and feels.",
       },
       {
         type: "paragraph",
