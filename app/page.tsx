@@ -7,9 +7,9 @@ import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = createPageMetadata({
-  title: "Aurelian Massage — Opening 21st May 2026 | Bath City Centre",
+  title: "Aurelian Massage — Opening 19th May 2026 | Bath City Centre",
   description:
-    "Aurelian Massage opens in Bath city centre on Tuesday 21st May 2026. Swedish and aromatherapy massage treatments at 16 St Peters Terrace. Book your first session now via Fresha.",
+    "Aurelian Massage opens in Bath city centre on Tuesday 19th May 2026. Swedish and aromatherapy massage treatments at 16 St Peters Terrace. Book your first session now via Fresha.",
   path: "/",
   keywords: [
     "Aurelian Massage Bath",
@@ -85,7 +85,7 @@ export default function ComingSoonPage() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                21st May 2026
+                19th May 2026
               </span>
             </h1>
           </div>
