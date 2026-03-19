@@ -16,6 +16,9 @@ export const siteConfig = {
     "Swedish and aromatherapy massage therapy in Bath city centre. Every session individually tailored to your body's needs at Aurelian Massage.",
   url: "https://www.aurelianmassage.co.uk",
   bookingUrl: "https://www.fresha.com/book-now/aurelian-massage-x0r1utrz/all-offer?share=true&pId=2823885",
+  /** Google Maps place URL (verified listing) — used in JSON-LD sameAs and hasMap */
+  googleMapsUrl:
+    "https://www.google.com/maps/place/Aurelian+massage/data=!4m2!3m1!1s0x0:0xd43308dbf33709de",
   email: "ross@aurelianmassage.com",
   phone: "07388 007570",
   defaultOgImage: "/api/og",

@@ -8,12 +8,6 @@ import { siteConfig } from "@/lib/site-config";
 const SCHEMA_BASE_URL = siteConfig.url.replace(/\/$/, "");
 const MAIN_ENTITY_ID = `${SCHEMA_BASE_URL}/#local-business`;
 
-// Central Bath, near Milsom Street (geo-precision)
-const BATH_GEO = {
-  latitude: 51.3828,
-  longitude: -2.358,
-};
-
 // GeoShape box covering postcodes BA1, BA2, BA3 (southwest then northeast: minLon minLat maxLon maxLat)
 const BATH_GEOSHAPE_BOX = "51.36 -2.42 51.41 -2.35";
 
@@ -71,10 +65,10 @@ export type MassageBusiness = {
 };
 
 function buildBathLocalBusinessSchema(): MassageBusiness {
-  const description = [
-    siteConfig.description,
-    " Deep Tissue Massage Bath and Sports Therapy BA1 for relief and recovery. Therapeutic Massage near Royal Victoria Park in Central Bath, Somerset.",
-  ].join("");
+  const sameAs = [
+    ...siteConfig.socialProfiles.map((p) => p.href),
+    siteConfig.googleMapsUrl,
+  ];
 
   const schema: MassageBusiness = {
     "@context": "https://schema.org",
@@ -82,7 +76,7 @@ function buildBathLocalBusinessSchema(): MassageBusiness {
     "@id": MAIN_ENTITY_ID,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
-    description,
+    description: siteConfig.description,
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
@@ -97,10 +91,10 @@ function buildBathLocalBusinessSchema(): MassageBusiness {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: BATH_GEO.latitude,
-      longitude: BATH_GEO.longitude,
+      latitude: siteConfig.geo.latitude,
+      longitude: siteConfig.geo.longitude,
     },
-    hasMap: `https://www.google.com/maps/search/?api=1&query=${BATH_GEO.latitude},${BATH_GEO.longitude}`,
+    hasMap: siteConfig.googleMapsUrl,
     areaServed: [
       { "@type": "GeoShape", box: BATH_GEOSHAPE_BOX },
       { "@type": "Place", name: "BA1, BA2, BA3" },
@@ -111,7 +105,7 @@ function buildBathLocalBusinessSchema(): MassageBusiness {
       url: place.url,
     })),
     openingHours: siteConfig.openingHours.map((h) => h.schema),
-    sameAs: siteConfig.socialProfiles.map((p) => p.href),
+    sameAs,
     makesOffer: services.map((service) => ({
       "@type": "Offer",
       itemOffered: {

@@ -21,7 +21,7 @@ describe("createPageMetadata", () => {
       path: "/treatments",
     });
 
-    expect(metadata.title).toBe("Treatments | Starter Local Business");
+    expect(metadata.title).toBe(`Treatments | ${siteConfig.name}`);
     expect(metadata.description).toBe("See our treatments.");
     expect(metadata.alternates?.canonical).toBe(`${siteConfig.url}/treatments`);
     expect(metadata.openGraph?.url).toBe(`${siteConfig.url}/treatments`);
@@ -39,7 +39,13 @@ describe("buildLocalBusinessSchema", () => {
     expect(schema["@type"]).toBe("LocalBusiness");
     expect(schema.name).toBe(siteConfig.name);
     expect(schema.address.addressLocality).toBe(siteConfig.address.city);
-    expect(schema.openingHours).toEqual(["Mo-Fr 08:00-17:00", "Sa 09:00-13:00"]);
-    expect(schema.sameAs).toEqual(siteConfig.socialProfiles);
+    expect(schema.openingHours).toEqual(
+      siteConfig.openingHours.map((h) => h.schema),
+    );
+    expect(schema.sameAs).toEqual([
+      ...siteConfig.socialProfiles.map((p) => p.href),
+      siteConfig.googleMapsUrl,
+    ]);
+    expect(schema.hasMap).toBe(siteConfig.googleMapsUrl);
   });
 });

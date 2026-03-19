@@ -78,6 +78,11 @@ export function createPageMetadata({
 }
 
 export function buildLocalBusinessSchema() {
+  const sameAs = [
+    ...siteConfig.socialProfiles.map((p) => p.href),
+    siteConfig.googleMapsUrl,
+  ];
+
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -101,12 +106,13 @@ export function buildLocalBusinessSchema() {
       latitude: siteConfig.geo.latitude,
       longitude: siteConfig.geo.longitude,
     },
+    hasMap: siteConfig.googleMapsUrl,
     areaServed: siteConfig.serviceAreas.map((area) => ({
       "@type": "City",
       name: `${area.city}, ${area.region}`,
     })),
     openingHours: siteConfig.openingHours.map((hours) => hours.schema),
-    sameAs: siteConfig.socialProfiles,
+    sameAs,
   };
 }
 
