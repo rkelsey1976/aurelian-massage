@@ -1,0 +1,8 @@
+# Next.js on Netlify — uses OpenNext via the official plugin
+# https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/
+
+[build]
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
