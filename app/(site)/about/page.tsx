@@ -6,38 +6,38 @@ import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = createPageMetadata({
-  title: "About Aurelian Massage",
+  title: "About Ross — Aurelian Massage, Bath",
   description:
-    "Learn about Aurelian Massage in Bath — our philosophy, our specialist therapists, and why we believe every session should be uniquely tailored to you.",
+    "Meet Ross, the therapist behind Aurelian Massage in Bath. Expert Swedish and aromatherapy massage treatments with high-quality oils and a personalised, luxurious experience.",
   path: "/about",
   keywords: [
     "about Aurelian Massage",
     "massage therapist Bath",
-    "Swedish massage therapist Bath",
-    "aromatherapy massage Bath",
+    "Ross Aurelian Massage",
+    "Swedish massage Bath",
   ],
 });
 
 const values = [
   {
     icon: UserCheck,
-    title: "Specialist Therapists",
-    body: "Every therapist at Aurelian Massage is trained in Swedish and aromatherapy massage. We combine clinical knowledge with a deeply intuitive touch to deliver treatments that are both effective and profoundly relaxing.",
+    title: "Expert Technique",
+    body: "Every session combines expert Swedish and holistic techniques to deliver treatments that are both effective and deeply relaxing — tailored to exactly what your body needs on the day.",
   },
   {
     icon: Sparkles,
-    title: "Individually Tailored",
-    body: "No two bodies are the same, and no two sessions should be either. Before every treatment we take time to understand how you are feeling on the day and adapt every technique, pressure, and pace to suit you.",
+    title: "Thoughtful Touches",
+    body: "From high-quality oils to a carefully considered environment, every detail is chosen to make you feel truly looked after. Small things make all the difference.",
   },
   {
     icon: MapPin,
     title: "Bath City Centre",
-    body: "Our studio is nestled in the heart of Bath — one of England's most beautiful cities and a place with a deep, centuries-old connection to the healing power of water and rest. We are easy to reach whether you live locally or are visiting.",
+    body: "Based at 16 St Peters Terrace, Bath — the ultimate spa experience without leaving the city. Easy to reach whether you live locally or are visiting.",
   },
   {
     icon: Heart,
-    title: "Beyond the Physical",
-    body: "We believe that true restoration is more than muscular release. Every session is designed to quieten the mind as much as ease the body, creating a genuine space for recovery and renewal.",
+    title: "Body, Mind & Spirit",
+    body: "Treatments are designed to leave your body restored, your mind calm, and your spirit refreshed — a genuine moment of calm in your day, however you need it.",
   },
 ];
 
@@ -94,17 +94,16 @@ export default function AboutPage() {
 
           <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold-accent">
             <Sparkles size={13} strokeWidth={1.5} aria-hidden="true" />
-            Our story
+            Meet your therapist
           </p>
 
-          <h1 className="mt-4 max-w-2xl font-serif text-5xl font-semibold leading-tight tracking-tight text-gold-champagne sm:text-6xl">
-            About Aurelian Massage
+          <h1 className="mt-4 max-w-2xl font-serif text-5xl font-semibold leading-tight tracking-tight text-neutral-light sm:text-6xl">
+            Hi, I&apos;m Ross
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-neutral-mid">
-            Inspired by the Latin <em className="text-gold-accent/80">Aureus</em> — meaning golden — Aurelian
-            Massage was founded on the belief that exceptional massage therapy
-            should be accessible in the heart of Bath.
+            At Aurelian Massage I create luxurious, personalised massage experiences
+            designed to leave your body restored, your mind calm, and your spirit refreshed.
           </p>
           </div>
 
@@ -134,29 +133,25 @@ export default function AboutPage() {
           {/* Text */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-accent">
-              Who we are
+              About me
             </p>
-            <h2 className="mt-3 font-serif text-3xl font-semibold text-gold-champagne">
-              A modern sanctuary in a historic city
+            <h2 className="mt-3 font-serif text-3xl font-semibold text-neutral-light">
+              Pure Gold Relaxation in the Heart of Bath
             </h2>
             <div className="mt-5 space-y-5 text-base leading-8 text-neutral-mid">
               <p>
-                Bath has long been a place associated with healing, restoration, and
-                the pursuit of wellbeing. From the Roman Baths to its Georgian spa
-                culture, the city carries a tradition of care that we are proud to
-                continue at Aurelian Massage.
+                Every session I deliver combines expert Swedish and holistic techniques
+                with high-quality oils, a soothing environment, and thoughtful touches
+                that make you feel truly looked after.
               </p>
               <p>
-                Our studio offers a calm, unhurried environment where specialist
-                therapists deliver treatments that are both clinically informed and
-                deeply personal. We work with a range of Swedish, remedial, and
-                aromatherapy techniques — not because we follow a fixed menu, but
-                because every client deserves a session shaped entirely around them.
+                Whether you&apos;re seeking deep relaxation, gentle rejuvenation, or a
+                moment of calm in your day, my treatments are tailored to your needs —
+                giving you the ultimate spa experience without leaving Bath.
               </p>
               <p>
-                Whether you are managing chronic tension, recovering from travel,
-                seeking relief from daily stress, or simply making time for yourself,
-                we are here to help you feel genuinely restored.
+                Treat yourself, unwind, and discover how small, thoughtful details can
+                make all the difference.
               </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -201,10 +196,10 @@ export default function AboutPage() {
       >
         <div className="mx-auto max-w-6xl px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-accent">
-            What we stand for
+            What I stand for
           </p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-gold-champagne">
-            Our approach to every session
+          <h2 className="mt-3 font-serif text-3xl font-semibold text-neutral-light">
+            My approach to every session
           </h2>
 
           <div className="mt-10 grid gap-8 sm:grid-cols-2">
@@ -240,7 +235,7 @@ export default function AboutPage() {
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-accent">
           Ready to experience it?
         </p>
-        <h2 className="mx-auto mt-4 max-w-xl font-serif text-3xl font-semibold text-gold-champagne">
+        <h2 className="mx-auto mt-4 max-w-xl font-serif text-3xl font-semibold text-neutral-light">
           Book your first treatment today
         </h2>
         <p className="mx-auto mt-5 max-w-md text-base leading-7 text-neutral-mid">

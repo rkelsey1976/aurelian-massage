@@ -23,7 +23,7 @@ export const siteConfig = {
     street: "16 St Peters Terrace",
     city: "Bath",
     region: "Somerset",
-    postalCode: "BA1",
+    postalCode: "BA2 3BT",
     country: "GB",
   },
   geo: {
@@ -83,6 +83,7 @@ export const navigationItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/treatments", label: "Treatments" },
+  { href: "/products", label: "Products" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];

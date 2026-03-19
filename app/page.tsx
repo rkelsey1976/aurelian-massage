@@ -56,37 +56,40 @@ export default function ComingSoonPage() {
 
       <div className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center">
 
-        {/* SVG Logo */}
-        <Link href="/" aria-label={`${siteConfig.name} — Home`}>
-          <Image
-            src="/logo.svg"
-            alt={`${siteConfig.name} logo`}
-            width={220}
-            height={80}
-            className="mb-10 h-auto w-40 sm:w-52"
-            priority
-          />
-        </Link>
+        {/* Logo + Heading row */}
+        <div className="mb-2 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+          <Link href="/" aria-label={`${siteConfig.name} — Home`}>
+            <Image
+              src="/logo.svg"
+              alt={`${siteConfig.name} logo`}
+              width={220}
+              height={80}
+              className="h-auto w-32 sm:w-44"
+              priority
+            />
+          </Link>
 
-        {/* Eyebrow */}
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-gold-accent/70">
-          Bath City Centre · 16 St Peters Terrace
-        </p>
-
-        {/* Heading */}
-        <h1 className="font-serif text-4xl font-light leading-tight text-neutral-light sm:text-5xl md:text-6xl">
-          Opening{" "}
-          <span
-            className="font-semibold"
-            style={{
-              background: "linear-gradient(90deg, #C5A556 0%, #E8D5A0 50%, #C5A556 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            May 2026
-          </span>
-        </h1>
+          <div className="text-left">
+            {/* Eyebrow */}
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.35em] text-gold-accent/70">
+              Bath City Centre · 16 St Peters Terrace
+            </p>
+            {/* Heading */}
+            <h1 className="font-serif text-4xl font-light leading-tight text-neutral-light sm:text-5xl md:text-6xl">
+              Opening{" "}
+              <span
+                className="font-semibold"
+                style={{
+                  background: "linear-gradient(90deg, #C5A556 0%, #E8D5A0 50%, #C5A556 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                May 2026
+              </span>
+            </h1>
+          </div>
+        </div>
 
         {/* Tagline */}
         <p className="mt-5 font-serif text-lg font-light italic leading-relaxed text-neutral-mid/70 sm:text-xl">

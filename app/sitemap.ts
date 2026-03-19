@@ -4,7 +4,7 @@ import { getAllBlogPosts } from "@/lib/blog";
 import { getCanonicalUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/treatments", "/contact", "/blog"].map((path) => ({
+  const staticRoutes = ["", "/about", "/treatments", "/products", "/contact", "/blog"].map((path) => ({
     url: getCanonicalUrl(path),
     lastModified: new Date(),
   }));

@@ -72,7 +72,7 @@ export function Footer() {
             {siteConfig.tagline}
           </p>
           <div className="space-y-1 text-sm text-neutral-mid/60">
-            <p>{siteConfig.address.city}, {siteConfig.address.region}</p>
+            <p>{siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.postalCode}</p>
             <p>
               <a
                 href={`tel:${siteConfig.phone}`}
