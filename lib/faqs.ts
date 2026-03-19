@@ -4,7 +4,7 @@ export const homepageFaqs: FaqItem[] = [
   {
     question: "Where is Aurelian Massage located?",
     answer:
-      "We are located in Bath city centre, Somerset. Our studio is easily accessible whether you are a local resident or visiting Bath. Please get in touch via our contact page and we will share the full address and directions with you.",
+      "We are at 16 St Peters Terrace, Bath, BA2 3BT — a short walk from the city centre, easy to reach whether you live locally or are visiting Bath. Use our contact page if you would like directions or help planning your visit.",
   },
   {
     question: "Do I need to book in advance?",
