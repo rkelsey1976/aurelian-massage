@@ -5,8 +5,6 @@ import { DiscountModal } from "@/components/marketing/discount-modal";
 import { Footer } from "@/components/marketing/footer";
 import { Header } from "@/components/marketing/header";
 import { BathLocalBusinessSchema } from "@/components/seo/BathLocalBusinessSchema";
-import { JsonLd } from "@/components/seo/json-ld";
-import { buildLocalBusinessSchema } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 import "./globals.css";
@@ -47,9 +45,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <head>
-        <JsonLd data={buildLocalBusinessSchema()} />
-      </head>
+      <head />
       <body>
         <BathLocalBusinessSchema />
           <div className="min-h-screen bg-purple-royal">
