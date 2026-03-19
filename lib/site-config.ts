@@ -66,7 +66,7 @@ export const siteConfig = {
     },
     {
       platform: "Facebook",
-      href: "https://www.facebook.com/aurelianmassage",
+      href: "https://www.facebook.com/profile.php?id=61587723460105",
       label: "Follow Aurelian Massage on Facebook",
     },
   ],
