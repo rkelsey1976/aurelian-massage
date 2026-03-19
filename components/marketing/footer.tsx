@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactElement } from "react";
 
 import { navigationItems, siteConfig } from "@/lib/site-config";
 
@@ -34,7 +35,7 @@ function FacebookIcon({ className }: { className?: string }) {
   );
 }
 
-const socialIcons: Record<string, (props: { className?: string }) => JSX.Element> = {
+const socialIcons: Record<string, (props: { className?: string }) => ReactElement> = {
   Instagram: InstagramIcon,
   Facebook: FacebookIcon,
 };

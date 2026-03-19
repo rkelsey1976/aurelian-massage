@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { DiscountModal } from "@/components/marketing/discount-modal";
 import { Footer } from "@/components/marketing/footer";
 import { Header } from "@/components/marketing/header";
+import { BathLocalBusinessSchema } from "@/components/seo/BathLocalBusinessSchema";
 import { JsonLd } from "@/components/seo/json-ld";
 import { buildLocalBusinessSchema } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <JsonLd data={buildLocalBusinessSchema()} />
       </head>
       <body>
+        <BathLocalBusinessSchema />
           <div className="min-h-screen bg-purple-royal">
           <Header />
           <main>{children}</main>
