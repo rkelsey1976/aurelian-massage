@@ -147,7 +147,7 @@ export function Header() {
               href={siteConfig.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-on-gold transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
               style={{ background: "#C5A556" }}
             >
               <CalendarCheck size={14} aria-hidden="true" />
@@ -279,7 +279,7 @@ export function Header() {
                             >
                               {navServiceGroups.map((group) => (
                                 <div key={group.title}>
-                                  <p className="mb-2 px-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-gold-accent/70">
+                                  <p className="mb-2 px-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-gold-champagne">
                                     {group.title}
                                   </p>
                                   <ul className="space-y-0.5">
@@ -340,7 +340,7 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMobile}
-                  className="flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+                  className="flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-on-gold transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                   style={{
                     background: "#C5A556",
                     boxShadow: "0 0 20px rgba(197,165,86,0.25)",

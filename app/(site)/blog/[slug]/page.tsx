@@ -57,7 +57,7 @@ function Block({ block }: { block: ContentBlock }) {
             <li key={item} className="flex items-start gap-3 text-base leading-7 text-neutral-mid">
               <span
                 aria-hidden="true"
-                className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold text-purple-dark"
+                className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold text-on-gold"
                 style={{ background: "#C5A556" }}
               >
                 ✦
@@ -82,7 +82,7 @@ function Block({ block }: { block: ContentBlock }) {
           </p>
           <Link
             href="/treatments"
-            className="mt-5 inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+            className="mt-5 inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold text-on-gold transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
             style={{ background: "#C5A556" }}
           >
             Browse all treatments

@@ -97,7 +97,7 @@ function ServiceCarouselCard({ service }: { service: Service }) {
           <Link
             href={`/treatments/${slug}`}
             aria-label={`View ${name} treatment`}
-            className="inline-flex items-center gap-2 rounded-full border border-gold-accent/65 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-accent transition-all duration-300 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+            className="inline-flex items-center gap-2 rounded-full border border-gold-accent/65 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-accent transition-all duration-300 hover:border-gold-accent hover:bg-gold-accent hover:text-on-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
           >
             View treatment
             <svg
@@ -212,7 +212,7 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
           <button
             onClick={prev}
             aria-label="Previous treatment"
-            className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full border border-gold-accent/40 text-gold-accent transition-all duration-200 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+            className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full border border-gold-accent/40 text-gold-accent transition-all duration-200 hover:border-gold-accent hover:bg-gold-accent hover:text-on-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
           >
             <svg
               aria-hidden="true"
@@ -232,7 +232,7 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
           <button
             onClick={next}
             aria-label="Next treatment"
-            className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full border border-gold-accent/40 text-gold-accent transition-all duration-200 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+            className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full border border-gold-accent/40 text-gold-accent transition-all duration-200 hover:border-gold-accent hover:bg-gold-accent hover:text-on-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
           >
             <svg
               aria-hidden="true"

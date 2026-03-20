@@ -46,7 +46,7 @@ export function Footer() {
 
   return (
     <footer
-      className="border-t border-gold-accent/20"
+      className="border-t border-gold-accent/40"
       style={{ background: "#180F24" }}
     >
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1.5fr_1fr_1fr]">
@@ -71,7 +71,7 @@ export function Footer() {
           <p className="max-w-md text-sm leading-6 text-neutral-mid">
             {siteConfig.tagline}
           </p>
-          <div className="space-y-1 text-sm text-neutral-mid/60">
+          <div className="space-y-1 text-sm text-neutral-mid">
             <p>{siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.postalCode}</p>
             <p>
               <a
@@ -114,7 +114,7 @@ export function Footer() {
 
         {/* Navigation column */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-accent/70">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-champagne">
             Pages
           </p>
           <ul className="mt-5 space-y-3 text-sm text-neutral-mid">
@@ -133,7 +133,7 @@ export function Footer() {
 
         {/* Hours column */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-accent/70">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-champagne">
             Opening Hours
           </p>
           <ul className="mt-5 space-y-3 text-sm text-neutral-mid/70">
@@ -144,9 +144,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gold-accent/10">
+      <div className="border-t border-gold-accent/35">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-4 sm:flex-row">
-          <p className="text-center text-xs text-neutral-mid/60">
+          <p className="text-center text-xs text-neutral-mid">
             © {year} {siteConfig.name}. All rights reserved.
             {" · "}
             <Link
@@ -156,13 +156,13 @@ export function Footer() {
               Privacy &amp; cookies
             </Link>
           </p>
-          <p className="text-center text-xs text-neutral-mid/40">
+          <p className="text-center text-xs text-neutral-mid/90">
             Website designed &amp; built by{" "}
             <a
               href="https://seo-kings.co.uk"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-mid/60 transition-colors hover:text-gold-accent focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-accent rounded"
+              className="text-neutral-light/90 underline decoration-neutral-mid/50 underline-offset-2 transition-colors hover:text-gold-accent hover:decoration-gold-accent/50 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-accent rounded"
             >
               SEO Kings
             </a>

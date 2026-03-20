@@ -76,7 +76,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
           href={siteConfig.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-gold-accent/65 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-accent transition-all duration-300 hover:border-gold-accent hover:bg-gold-accent hover:text-purple-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+          className="inline-flex items-center gap-2 rounded-full border border-gold-accent/65 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-accent transition-all duration-300 hover:border-gold-accent hover:bg-gold-accent hover:text-on-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
         >
           Book this treatment
           <svg

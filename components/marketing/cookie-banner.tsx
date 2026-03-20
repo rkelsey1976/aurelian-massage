@@ -100,7 +100,7 @@ export function CookieBanner() {
           <button
             type="button"
             onClick={() => saveChoice("all")}
-            className="order-1 w-full rounded-full px-5 py-3 text-sm font-semibold text-purple-dark transition-all duration-200 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#2C1E42] sm:order-2 sm:w-auto"
+            className="order-1 w-full rounded-full px-5 py-3 text-sm font-semibold text-on-gold transition-all duration-200 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[#2C1E42] sm:order-2 sm:w-auto"
             style={{
               background: "#C5A556",
               boxShadow: "0 0 20px rgba(197,165,86,0.25)",

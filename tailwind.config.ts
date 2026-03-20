@@ -16,6 +16,7 @@ const config = {
         "purple-plum": "#5C3D88",
         "gold-premium": "#C5A556",
         "gold-champagne": "#DFC98A",
+        "on-gold": "#0D0812",
         "neutral-light": "#F7F7F7",
         "neutral-gray": "#CCCACF",
       },

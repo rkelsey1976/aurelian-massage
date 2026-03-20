@@ -83,7 +83,7 @@ export function MegaMenu({ onClose }: MegaMenuProps) {
               <Link
                 href={megaMenuFeatured.cta.href}
                 onClick={onClose}
-                className="rounded-full px-5 py-2.5 text-center text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+                className="rounded-full px-5 py-2.5 text-center text-sm font-semibold text-on-gold transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                 style={{ background: "#C5A556" }}
               >
                 {megaMenuFeatured.cta.label}

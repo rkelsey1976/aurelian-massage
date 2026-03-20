@@ -82,7 +82,7 @@ export default async function TreatmentPage({ params }: Props) {
 
           {featured && (
             <span
-              className="mb-4 inline-block w-fit rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-purple-dark"
+              className="mb-4 inline-block w-fit rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-on-gold"
               style={{ background: "#C5A556" }}
             >
               Signature treatment
@@ -99,7 +99,7 @@ export default async function TreatmentPage({ params }: Props) {
               {duration} minutes
             </span>
             <span
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-purple-dark"
+              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-on-gold"
               style={{ background: "#C5A556" }}
             >
               <PoundSterling size={14} aria-hidden="true" />
@@ -165,7 +165,7 @@ export default async function TreatmentPage({ params }: Props) {
                     <li key={item} className="flex items-start gap-3 text-sm leading-6 text-neutral-mid">
                       <span
                         aria-hidden="true"
-                        className="mt-1 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full text-[8px] font-bold text-purple-dark"
+                        className="mt-1 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full text-[8px] font-bold text-on-gold"
                         style={{ background: "#C5A556" }}
                       >
                         ✦
@@ -200,7 +200,7 @@ export default async function TreatmentPage({ params }: Props) {
                     <li key={item} className="flex items-start gap-3 text-sm leading-6 text-neutral-mid">
                       <span
                         aria-hidden="true"
-                        className="mt-1 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full text-[8px] font-bold text-purple-dark"
+                        className="mt-1 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full text-[8px] font-bold text-on-gold"
                         style={{ background: "#C5A556" }}
                       >
                         ✦
@@ -227,7 +227,7 @@ export default async function TreatmentPage({ params }: Props) {
                   <li key={item} className="flex items-start gap-3 text-neutral-mid">
                     <span
                       aria-hidden="true"
-                      className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold text-purple-dark"
+                      className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold text-on-gold"
                       style={{ background: "#C5A556" }}
                     >
                       ✦
@@ -271,7 +271,7 @@ export default async function TreatmentPage({ params }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Book now: ${name}`}
-                className="mt-7 flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-purple-dark transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+                className="mt-7 flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-on-gold transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                 style={{
                   background: "#C5A556",
                   boxShadow: "0 0 20px rgba(197,165,86,0.25)",

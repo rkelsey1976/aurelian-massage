@@ -88,22 +88,22 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         <div>
           <p className="text-sm font-semibold text-neutral-light">{testimonial.author}</p>
           {testimonial.location && (
-            <p className="mt-0.5 text-xs text-neutral-mid/60">{testimonial.location}</p>
+            <p className="mt-0.5 text-xs text-neutral-mid/90">{testimonial.location}</p>
           )}
           {testimonial.treatment && (
-            <p className="mt-1 text-xs italic text-gold-accent/70">{testimonial.treatment}</p>
+            <p className="mt-1 text-xs italic text-gold-champagne">{testimonial.treatment}</p>
           )}
         </div>
         {testimonial.platform === "Google" && (
           <div className="flex flex-col items-center gap-1">
             <GoogleIcon className="h-5 w-5 flex-shrink-0" />
-            <span className="text-[10px] text-neutral-mid/40">Google</span>
+            <span className="text-[10px] text-neutral-mid/80">Google</span>
           </div>
         )}
         {testimonial.platform === "Facebook" && (
           <div className="flex flex-col items-center gap-1">
             <FacebookIcon className="h-5 w-5 flex-shrink-0" />
-            <span className="text-[10px] text-neutral-mid/40">Facebook</span>
+            <span className="text-[10px] text-neutral-mid/80">Facebook</span>
           </div>
         )}
       </footer>

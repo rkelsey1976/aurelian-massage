@@ -192,7 +192,7 @@ export function DiscountModal() {
                   type="button"
                   onClick={handleCopy}
                   aria-label={copied ? "Code copied" : "Copy discount code"}
-                  className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold text-purple-dark transition-all duration-200 hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+                  className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold text-on-gold transition-all duration-200 hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
                   style={{ background: "#C5A556" }}
                 >
                   {copied ? (
@@ -221,7 +221,7 @@ export function DiscountModal() {
                 <Link
                   href="/treatments"
                   onClick={() => dismiss(true)}
-                  className="flex flex-1 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-purple-dark transition-all duration-300 hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+                  className="flex flex-1 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-on-gold transition-all duration-300 hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                   style={{
                     background: "#C5A556",
                     boxShadow: "0 0 20px rgba(197,165,86,0.30)",
