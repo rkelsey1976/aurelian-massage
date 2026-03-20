@@ -125,34 +125,43 @@ export function TreatmentFlyerPreview({
             />
           </div>
 
-          <ul className="mt-[5mm] flex min-h-0 flex-1 flex-col gap-[2.5mm] border-t border-gold-premium/15 pt-[4mm]">
-            {services.map((s) => (
-              <li
-                key={s.slug}
-                className={`flex gap-2 border-b border-gold-premium/10 pb-[2.5mm] text-[8pt] leading-snug last:border-b-0 last:pb-0 ${
-                  s.featured ? "rounded-sm bg-gold-premium/5 px-1.5 py-1 -mx-1.5" : ""
-                }`}
-              >
-                <div className="min-w-0 flex-1">
-                  <p className="font-serif text-[9pt] font-semibold text-neutral-light">
-                    {s.name}
-                    {s.featured ? (
-                      <span className="ml-1.5 align-middle text-[6pt] font-sans font-bold uppercase tracking-wider text-gold-premium">
-                        Signature
-                      </span>
-                    ) : null}
-                  </p>
-                  <p className="mt-0.5 text-[7pt] text-neutral-gray line-clamp-1">{s.description}</p>
-                </div>
-                <div className="shrink-0 text-right">
-                  <p className="font-serif text-[10pt] font-semibold text-gold-champagne">£{s.price}</p>
-                  <p className="text-[7pt] text-neutral-gray">{s.duration} min</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <div className="flex min-h-0 min-w-0 flex-1 flex-col">
+            <ul className="mt-[5mm] flex shrink-0 flex-col gap-[2.5mm] border-t border-gold-premium/15 pt-[4mm]">
+              {services.map((s) => (
+                <li
+                  key={s.slug}
+                  className={`flex gap-2 border-b border-gold-premium/10 pb-[2.5mm] text-[8pt] leading-snug last:border-b-0 last:pb-0 ${
+                    s.featured ? "rounded-sm bg-gold-premium/5 px-1.5 py-1 -mx-1.5" : ""
+                  }`}
+                >
+                  <div className="min-w-0 flex-1">
+                    <p className="font-serif text-[9pt] font-semibold text-neutral-light">
+                      {s.name}
+                      {s.featured ? (
+                        <span className="ml-1.5 align-middle text-[6pt] font-sans font-bold uppercase tracking-wider text-gold-premium">
+                          Signature
+                        </span>
+                      ) : null}
+                    </p>
+                    <p className="mt-0.5 text-[7pt] text-neutral-gray line-clamp-1">{s.description}</p>
+                  </div>
+                  <div className="shrink-0 text-right">
+                    <p className="font-serif text-[10pt] font-semibold text-gold-champagne">£{s.price}</p>
+                    <p className="text-[7pt] text-neutral-gray">{s.duration} min</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
 
-          <div className="mt-auto flex items-end justify-between gap-3 border-t border-gold-premium/20 pt-[4mm]">
+            <div
+              aria-hidden
+              className="mt-[4mm] h-[10mm] shrink-0 bg-purple-deep -mx-[9mm]"
+            />
+
+            <div className="min-h-0 min-w-0 flex-1" aria-hidden />
+          </div>
+
+          <div className="flex shrink-0 items-end justify-between gap-3 border-t border-gold-premium/20 pt-[4mm]">
             <div className="min-w-0 text-[7pt] leading-snug text-neutral-gray">
               <p className="font-medium text-neutral-light">{phone}</p>
               <p className="mt-0.5">{address.street}</p>
@@ -182,10 +191,6 @@ export function TreatmentFlyerPreview({
               <p className="max-w-[22mm] text-center text-[5.5pt] font-medium uppercase leading-tight tracking-[0.06em] text-gold-premium">
                 Book through Fresha
               </p>
-              <div
-                aria-hidden
-                className="mt-0.5 h-[1.75mm] w-[20mm] rounded-sm bg-purple-royal ring-1 ring-gold-premium/20"
-              />
             </div>
           </div>
         </div>

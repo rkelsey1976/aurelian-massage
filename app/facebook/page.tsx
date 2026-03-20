@@ -50,12 +50,19 @@ export default function FacebookAssetsPage() {
             >
               /facebook-covers
             </Link>
-            . Custom copy and backgrounds:{" "}
+            . Custom square posts:{" "}
             <Link
               href="/facebook-builder"
               className="font-medium text-gold-premium underline-offset-2 hover:underline"
             >
               Facebook builder
+            </Link>
+            . Timeline covers:{" "}
+            <Link
+              href="/facebook-cover-builder"
+              className="font-medium text-gold-premium underline-offset-2 hover:underline"
+            >
+              Cover builder
             </Link>
             .
           </p>

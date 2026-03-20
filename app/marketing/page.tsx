@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, IdCard, ImageIcon, LayoutGrid, PanelTop, PenLine, Share2, Sparkles } from "lucide-react";
+import {
+  ArrowUpRight,
+  IdCard,
+  ImageIcon,
+  LayoutGrid,
+  PanelTop,
+  PanelsTopLeft,
+  PenLine,
+  Share2,
+  Sparkles,
+} from "lucide-react";
 
 import { siteConfig } from "@/lib/site-config";
 
@@ -40,6 +50,12 @@ const assets = [
     title: "Facebook covers",
     description: "Timeline cover frames (820×312 style preview).",
     icon: PanelTop,
+  },
+  {
+    href: "/facebook-cover-builder",
+    title: "Facebook cover builder",
+    description: "Custom timeline cover — layouts, copy, backgrounds, PNG export.",
+    icon: PanelsTopLeft,
   },
   {
     href: "/instagram",

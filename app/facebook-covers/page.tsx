@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { DownloadableGraphic } from "@/components/marketing/downloadable-graphic";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -14,23 +16,32 @@ export const metadata: Metadata = {
 const COVER_W = 820;
 const COVER_H = 312;
 
-function CoverFrame({
+function CoverDownload({
+  id,
+  filename,
   title,
+  note,
   children,
 }: {
+  id: string;
+  filename: string;
   title: string;
+  note?: string;
   children: ReactNode;
 }) {
   return (
-    <section className="space-y-3">
-      <h2 className="text-sm font-medium tracking-wide text-neutral-gray">{title}</h2>
-      <div
-        className="relative overflow-hidden rounded-lg shadow-purple-depth"
-        style={{ width: COVER_W, height: COVER_H }}
-      >
-        {children}
-      </div>
-    </section>
+    <DownloadableGraphic
+      id={id}
+      filename={filename}
+      title={title}
+      note={
+        note ??
+        `${COVER_W}×${COVER_H}px Facebook desktop cover. Download PNG exports at 2× pixel density for a crisp upload.`
+      }
+      dimensions={{ width: COVER_W, height: COVER_H }}
+    >
+      {children}
+    </DownloadableGraphic>
   );
 }
 
@@ -55,16 +66,31 @@ export default function FacebookCoversPage() {
           <p className="max-w-xl text-sm leading-relaxed text-neutral-gray">
             Each frame below is{" "}
             <strong className="font-medium text-neutral-light">{COVER_W}×{COVER_H}px</strong>{" "}
-            (Facebook’s desktop cover size). Zoom the page to 100%, hide browser UI if needed, and
-            capture only the frame — keep text toward the{" "}
-            <strong className="font-medium text-neutral-light">right or top</strong> so it stays
-            clear of the profile photo overlap on the left.
+            (Facebook’s desktop cover size). Use <strong className="text-neutral-light">Download PNG</strong>{" "}
+            on each design for a quick export (2× pixel density). You can still screenshot at 100% zoom if
+            you prefer — keep text toward the{" "}
+            <strong className="font-medium text-neutral-light">right or top</strong> so it stays clear of
+            the profile photo overlap on the left.
+          </p>
+          <p className="text-sm text-neutral-gray">
+            Build your own copy and background on{" "}
+            <Link
+              href="/facebook-cover-builder"
+              className="font-medium text-gold-premium underline-offset-2 hover:underline"
+            >
+              /facebook-cover-builder
+            </Link>
+            .
           </p>
         </header>
 
         <div className="flex flex-col gap-16">
           {/* 1 — Hero-style luxury gradient */}
-          <CoverFrame title="1 — Luxury gradient (matches site hero)">
+          <CoverDownload
+            id="fb-cover-1-luxury-gradient"
+            filename="facebook-cover-1-luxury-gradient"
+            title="1 — Luxury gradient (matches site hero)"
+          >
             <div className="relative flex h-full w-full items-center justify-end bg-gradient-to-br from-purple-royal via-purple-deep to-[#3b2660] pr-10">
               <div
                 aria-hidden
@@ -100,10 +126,14 @@ export default function FacebookCoversPage() {
                 <p className="mt-3 text-[11px] leading-snug text-neutral-gray">{shortTag}</p>
               </div>
             </div>
-          </CoverFrame>
+          </CoverDownload>
 
           {/* 2 — Gold headline bar */}
-          <CoverFrame title="2 — Gold bar + deep purple">
+          <CoverDownload
+            id="fb-cover-2-gold-bar"
+            filename="facebook-cover-2-gold-bar"
+            title="2 — Gold bar + deep purple"
+          >
             <div className="relative flex h-full w-full flex-col bg-purple-royal">
               <div
                 aria-hidden
@@ -124,10 +154,14 @@ export default function FacebookCoversPage() {
                 <p className="mt-4 text-[11px] text-neutral-gray">{url.replace("https://", "")}</p>
               </div>
             </div>
-          </CoverFrame>
+          </CoverDownload>
 
           {/* 3 — Minimal wordmark */}
-          <CoverFrame title="3 — Minimal wordmark">
+          <CoverDownload
+            id="fb-cover-3-minimal-wordmark"
+            filename="facebook-cover-3-minimal-wordmark"
+            title="3 — Minimal wordmark"
+          >
             <div className="relative flex h-full w-full items-center justify-end bg-purple-deep pr-14">
               <div
                 aria-hidden
@@ -153,10 +187,14 @@ export default function FacebookCoversPage() {
                 </p>
               </div>
             </div>
-          </CoverFrame>
+          </CoverDownload>
 
           {/* 4 — Logo + hero photo (matches homepage hero) */}
-          <CoverFrame title="4 — Logo spotlight">
+          <CoverDownload
+            id="fb-cover-4-logo-spotlight"
+            filename="facebook-cover-4-logo-spotlight"
+            title="4 — Logo spotlight"
+          >
             <div className="relative flex h-full w-full items-center justify-start overflow-hidden pl-4 pr-0">
               <div
                 aria-hidden
@@ -215,10 +253,14 @@ export default function FacebookCoversPage() {
                 </div>
               </div>
             </div>
-          </CoverFrame>
+          </CoverDownload>
 
           {/* 5 — Editorial services line */}
-          <CoverFrame title="5 — Editorial services">
+          <CoverDownload
+            id="fb-cover-5-editorial-services"
+            filename="facebook-cover-5-editorial-services"
+            title="5 — Editorial services"
+          >
             <div className="relative flex h-full w-full flex-col justify-center bg-purple-royal pl-[200px] pr-10">
               <div
                 aria-hidden
@@ -244,7 +286,7 @@ export default function FacebookCoversPage() {
                 </p>
               </div>
             </div>
-          </CoverFrame>
+          </CoverDownload>
         </div>
       </div>
     </div>
