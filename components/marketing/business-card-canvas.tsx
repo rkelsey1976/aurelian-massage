@@ -103,7 +103,7 @@ function BusinessCardFrontLogoImage({
   );
 }
 
-function FrontBleedBackdrop({
+export function CardFaceBleedBackdrop({
   style,
   texture,
 }: {
@@ -172,7 +172,7 @@ export function BusinessCardOneSidedCanvas(props: BusinessCardCanvasProps) {
       bleedPx={BUSINESS_CARD_BLEED_PX}
       gutterPx={CARD_GUTTER_PX}
       trimClassName={TRIM_OVERFLOW_VISIBLE}
-      bleedBackdrop={<FrontBleedBackdrop style={frontBgStyle} texture={cardTexture} />}
+      bleedBackdrop={<CardFaceBleedBackdrop style={frontBgStyle} texture={cardTexture} />}
     >
       <div className="relative flex h-full w-full overflow-visible">
         <div
@@ -345,7 +345,7 @@ export function BusinessCardFrontCanvas(props: BusinessCardCanvasProps) {
       bleedPx={BUSINESS_CARD_BLEED_PX}
       gutterPx={CARD_GUTTER_PX}
       trimClassName={TRIM_OVERFLOW_VISIBLE}
-      bleedBackdrop={<FrontBleedBackdrop style={frontBgStyle} texture={cardTexture} />}
+      bleedBackdrop={<CardFaceBleedBackdrop style={frontBgStyle} texture={cardTexture} />}
     >
       <div className="relative flex h-full w-full flex-col overflow-visible px-8 py-7 pl-10">
         {frontLogoPlacement === "bottom-right" || frontLogoPlacement === "bottom-left" ? (
@@ -395,7 +395,7 @@ export function BusinessCardBackCanvas(props: BusinessCardCanvasProps) {
       bleedPx={BUSINESS_CARD_BLEED_PX}
       gutterPx={CARD_GUTTER_PX}
       trimClassName={TRIM_OVERFLOW_VISIBLE}
-      bleedBackdrop={<FrontBleedBackdrop style={frontBgStyle} texture={cardTexture} />}
+      bleedBackdrop={<CardFaceBleedBackdrop style={frontBgStyle} texture={cardTexture} />}
     >
       <div className="relative flex h-full w-full flex-col overflow-visible">
         <div className="relative flex flex-1 items-center gap-5 px-6 py-5 pl-9">

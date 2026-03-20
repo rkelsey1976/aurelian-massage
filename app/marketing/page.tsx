@@ -12,6 +12,7 @@ import {
   Share2,
   Sparkles,
   Store,
+  Ticket,
 } from "lucide-react";
 
 import { siteConfig } from "@/lib/site-config";
@@ -34,6 +35,12 @@ const assets = [
     title: "Business card builder",
     description: "Edit copy & Fresha link — one-sided or two-sided PNG export with bleed + crop marks.",
     icon: PenLine,
+  },
+  {
+    href: "/loyalty-card-builder",
+    title: "Loyalty card builder",
+    description: "White card, purple header — 4 stamps, $20 off after 4 visits by default, Fresha QR, PNG export.",
+    icon: Ticket,
   },
   {
     href: "/treatment-flyer",
