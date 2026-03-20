@@ -13,6 +13,8 @@ const BLEED_BOX_W = CARD_W + 2 * CARD_BLEED_PX;
 const BLEED_BOX_H = CARD_H + 2 * CARD_BLEED_PX;
 const SHEET_W = BLEED_BOX_W + 2 * CARD_GUTTER_PX;
 const SHEET_H = BLEED_BOX_H + 2 * CARD_GUTTER_PX;
+/** Square trim area for PNG export (no rounded preview chrome). */
+const PRINT_FRAME_CLASS = "relative overflow-hidden";
 
 export type BusinessCardPreviewsProps = {
   bookingQrDataUrl: string;
@@ -47,6 +49,7 @@ export function BusinessCardPreviews({
         dimensions={{ width: SHEET_W, height: SHEET_H }}
         highResFilename="business-card-one-sided-hires"
         highResPixelRatio={5}
+        frameClassName={PRINT_FRAME_CLASS}
       >
         <PrintPackPx
           trimWidthPx={CARD_W}
@@ -170,6 +173,7 @@ export function BusinessCardPreviews({
         dimensions={{ width: SHEET_W, height: SHEET_H }}
         highResFilename="business-card-front-hires"
         highResPixelRatio={5}
+        frameClassName={PRINT_FRAME_CLASS}
       >
         <PrintPackPx
           trimWidthPx={CARD_W}
@@ -234,6 +238,7 @@ export function BusinessCardPreviews({
         dimensions={{ width: SHEET_W, height: SHEET_H }}
         highResFilename="business-card-back-hires"
         highResPixelRatio={5}
+        frameClassName={PRINT_FRAME_CLASS}
       >
         <PrintPackPx
           trimWidthPx={CARD_W}

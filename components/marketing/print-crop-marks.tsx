@@ -76,7 +76,7 @@ export function PrintPackPx({
   markLengthPx = 11,
   gapPx = 2,
   children,
-  trimClassName = "relative z-10 box-border min-h-0 min-w-0 overflow-hidden rounded-md shadow-purple-depth",
+  trimClassName = "relative z-10 box-border min-h-0 min-w-0 overflow-hidden",
   trimStyle,
 }: PrintPackPxProps) {
   const bleedW = trimWidthPx + 2 * bleedPx;
@@ -94,7 +94,7 @@ export function PrintPackPx({
     >
       <CropMarkLines lines={lines} strokeWidth={1} viewBoxW={sheetW} viewBoxH={sheetH} />
       <div
-        className="absolute overflow-hidden rounded-md"
+        className="absolute overflow-hidden"
         style={{
           left: gutterPx,
           top: gutterPx,
@@ -143,7 +143,7 @@ export function PrintPackMm({
   markLengthMm = 2.5,
   gapMm = 0.75,
   children,
-  trimClassName = "relative z-10 box-border min-h-0 min-w-0 overflow-hidden rounded-sm shadow-purple-depth",
+  trimClassName = "relative z-10 box-border min-h-0 min-w-0 overflow-hidden",
   trimStyle,
 }: PrintPackMmProps) {
   const bleedW = trimWidthMm + 2 * bleedMm;
@@ -161,7 +161,7 @@ export function PrintPackMm({
     >
       <CropMarkLines lines={lines} strokeWidth={0.25} viewBoxW={sheetW} viewBoxH={sheetH} />
       <div
-        className="absolute overflow-hidden rounded-sm"
+        className="absolute overflow-hidden"
         style={{
           left: `${gutterMm}mm`,
           top: `${gutterMm}mm`,

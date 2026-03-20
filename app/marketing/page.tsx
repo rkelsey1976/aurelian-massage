@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, IdCard, ImageIcon, LayoutGrid, PanelTop, Share2, Sparkles } from "lucide-react";
+import { ArrowUpRight, IdCard, ImageIcon, LayoutGrid, PanelTop, PenLine, Share2, Sparkles } from "lucide-react";
 
 import { siteConfig } from "@/lib/site-config";
 
@@ -28,6 +28,12 @@ const assets = [
     title: "Facebook graphics",
     description: "Square and landscape feed assets; Download PNG on each block.",
     icon: Share2,
+  },
+  {
+    href: "/facebook-builder",
+    title: "Facebook builder",
+    description: "Custom square post — edit copy, layout, background, export PNG.",
+    icon: PenLine,
   },
   {
     href: "/facebook-covers",

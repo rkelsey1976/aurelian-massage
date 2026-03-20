@@ -53,6 +53,7 @@ export function TreatmentFlyerPreview({
       dimensions={{ width: `${FLYER_SHEET_W_MM}mm`, height: `${FLYER_SHEET_H_MM}mm` }}
       highResFilename="treatment-flyer-a5-hires"
       highResPixelRatio={6}
+      frameClassName="relative overflow-hidden"
     >
       <PrintPackMm
         trimWidthMm={FLYER_TRIM_W_MM}

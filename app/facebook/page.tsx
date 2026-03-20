@@ -50,6 +50,13 @@ export default function FacebookAssetsPage() {
             >
               /facebook-covers
             </Link>
+            . Custom copy and backgrounds:{" "}
+            <Link
+              href="/facebook-builder"
+              className="font-medium text-gold-premium underline-offset-2 hover:underline"
+            >
+              Facebook builder
+            </Link>
             .
           </p>
         </header>

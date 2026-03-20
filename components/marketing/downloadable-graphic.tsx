@@ -16,6 +16,8 @@ type DownloadableGraphicProps = {
   pixelRatio?: number;
   /** Pixel ratio for the high-res download when `highResFilename` is set (default 5). */
   highResPixelRatio?: number;
+  /** Capture root classes (default rounded preview + shadow). Use square corners for print sheets. */
+  frameClassName?: string;
 };
 
 function sanitizeFilename(name: string) {
@@ -97,6 +99,7 @@ export function DownloadableGraphic({
   highResFilename,
   pixelRatio = 2,
   highResPixelRatio = 5,
+  frameClassName = "relative overflow-hidden rounded-lg shadow-purple-depth",
 }: DownloadableGraphicProps) {
   const [busy, setBusy] = useState<false | "quick" | "high">(false);
   const [error, setError] = useState<string | null>(null);
@@ -189,11 +192,7 @@ export function DownloadableGraphic({
           ) : null}
         </div>
       </div>
-      <div
-        id={id}
-        className="relative overflow-hidden rounded-lg shadow-purple-depth"
-        style={frameStyle}
-      >
+      <div id={id} className={frameClassName} style={frameStyle}>
         {children}
       </div>
     </section>
