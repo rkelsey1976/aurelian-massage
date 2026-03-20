@@ -43,8 +43,10 @@ export default async function TreatmentFlyerPage() {
           <p className="max-w-xl text-sm leading-relaxed text-neutral-gray">
             Frame below is <strong className="text-neutral-light">148×210mm</strong> (ISO A5). Use print dialog
             “Actual size” or export at <strong className="text-neutral-light">300dpi</strong> (~1748×2480px) for
-            professional print. Use <strong className="text-neutral-light">Download PNG</strong> for a quick
-            2× raster export.
+            professional print. The preview adds a <strong className="text-neutral-light">4mm gutter</strong>{" "}
+            with <strong className="text-neutral-light">crop marks</strong> at the 148×210mm trim. Use{" "}
+            <strong className="text-neutral-light">Standard (2×)</strong> for proofs or{" "}
+            <strong className="text-neutral-light">High-res (6×)</strong> for large print-ready files.
           </p>
         </header>
 

@@ -41,8 +41,10 @@ export default async function BusinessCardPage() {
             Each card is <strong className="font-medium text-neutral-light">{CARD_W}×{CARD_H}px</strong>{" "}
             (3.5×2 proportion). Export or print via your browser; for professional print, use 300dpi assets
             (e.g. 1050×600px) from the same layout. Use <strong className="text-neutral-light">One-sided</strong>{" "}
-            for a single print face; Front + Back if you prefer a classic two-sided card. Each block has{" "}
-            <strong className="text-neutral-light">Download PNG</strong> (2× capture for sharper files).
+            for a single print face; Front + Back if you prefer a classic two-sided card. Each sheet includes{" "}
+            <strong className="text-neutral-light">crop marks</strong> around the 420×240 trim (24px gutter). Use{" "}
+            <strong className="text-neutral-light">Standard (2×)</strong> for sharing or{" "}
+            <strong className="text-neutral-light">High-res (5×)</strong> for professional print.
           </p>
         </header>
 

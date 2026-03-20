@@ -3,6 +3,13 @@
 import Image from "next/image";
 
 import { DownloadableGraphic } from "@/components/marketing/downloadable-graphic";
+import { PrintPackMm } from "@/components/marketing/print-crop-marks";
+
+const FLYER_TRIM_W_MM = 148;
+const FLYER_TRIM_H_MM = 210;
+const FLYER_GUTTER_MM = 4;
+const FLYER_SHEET_W_MM = FLYER_TRIM_W_MM + 2 * FLYER_GUTTER_MM;
+const FLYER_SHEET_H_MM = FLYER_TRIM_H_MM + 2 * FLYER_GUTTER_MM;
 
 export type FlyerService = {
   slug: string;
@@ -39,10 +46,17 @@ export function TreatmentFlyerPreview({
       id="treatment-flyer-a5"
       filename="treatment-flyer-a5"
       title="Print preview"
-      note="148×210mm (ISO A5) — Download PNG at 2× for a sharper proof; use 300dpi workflow for litho print."
-      dimensions={{ width: "148mm", height: "210mm" }}
+      note={`Trim ${FLYER_TRIM_W_MM}×${FLYER_TRIM_H_MM}mm A5, ${FLYER_GUTTER_MM}mm gutter + crop marks. Standard (2×) for proof; High-res (6×) for large print files.`}
+      dimensions={{ width: `${FLYER_SHEET_W_MM}mm`, height: `${FLYER_SHEET_H_MM}mm` }}
+      highResFilename="treatment-flyer-a5-hires"
+      highResPixelRatio={6}
     >
-      <div className="relative h-full w-full">
+      <PrintPackMm
+        trimWidthMm={FLYER_TRIM_W_MM}
+        trimHeightMm={FLYER_TRIM_H_MM}
+        gutterMm={FLYER_GUTTER_MM}
+      >
+        <div className="relative h-full w-full">
         <div className="absolute inset-0">
           <Image
             src="/back-massage.png"
@@ -171,6 +185,7 @@ export function TreatmentFlyerPreview({
           </div>
         </div>
       </div>
+      </PrintPackMm>
     </DownloadableGraphic>
   );
 }

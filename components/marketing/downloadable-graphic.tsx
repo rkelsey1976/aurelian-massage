@@ -10,6 +10,12 @@ type DownloadableGraphicProps = {
   note?: string;
   dimensions: { width: number | string; height: number | string };
   children: ReactNode;
+  /** If set, shows a second button for a higher `pixelRatio` export (print / litho). */
+  highResFilename?: string;
+  /** Pixel ratio for the quick download (default 2). */
+  pixelRatio?: number;
+  /** Pixel ratio for the high-res download when `highResFilename` is set (default 5). */
+  highResPixelRatio?: number;
 };
 
 function sanitizeFilename(name: string) {
@@ -88,39 +94,56 @@ export function DownloadableGraphic({
   note,
   dimensions,
   children,
+  highResFilename,
+  pixelRatio = 2,
+  highResPixelRatio = 5,
 }: DownloadableGraphicProps) {
-  const [busy, setBusy] = useState(false);
+  const [busy, setBusy] = useState<false | "quick" | "high">(false);
   const [error, setError] = useState<string | null>(null);
 
-  const download = useCallback(async () => {
-    const el = document.getElementById(id);
-    if (!el || busy) return;
-    setBusy(true);
-    setError(null);
-    try {
-      // html2canvas cannot parse Tailwind v4’s oklab()/oklch() in stylesheets; html-to-image
-      // rasterizes via the browser’s SVG path and avoids that parser.
+  const runDownload = useCallback(async (ratio: number, fileBase: string) => {
+      const el = document.getElementById(id);
+      if (!el) return;
       el.scrollIntoView({ block: "nearest", inline: "nearest" });
       await new Promise<void>((r) => requestAnimationFrame(() => r()));
       await waitForImagesInRoot(el);
 
       const { toPng } = await import("html-to-image");
       const dataUrl = await toPng(el, {
-        pixelRatio: 2,
+        pixelRatio: ratio,
         cacheBust: true,
         skipFonts: true,
       });
       const a = document.createElement("a");
-      a.download = `${sanitizeFilename(filename)}.png`;
+      a.download = `${sanitizeFilename(fileBase)}.png`;
       a.href = dataUrl;
       a.click();
+  }, [id]);
+
+  const downloadQuick = useCallback(async () => {
+    setError(null);
+    setBusy("quick");
+    try {
+      await runDownload(pixelRatio, filename);
     } catch (e) {
-      const message = e instanceof Error ? e.message : "Could not create PNG.";
-      setError(message);
+      setError(e instanceof Error ? e.message : "Could not create PNG.");
     } finally {
       setBusy(false);
     }
-  }, [id, filename, busy]);
+  }, [runDownload, pixelRatio, filename]);
+
+  const downloadHighRes = useCallback(async () => {
+    if (!highResFilename) return;
+    setError(null);
+    setBusy("high");
+    try {
+      await runDownload(highResPixelRatio, highResFilename);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Could not create PNG.");
+    } finally {
+      setBusy(false);
+    }
+  }, [runDownload, highResPixelRatio, highResFilename]);
 
   const frameStyle: CSSProperties = {
     width: dimensions.width,
@@ -134,17 +157,35 @@ export function DownloadableGraphic({
           <h2 className="text-sm font-medium tracking-wide text-neutral-gray">{title}</h2>
           {note ? <p className="mt-1 text-xs text-neutral-gray/80">{note}</p> : null}
         </div>
-        <div className="flex shrink-0 flex-col items-end gap-1">
-          <button
-            type="button"
-            disabled={busy}
-            onClick={download}
-            className="rounded-md border border-gold-premium/35 bg-purple-deep px-3 py-1.5 text-xs font-medium text-gold-premium transition hover:bg-purple-plum/40 disabled:cursor-wait disabled:opacity-60"
-          >
-            {busy ? "Saving…" : "Download PNG"}
-          </button>
+        <div className="flex shrink-0 flex-col items-end gap-1.5">
+          <div className="flex flex-wrap justify-end gap-2">
+            <button
+              type="button"
+              disabled={!!busy}
+              onClick={downloadQuick}
+              className="rounded-md border border-gold-premium/35 bg-purple-deep px-3 py-1.5 text-xs font-medium text-gold-premium transition hover:bg-purple-plum/40 disabled:cursor-wait disabled:opacity-60"
+            >
+              {busy === "quick"
+                ? "Saving…"
+                : highResFilename
+                  ? `Standard (${pixelRatio}×)`
+                  : pixelRatio === 2
+                    ? "Download PNG"
+                    : `PNG (${pixelRatio}×)`}
+            </button>
+            {highResFilename ? (
+              <button
+                type="button"
+                disabled={!!busy}
+                onClick={downloadHighRes}
+                className="rounded-md border border-gold-champagne/45 bg-purple-plum/50 px-3 py-1.5 text-xs font-semibold text-gold-champagne transition hover:bg-purple-plum/70 disabled:cursor-wait disabled:opacity-60"
+              >
+                {busy === "high" ? "Saving…" : `High-res PNG (${highResPixelRatio}×)`}
+              </button>
+            ) : null}
+          </div>
           {error ? (
-            <p className="max-w-[220px] text-right text-[10px] leading-snug text-red-300/95">{error}</p>
+            <p className="max-w-[240px] text-right text-[10px] leading-snug text-red-300/95">{error}</p>
           ) : null}
         </div>
       </div>

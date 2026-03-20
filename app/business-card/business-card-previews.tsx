@@ -3,9 +3,13 @@
 import Image from "next/image";
 
 import { DownloadableGraphic } from "@/components/marketing/downloadable-graphic";
+import { PrintPackPx } from "@/components/marketing/print-crop-marks";
 
 const CARD_W = 420;
 const CARD_H = 240;
+const CARD_GUTTER_PX = 24;
+const SHEET_W = CARD_W + 2 * CARD_GUTTER_PX;
+const SHEET_H = CARD_H + 2 * CARD_GUTTER_PX;
 
 export type BusinessCardPreviewsProps = {
   bookingQrDataUrl: string;
@@ -36,10 +40,13 @@ export function BusinessCardPreviews({
         id="bc-one-sided"
         filename="business-card-one-sided"
         title="One-sided (all on one face)"
-        note="420×240px preview — Download PNG at 2× for sharper export."
-        dimensions={{ width: CARD_W, height: CARD_H }}
+        note="Trim 420×240px inside 24px gutter — crop marks. Standard (2×) for screen; High-res (5×) for print."
+        dimensions={{ width: SHEET_W, height: SHEET_H }}
+        highResFilename="business-card-one-sided-hires"
+        highResPixelRatio={5}
       >
-        <div className="relative flex h-full w-full bg-gradient-to-br from-purple-royal via-purple-deep to-[#3b2660]">
+        <PrintPackPx trimWidthPx={CARD_W} trimHeightPx={CARD_H} gutterPx={CARD_GUTTER_PX}>
+          <div className="relative flex h-full w-full bg-gradient-to-br from-purple-royal via-purple-deep to-[#3b2660]">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-gold-premium via-gold-champagne to-gold-premium"
@@ -139,16 +146,20 @@ export function BusinessCardPreviews({
             </div>
           </div>
         </div>
+        </PrintPackPx>
       </DownloadableGraphic>
 
       <DownloadableGraphic
         id="bc-front"
         filename="business-card-front"
         title="Front"
-        note="Classic two-sided layout — front face."
-        dimensions={{ width: CARD_W, height: CARD_H }}
+        note="Trim 420×240px with crop marks. Standard (2×) or High-res (5×) for litho."
+        dimensions={{ width: SHEET_W, height: SHEET_H }}
+        highResFilename="business-card-front-hires"
+        highResPixelRatio={5}
       >
-        <div className="relative flex h-full w-full bg-gradient-to-br from-purple-royal via-purple-deep to-[#3b2660]">
+        <PrintPackPx trimWidthPx={CARD_W} trimHeightPx={CARD_H} gutterPx={CARD_GUTTER_PX}>
+          <div className="relative flex h-full w-full bg-gradient-to-br from-purple-royal via-purple-deep to-[#3b2660]">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-gold-premium via-gold-champagne to-gold-premium"
@@ -195,16 +206,20 @@ export function BusinessCardPreviews({
             </div>
           </div>
         </div>
+        </PrintPackPx>
       </DownloadableGraphic>
 
       <DownloadableGraphic
         id="bc-back"
         filename="business-card-back"
         title="Back"
-        note="Classic two-sided layout — back with QR."
-        dimensions={{ width: CARD_W, height: CARD_H }}
+        note="Trim 420×240px with crop marks. Standard (2×) or High-res (5×) for litho."
+        dimensions={{ width: SHEET_W, height: SHEET_H }}
+        highResFilename="business-card-back-hires"
+        highResPixelRatio={5}
       >
-        <div className="relative flex h-full w-full flex-col bg-purple-royal">
+        <PrintPackPx trimWidthPx={CARD_W} trimHeightPx={CARD_H} gutterPx={CARD_GUTTER_PX}>
+          <div className="relative flex h-full w-full flex-col bg-purple-royal">
           <div aria-hidden className="noise pointer-events-none absolute inset-0" />
           <div
             aria-hidden
@@ -274,6 +289,7 @@ export function BusinessCardPreviews({
             </div>
           </div>
         </div>
+        </PrintPackPx>
       </DownloadableGraphic>
     </div>
   );
