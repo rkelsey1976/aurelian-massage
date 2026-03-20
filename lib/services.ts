@@ -27,7 +27,7 @@ export const services: Service[] = [
     gradient:
       "linear-gradient(160deg, rgba(32,21,46,0.55) 0%, rgba(122,80,176,0.75) 100%)",
     description:
-      "A focused treatment designed to relieve the areas where tension most commonly accumulates. This massage concentrates on the upper back, shoulders, and neck, using flowing Swedish massage techniques to ease muscular tightness, improve circulation, and encourage greater mobility. It is particularly beneficial for those experiencing stress, postural strain, or stiffness from daily activities, leaving the upper body feeling lighter and deeply relaxed.",
+      "Swedish massage focused on the upper back, shoulders and neck. Eases desk and postural tension in thirty focused minutes.",
     idealFor: [
       "Those experiencing neck or shoulder tension from desk work or screen use",
       "People carrying stress in their upper body",
@@ -72,7 +72,7 @@ export const services: Service[] = [
     gradient:
       "linear-gradient(160deg, rgba(20,40,60,0.60) 0%, rgba(40,80,120,0.78) 100%)",
     description:
-      "Created especially for those who have spent long hours travelling or sitting. This restorative massage focuses on the legs, lower back, and shoulders to stimulate circulation and gently release travel-related tension. Swedish massage techniques help reduce fatigue, encourage the body's natural recovery processes, and restore a sense of physical balance, leaving you refreshed and ready to enjoy your time in Bath.",
+      "For long journeys or sitting—legs, lower back and shoulders. Stimulates circulation and eases travel fatigue so you can enjoy Bath.",
     idealFor: [
       "Visitors arriving in Bath after long journeys by car, train, or plane",
       "Those experiencing stiffness, fatigue, or swelling in the legs",
@@ -117,7 +117,7 @@ export const services: Service[] = [
     gradient:
       "linear-gradient(160deg, rgba(60,40,10,0.55) 0%, rgba(160,110,30,0.75) 100%)",
     description:
-      "A beautifully balanced full body massage designed to promote relaxation and restore physical harmony. Using traditional Swedish massage techniques across the back, legs, arms, shoulders, and neck, this treatment improves circulation, relieves muscular tension, and calms the nervous system. The experience leaves the body feeling revitalised, supple, and deeply relaxed.",
+      "Classic full-body Swedish massage—back, limbs, neck and arms. Balanced pressure to improve circulation and deep relaxation.",
     idealFor: [
       "Those seeking a complete and balanced full body treatment",
       "Anyone looking to relieve general muscular tension throughout the body",
@@ -163,7 +163,7 @@ export const services: Service[] = [
     gradient:
       "linear-gradient(160deg, rgba(32,21,46,0.45) 0%, rgba(197,165,86,0.70) 100%)",
     description:
-      "A signature treatment created to provide deeper relaxation and personalised attention. This extended massage allows additional time to focus on areas of tension while maintaining a smooth and flowing full body treatment. The carefully paced techniques encourage muscles to release gradually while calming the mind, creating a restorative experience that leaves you feeling balanced, grounded, and renewed.",
+      "Our extended signature: flowing full-body work with extra time on tight areas. Unhurried, personalised and deeply restorative.",
     idealFor: [
       "Those wanting the most personalised and attentive experience available",
       "Anyone carrying persistent tension that needs more focused time",
@@ -208,7 +208,7 @@ export const services: Service[] = [
     gradient:
       "linear-gradient(160deg, rgba(15,10,35,0.60) 0%, rgba(60,30,100,0.80) 100%)",
     description:
-      "An indulgent and deeply soothing full body massage designed to allow the body and mind to completely unwind. Slow, flowing Swedish techniques help melt away muscular tension while promoting circulation and encouraging deep relaxation throughout the nervous system. With generous time to work through the entire body without rushing, this treatment creates a profound sense of calm and wellbeing.",
+      "Ninety minutes of slow, full-body Swedish massage—nothing rushed. Space to fully unwind and reset body and mind.",
     idealFor: [
       "Those wanting to fully surrender and let go of accumulated stress",
       "Anyone who finds shorter sessions feel rushed or incomplete",
@@ -253,7 +253,7 @@ export const services: Service[] = [
     gradient:
       "linear-gradient(160deg, rgba(10,35,25,0.55) 0%, rgba(30,100,60,0.75) 100%)",
     description:
-      "An uplifting full body massage that combines Swedish techniques with carefully selected invigorating essential oils. Fresh, energising aromas help stimulate the senses while massage movements encourage circulation and release muscular tension. This treatment is ideal for boosting energy levels, refreshing the body, and restoring a sense of vitality and clarity.",
+      "Full-body Swedish massage with uplifting essential oils. Invigorating aromas and flowing strokes to boost energy and clarity.",
     idealFor: [
       "Those feeling fatigued, low in energy, or in need of a lift",
       "Anyone wanting the therapeutic benefits of aromatherapy alongside massage",
@@ -298,7 +298,7 @@ export const services: Service[] = [
     gradient:
       "linear-gradient(160deg, rgba(10,20,45,0.60) 0%, rgba(20,50,100,0.80) 100%)",
     description:
-      "A deeply relaxing treatment designed to quiet the mind and prepare the body for restorative rest. Gentle Swedish massage techniques are combined with calming essential oils known for their soothing and sleep-promoting qualities. This nurturing experience encourages the nervous system to slow down, easing physical and mental tension while leaving you feeling peaceful, comforted, and ready for a restful night.",
+      "Gentle Swedish massage with calming, sleep-friendly essential oils. Quiets tension and the nervous system—ideal before rest.",
     idealFor: [
       "Those struggling with sleep difficulty or disrupted rest",
       "Anyone experiencing anxiety, mental restlessness, or overwhelm",

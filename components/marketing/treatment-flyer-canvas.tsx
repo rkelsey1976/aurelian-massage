@@ -264,29 +264,29 @@ export function TreatmentFlyerCanvas({
 
   const h2Cls =
     style === "editorial"
-      ? "mt-4 font-serif text-[14pt] font-semibold tracking-tight text-neutral-light"
-      : "mt-3 font-serif text-[13pt] font-semibold text-neutral-light";
+      ? "mt-2.5 font-serif text-[14pt] font-semibold tracking-tight text-neutral-light"
+      : "mt-2 font-serif text-[13pt] font-semibold text-neutral-light";
 
   const introCls =
     style === "minimal"
-      ? "mt-1 max-w-[78mm] text-[8pt] leading-snug text-neutral-light/75"
+      ? "mt-0.5 max-w-[78mm] text-[8pt] leading-snug text-neutral-light/75"
       : style === "noir"
-        ? "mt-1 max-w-[78mm] text-[8pt] leading-snug text-neutral-gray"
-        : "mt-1 max-w-[78mm] text-[8pt] leading-snug text-neutral-gray";
+        ? "mt-0.5 max-w-[78mm] text-[8pt] leading-snug text-neutral-gray"
+        : "mt-0.5 max-w-[78mm] text-[8pt] leading-snug text-neutral-gray";
 
   const listWrapCls =
     style === "editorial"
-      ? "mt-[5mm] flex shrink-0 flex-col gap-[2mm] border-t border-gold-premium/20 pt-[4mm]"
+      ? "mt-0 flex shrink-0 flex-col gap-[2mm] border-t border-gold-premium/20 pt-[1.5mm]"
       : style === "minimal"
-        ? "mt-[5mm] flex shrink-0 flex-col gap-[2mm] border-t border-white/10 pt-[4mm]"
-        : "mt-[5mm] flex shrink-0 flex-col gap-[2.5mm] border-t border-gold-premium/15 pt-[4mm]";
+        ? "mt-0 flex shrink-0 flex-col border-t border-white/10 pt-[1.5mm] [&>li:not(:last-child)]:border-b [&>li:not(:last-child)]:border-white/10"
+        : "mt-0 flex shrink-0 flex-col border-t border-gold-premium/15 pt-[1.5mm] [&>li:not(:last-child)]:border-b [&>li:not(:last-child)]:border-gold-premium/15";
 
   const itemBase =
     style === "editorial"
-      ? "flex gap-2 rounded-md border border-gold-premium/12 bg-purple-deep/35 px-2 py-1.5 text-[8pt] leading-snug"
+      ? "flex gap-2 rounded-md border border-gold-premium/12 bg-purple-deep/35 px-2 py-1.5 text-[8pt] leading-snug last:border-b-0"
       : style === "minimal"
-        ? "flex gap-2 border-b border-white/8 pb-[2.5mm] text-[8pt] leading-snug last:border-b-0 last:pb-0"
-        : "flex gap-2 border-b border-gold-premium/10 pb-[2.5mm] text-[8pt] leading-snug last:border-b-0 last:pb-0";
+        ? "flex gap-2 py-[2.5mm] text-[8pt] leading-snug"
+        : "flex gap-2 py-[2.5mm] text-[8pt] leading-snug";
 
   const featuredExtra =
     style === "editorial"
@@ -333,10 +333,10 @@ export function TreatmentFlyerCanvas({
 
   const logoCls =
     style === "editorial"
-      ? "h-[56mm] w-[56mm] shrink-0 opacity-95 drop-shadow-[0_0_28px_rgba(197,165,86,0.38)]"
+      ? "-mt-[4mm] h-[56mm] w-[56mm] shrink-0 opacity-95 drop-shadow-[0_0_28px_rgba(197,165,86,0.38)]"
       : style === "noir"
-        ? "h-[58mm] w-[58mm] shrink-0 opacity-[0.98] drop-shadow-[0_0_48px_rgba(197,165,86,0.35)]"
-        : "h-[58mm] w-[58mm] shrink-0 opacity-95 drop-shadow-[0_0_42px_rgba(197,165,86,0.42)]";
+        ? "-mt-[4mm] h-[58mm] w-[58mm] shrink-0 opacity-[0.98] drop-shadow-[0_0_48px_rgba(197,165,86,0.35)]"
+        : "-mt-[4mm] h-[58mm] w-[58mm] shrink-0 opacity-95 drop-shadow-[0_0_42px_rgba(197,165,86,0.42)]";
 
   return (
     <PrintPackMm
@@ -346,7 +346,7 @@ export function TreatmentFlyerCanvas({
       gutterMm={FLYER_GUTTER_MM}
       bleedBackdrop={<BleedBackdrop background={background} style={style} />}
     >
-      <div className="relative z-10 flex h-full flex-col px-[9mm] pb-[7mm] pt-[8mm]">
+      <div className="relative z-10 flex h-full flex-col px-[9mm] pb-[7mm] pt-[6mm]">
         <div className="flex items-start justify-between gap-[3mm]">
           <div className="min-w-0 flex-1 pr-1">
             <p className={eyebrow}>{headerEyebrow}</p>
@@ -369,7 +369,7 @@ export function TreatmentFlyerCanvas({
           />
         </div>
 
-        <div className="flex min-h-0 min-w-0 flex-1 flex-col">
+        <div className="-mt-[7mm] flex min-h-0 min-w-0 flex-1 flex-col">
           <ul className={listWrapCls}>
             {services.map((s) => (
               <li
@@ -381,7 +381,9 @@ export function TreatmentFlyerCanvas({
                     {s.name}
                     {s.featured ? <span className={sigCls}>Signature</span> : null}
                   </p>
-                  <p className="mt-0.5 text-[7pt] text-neutral-gray line-clamp-1">{s.description}</p>
+                  <p className="mt-0.5 text-[7pt] leading-[1.42] text-neutral-gray line-clamp-2 break-words [overflow-wrap:anywhere]">
+                    {s.description}
+                  </p>
                 </div>
                 <div className="shrink-0 text-right">
                   <p className={priceCls}>£{s.price}</p>
@@ -394,7 +396,7 @@ export function TreatmentFlyerCanvas({
           <div className="min-h-0 min-w-0 flex-1" aria-hidden />
         </div>
 
-        <div className={`flex shrink-0 items-end justify-between gap-3 pt-[4mm] ${footerBorder}`}>
+        <div className={`mt-[6mm] flex shrink-0 items-end justify-between gap-3 pt-[7mm] ${footerBorder}`}>
           <div className={`min-w-0 ${footerText}`}>
             <p className={phoneCls}>{phone}</p>
             <p className="mt-0.5">{address.street}</p>

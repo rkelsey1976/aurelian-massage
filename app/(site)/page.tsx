@@ -1,4 +1,5 @@
 import { MapPin, Sparkles, UserCheck } from "lucide-react";
+import { ComingSoonHome } from "@/components/marketing/coming-soon";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { FaqAccordion } from "@/components/marketing/faq-accordion";
 import { Hero } from "@/components/marketing/hero";
@@ -12,21 +13,33 @@ import { services } from "@/lib/services";
 import { siteConfig } from "@/lib/site-config";
 import { testimonials } from "@/lib/testimonials";
 
-export const metadata = createPageMetadata({
-  title: "Swedish & Aromatherapy Massage in Bath | Aurelian Massage",
-  description:
-    "Swedish and aromatherapy massage therapy in Bath city centre. Every session individually tailored to your body's needs at Aurelian Massage.",
-  path: "/",
-  keywords: [
-    "Swedish massage Bath",
-    "aromatherapy massage Bath",
-    "relaxation massage Bath",
-    "massage therapy Bath",
-    "Aurelian Massage",
-  ],
-});
+export const metadata = siteConfig.comingSoon
+  ? createPageMetadata({
+      title: "Coming soon",
+      description:
+        "Aurelian Massage — Swedish & aromatherapy massage in Bath city centre. Our full website is launching soon; book on Fresha or email the studio in the meantime.",
+      path: "/",
+      keywords: ["Aurelian Massage", "massage Bath", "coming soon"],
+    })
+  : createPageMetadata({
+      title: "Swedish & Aromatherapy Massage in Bath | Aurelian Massage",
+      description:
+        "Swedish and aromatherapy massage therapy in Bath city centre. Every session individually tailored to your body's needs at Aurelian Massage.",
+      path: "/",
+      keywords: [
+        "Swedish massage Bath",
+        "aromatherapy massage Bath",
+        "relaxation massage Bath",
+        "massage therapy Bath",
+        "Aurelian Massage",
+      ],
+    });
 
 export default function HomePage() {
+  if (siteConfig.comingSoon) {
+    return <ComingSoonHome />;
+  }
+
   return (
     <>
       <Hero

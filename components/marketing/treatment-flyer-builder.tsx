@@ -366,12 +366,16 @@ export function TreatmentFlyerBuilder({ initial }: { initial: TreatmentFlyerBuil
                     />
                   </label>
                 </div>
-                <input
-                  value={s.description}
-                  onChange={(e) => updateService(i, { description: e.target.value })}
-                  placeholder="Short description (one line on flyer)"
-                  className="mb-2 w-full rounded border border-gold-premium/20 bg-purple-royal px-2 py-1.5 text-sm text-neutral-light"
-                />
+                <label className="mb-2 flex flex-col gap-0.5 text-[10px] text-neutral-gray">
+                  Description (about two lines on the flyer)
+                  <textarea
+                    value={s.description}
+                    onChange={(e) => updateService(i, { description: e.target.value })}
+                    placeholder="Short blurb — wraps here while you edit"
+                    rows={4}
+                    className="min-h-[5.25rem] w-full resize-y rounded border border-gold-premium/20 bg-purple-royal px-2 py-1.5 text-sm text-neutral-light"
+                  />
+                </label>
                 <label className="flex cursor-pointer items-center gap-2 text-neutral-gray">
                   <input
                     type="checkbox"

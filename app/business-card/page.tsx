@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import QRCode from "qrcode";
 
 import { BusinessCardPreviews } from "./business-card-previews";
+import {
+  BUSINESS_CARD_TRIM_H_PX,
+  BUSINESS_CARD_TRIM_W_PX,
+} from "@/components/marketing/business-card-canvas";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -9,10 +14,6 @@ export const metadata: Metadata = {
   description: "Print-ready business card layout for Aurelian Massage.",
   robots: { index: false, follow: false },
 };
-
-/** 3.5 × 2 in at ~120dpi for clear on-screen proofing (420 × 240 px). */
-const CARD_W = 420;
-const CARD_H = 240;
 
 export default async function BusinessCardPage() {
   const { name, owner, address, phone, email, url, bookingUrl } = siteConfig;
@@ -38,14 +39,21 @@ export default async function BusinessCardPage() {
             Business card — {owner.name}
           </h1>
           <p className="max-w-xl text-sm leading-relaxed text-neutral-gray">
-            Each card is <strong className="font-medium text-neutral-light">{CARD_W}×{CARD_H}px</strong>{" "}
+            Each card is{" "}
+            <strong className="font-medium text-neutral-light">
+              {BUSINESS_CARD_TRIM_W_PX}×{BUSINESS_CARD_TRIM_H_PX}px
+            </strong>{" "}
             (3.5×2 proportion). Export or print via your browser; for professional print, use 300dpi assets
             (e.g. 1050×600px) from the same layout. Use <strong className="text-neutral-light">One-sided</strong>{" "}
             for a single print face; Front + Back if you prefer a classic two-sided card. Each sheet includes{" "}
-            <strong className="text-neutral-light">crop marks</strong> on the 420×240 trim plus{" "}
+            <strong className="text-neutral-light">crop marks</strong> on the trim plus{" "}
             <strong className="text-neutral-light">~3mm bleed</strong> (backgrounds extend past trim). Grey area is
             slug margin. Use <strong className="text-neutral-light">Standard (2×)</strong> or{" "}
-            <strong className="text-neutral-light">High-res (5×)</strong> for print.
+            <strong className="text-neutral-light">High-res (5×)</strong> for print.{" "}
+            <Link href="/business-card-builder" className="font-medium text-gold-premium underline-offset-2 hover:underline">
+              Customise in the builder
+            </Link>
+            .
           </p>
         </header>
 

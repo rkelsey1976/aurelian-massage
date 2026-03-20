@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowUpRight,
+  Camera,
   IdCard,
   ImageIcon,
   LayoutGrid,
@@ -10,6 +11,7 @@ import {
   PenLine,
   Share2,
   Sparkles,
+  Store,
 } from "lucide-react";
 
 import { siteConfig } from "@/lib/site-config";
@@ -26,6 +28,12 @@ const assets = [
     title: "Business cards",
     description: "Print-ready card layout with QR and contact details.",
     icon: IdCard,
+  },
+  {
+    href: "/business-card-builder",
+    title: "Business card builder",
+    description: "Edit copy & Fresha link — one-sided or two-sided PNG export with bleed + crop marks.",
+    icon: PenLine,
   },
   {
     href: "/treatment-flyer",
@@ -62,6 +70,18 @@ const assets = [
     title: "Facebook cover builder",
     description: "Custom timeline cover — layouts, copy, backgrounds, PNG export.",
     icon: PanelsTopLeft,
+  },
+  {
+    href: "/google-business-cover-builder",
+    title: "Google Business cover builder",
+    description: "16:9 Business Profile cover — 1024×576 layouts, copy, backgrounds, PNG export.",
+    icon: Store,
+  },
+  {
+    href: "/google-business-photos-builder",
+    title: "Google Business photos builder",
+    description: "Profile logo & listing sizes — 720×720 and 1200×900, captions, PNG export.",
+    icon: Camera,
   },
   {
     href: "/instagram",

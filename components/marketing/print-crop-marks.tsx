@@ -102,7 +102,12 @@ export function PrintPackPx({
           height: bleedH,
         }}
       >
-        <div className="pointer-events-none absolute inset-0">{bleedBackdrop}</div>
+        {/* Slightly oversized backdrop so gradients/solids fully cover bleed (avoids hairline gaps at trim). */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute left-1/2 top-1/2 h-[102%] w-[102%] -translate-x-1/2 -translate-y-1/2">
+            {bleedBackdrop}
+          </div>
+        </div>
         <div
           className={trimClassName}
           style={{
@@ -169,7 +174,11 @@ export function PrintPackMm({
           height: `${bleedH}mm`,
         }}
       >
-        <div className="pointer-events-none absolute inset-0">{bleedBackdrop}</div>
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute left-1/2 top-1/2 h-[102%] w-[102%] -translate-x-1/2 -translate-y-1/2">
+            {bleedBackdrop}
+          </div>
+        </div>
         <div
           className={trimClassName}
           style={{

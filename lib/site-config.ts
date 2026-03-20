@@ -8,7 +8,24 @@ export type BusinessHours = {
   schema: string;
 };
 
+/**
+ * When true (set `NEXT_PUBLIC_COMING_SOON=true` at build/runtime), the public homepage
+ * shows the coming-soon screen instead of the full marketing home.
+ */
+const comingSoon = process.env.NEXT_PUBLIC_COMING_SOON === "true";
+
 export const siteConfig = {
+  comingSoon,
+  /** Copy for the homepage coming-soon state — edit here without touching the component. */
+  comingSoonCopy: {
+    eyebrow: "Aurelian Massage · Bath",
+    headline: "Something golden is on the way",
+    subheadline: "Swedish & aromatherapy massage in Bath city centre",
+    body:
+      "We're refreshing our home online while we keep welcoming clients in the studio. A fuller site with every treatment and story will land here soon — until then, book by link below or get in touch; we'd love to hear from you.",
+    primaryCtaLabel: "Book on Fresha",
+    secondaryCtaLabel: "Email the studio",
+  },
   name: "Aurelian Massage",
   legalName: "Aurelian Massage",
   tagline: "A modern sanctuary inspired by the timeless healing traditions of the City of Bath.",
