@@ -68,9 +68,10 @@ export default function FacebookCoversPage() {
             <strong className="font-medium text-neutral-light">{COVER_W}×{COVER_H}px</strong>{" "}
             (Facebook’s desktop cover size). Use <strong className="text-neutral-light">Download PNG</strong>{" "}
             on each design for a quick export (2× pixel density). You can still screenshot at 100% zoom if
-            you prefer — keep text toward the{" "}
-            <strong className="font-medium text-neutral-light">right or top</strong> so it stays clear of
-            the profile photo overlap on the left.
+            you prefer — note Facebook’s profile photo overlaps the{" "}
+            <strong className="font-medium text-neutral-light">lower left</strong>; these designs keep the
+            main copy <strong className="font-medium text-neutral-light">centred vertically</strong> and{" "}
+            <strong className="font-medium text-neutral-light">left aligned</strong>.
           </p>
           <p className="text-sm text-neutral-gray">
             Build your own copy and background on{" "}
@@ -91,7 +92,7 @@ export default function FacebookCoversPage() {
             filename="facebook-cover-1-luxury-gradient"
             title="1 — Luxury gradient (matches site hero)"
           >
-            <div className="relative flex h-full w-full items-center justify-end bg-gradient-to-br from-purple-royal via-purple-deep to-[#3b2660] pr-10">
+            <div className="relative flex h-full w-full items-center justify-start bg-gradient-to-br from-purple-royal via-purple-deep to-[#3b2660] pl-10 pr-6">
               <div
                 aria-hidden
                 className="noise pointer-events-none absolute inset-0 opacity-100"
@@ -101,7 +102,7 @@ export default function FacebookCoversPage() {
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    "radial-gradient(ellipse 80% 100% at 100% 50%, rgba(122,80,176,0.35) 0%, transparent 55%)",
+                    "radial-gradient(ellipse 80% 100% at 0% 50%, rgba(122,80,176,0.35) 0%, transparent 55%)",
                 }}
               />
               <div
@@ -112,7 +113,7 @@ export default function FacebookCoversPage() {
                     "radial-gradient(ellipse at center, transparent 35%, rgba(20, 12, 32, 0.5) 100%)",
                 }}
               />
-              <div className="relative z-10 max-w-[480px] text-right">
+              <div className="relative z-10 max-w-[480px] text-left">
                 <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.35em] text-gold-premium">
                   Massage therapy
                 </p>
@@ -122,7 +123,7 @@ export default function FacebookCoversPage() {
                 <p className="mt-2 font-serif text-[13px] font-light italic text-neutral-light/85">
                   {address.city} · {address.region}
                 </p>
-                <div className="ml-auto mt-4 h-px w-32 bg-gradient-to-l from-gold-premium to-transparent" />
+                <div className="mr-auto mt-4 h-px w-32 bg-gradient-to-r from-gold-premium to-transparent" />
                 <p className="mt-3 text-[11px] leading-snug text-neutral-gray">{shortTag}</p>
               </div>
             </div>
@@ -144,7 +145,7 @@ export default function FacebookCoversPage() {
                   {name}
                 </p>
               </div>
-              <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-12 pb-6 pt-5 text-center">
+              <div className="relative z-10 flex flex-1 flex-col items-start justify-center px-12 pb-6 pt-5 text-left">
                 <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-gold-premium">
                   {address.city} city centre
                 </p>
@@ -162,7 +163,7 @@ export default function FacebookCoversPage() {
             filename="facebook-cover-3-minimal-wordmark"
             title="3 — Minimal wordmark"
           >
-            <div className="relative flex h-full w-full items-center justify-end bg-purple-deep pr-14">
+            <div className="relative flex h-full w-full items-center justify-start bg-purple-deep pl-14 pr-6">
               <div
                 aria-hidden
                 className="noise pointer-events-none absolute inset-0 opacity-100"
@@ -175,7 +176,7 @@ export default function FacebookCoversPage() {
                     "repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(197,165,86,0.04) 1px, rgba(197,165,86,0.04) 2px)",
                 }}
               />
-              <div className="relative z-10 text-right">
+              <div className="relative z-10 text-left">
                 <p className="font-serif text-[42px] font-semibold leading-none tracking-tight text-neutral-light">
                   Aurelian
                 </p>
@@ -261,7 +262,7 @@ export default function FacebookCoversPage() {
             filename="facebook-cover-5-editorial-services"
             title="5 — Editorial services"
           >
-            <div className="relative flex h-full w-full flex-col justify-center bg-purple-royal pl-[200px] pr-10">
+            <div className="relative flex h-full w-full flex-col justify-center bg-purple-royal pl-[148px] pr-10">
               <div
                 aria-hidden
                 className="noise pointer-events-none absolute inset-0 opacity-100"

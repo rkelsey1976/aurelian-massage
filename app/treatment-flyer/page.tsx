@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import QRCode from "qrcode";
 
 import { TreatmentFlyerPreview } from "./treatment-flyer-preview";
@@ -48,6 +49,16 @@ export default async function TreatmentFlyerPage() {
             <strong className="text-neutral-light">crop marks</strong> on 148×210mm. Use{" "}
             <strong className="text-neutral-light">Standard (2×)</strong> or{" "}
             <strong className="text-neutral-light">High-res (6×)</strong> for print files.
+          </p>
+          <p className="text-sm text-neutral-gray">
+            Custom copy, rows, and backgrounds:{" "}
+            <Link
+              href="/treatment-flyer-builder"
+              className="font-medium text-gold-premium underline-offset-2 hover:underline"
+            >
+              /treatment-flyer-builder
+            </Link>
+            .
           </p>
         </header>
 

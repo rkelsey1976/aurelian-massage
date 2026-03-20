@@ -35,11 +35,12 @@ export default function FacebookCoverBuilderPage() {
           </p>
           <h1 className="font-serif text-3xl font-semibold text-neutral-light">Facebook cover builder</h1>
           <p className="max-w-2xl text-sm leading-relaxed text-neutral-gray">
-            Compose a <strong className="text-neutral-light">820×312px</strong> desktop timeline cover. Choose a
-            layout (copy stays toward the <strong className="text-neutral-light">right</strong> or{" "}
-            <strong className="text-neutral-light">top</strong> where possible), edit text, pick a background, then{" "}
-            <strong className="text-neutral-light">Download PNG</strong> at 2× for a sharp upload. Static cover
-            templates:{" "}
+            Compose a <strong className="text-neutral-light">820×312px</strong> desktop timeline cover.             Pick from <strong className="text-neutral-light">six layouts</strong> (spotlight, gold strip, minimal,
+            editorial, logo spotlight, footer band), <strong className="text-neutral-light">left / centre / right</strong>{" "}
+            alignment where it applies, then edit copy, preset or uploaded background, and{" "}
+            <strong className="text-neutral-light">Download PNG</strong> at 2× for a sharp upload. Facebook’s
+            profile photo sits on the <strong className="text-neutral-light">lower left</strong> — avoid crucial
+            detail there. Static cover templates:{" "}
             <Link href="/facebook-covers" className="font-medium text-gold-premium underline-offset-2 hover:underline">
               /facebook-covers
             </Link>

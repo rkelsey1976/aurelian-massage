@@ -34,6 +34,12 @@ const assets = [
     icon: LayoutGrid,
   },
   {
+    href: "/treatment-flyer-builder",
+    title: "Treatment flyer builder",
+    description: "Edit A5 menu copy, treatment rows, background, booking QR — export PNG.",
+    icon: PenLine,
+  },
+  {
     href: "/facebook",
     title: "Facebook graphics",
     description: "Square and landscape feed assets; Download PNG on each block.",

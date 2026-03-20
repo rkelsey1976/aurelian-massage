@@ -36,7 +36,7 @@ export default function FacebookBuilderPage() {
           <h1 className="font-serif text-3xl font-semibold text-neutral-light">Facebook graphic builder</h1>
           <p className="max-w-2xl text-sm leading-relaxed text-neutral-gray">
             Compose a <strong className="text-neutral-light">540×540px</strong> square (half of 1080×1080). Copy
-            defaults from your site config, then edit text, toggles, and background.{" "}
+            defaults from your site config, then edit text, toggles, preset background, or upload your own image.{" "}
             <strong className="text-neutral-light">Download PNG</strong> exports at 2× for crisp Facebook uploads.
             Static templates without editing live on{" "}
             <Link href="/facebook" className="font-medium text-gold-premium underline-offset-2 hover:underline">

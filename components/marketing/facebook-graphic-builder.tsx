@@ -3,6 +3,11 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
+import {
+  BUILDER_CUSTOM_BG_SELECT,
+  BuilderCustomBackgroundControl,
+  useBuilderCustomBackground,
+} from "@/components/marketing/builder-custom-background";
 import { DownloadableGraphic } from "@/components/marketing/downloadable-graphic";
 
 const SQ = 540;
@@ -76,9 +81,16 @@ export function FacebookGraphicBuilder({ defaults }: { defaults: FacebookBuilder
   const [urlFooter, setUrlFooter] = useState(defaults.urlDisplay);
   const [showUrlFooter, setShowUrlFooter] = useState(true);
   const [bgId, setBgId] = useState<BgId>("gradient-royal");
+  const {
+    dataUrl: customBgUrl,
+    clear: clearCustomBg,
+    onFileChange: onCustomBgFile,
+    fileHint: customBgFileHint,
+  } = useBuilderCustomBackground();
 
   const bg = useMemo(() => BACKGROUNDS.find((b) => b.id === bgId)!, [bgId]);
-  const isPhoto = "src" in bg && Boolean(bg.src);
+  const isPhoto = !customBgUrl && "src" in bg && Boolean(bg.src);
+  const usePhotoLikeBg = Boolean(customBgUrl) || isPhoto;
 
   return (
     <div className="grid gap-10 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:items-start">
@@ -100,10 +112,15 @@ export function FacebookGraphicBuilder({ defaults }: { defaults: FacebookBuilder
         </div>
 
         <div>
-          <label className="text-xs font-medium uppercase tracking-wider text-gold-premium">Background</label>
+          <label className="text-xs font-medium uppercase tracking-wider text-gold-premium">Background preset</label>
           <select
-            value={bgId}
-            onChange={(e) => setBgId(e.target.value as BgId)}
+            value={customBgUrl ? BUILDER_CUSTOM_BG_SELECT : bgId}
+            onChange={(e) => {
+              const v = e.target.value;
+              if (v === BUILDER_CUSTOM_BG_SELECT) return;
+              clearCustomBg();
+              setBgId(v as BgId);
+            }}
             className="mt-2 w-full rounded-md border border-gold-premium/25 bg-purple-royal px-3 py-2 text-sm text-neutral-light focus:outline-none focus:ring-2 focus:ring-gold-premium/50"
           >
             {BACKGROUNDS.map((b) => (
@@ -111,8 +128,19 @@ export function FacebookGraphicBuilder({ defaults }: { defaults: FacebookBuilder
                 {b.label}
               </option>
             ))}
+            {customBgUrl ? (
+              <option value={BUILDER_CUSTOM_BG_SELECT}>Uploaded image</option>
+            ) : null}
           </select>
         </div>
+
+        <BuilderCustomBackgroundControl
+          inputId="fb-graphic-builder-bg-upload"
+          dataUrl={customBgUrl}
+          fileHint={customBgFileHint}
+          onFileChange={onCustomBgFile}
+          onClear={clearCustomBg}
+        />
 
         <label className="flex cursor-pointer items-center gap-2 text-sm text-neutral-gray">
           <input
@@ -255,6 +283,7 @@ export function FacebookGraphicBuilder({ defaults }: { defaults: FacebookBuilder
             setCtaHref(defaults.ctaHref);
             setUrlFooter(defaults.urlDisplay);
             setBgId("gradient-royal");
+            clearCustomBg();
             setLayout("brand");
             setShowCta(false);
             setShowBody(true);
@@ -277,9 +306,31 @@ export function FacebookGraphicBuilder({ defaults }: { defaults: FacebookBuilder
           dimensions={{ width: SQ, height: SQ }}
         >
           <div
-            className={`relative flex h-full w-full flex-col ${isPhoto ? "bg-purple-royal" : (bg as BgOption & { className: string }).className}`}
+            className={`relative flex h-full w-full flex-col ${
+              usePhotoLikeBg ? "bg-purple-royal" : (bg as BgOption & { className: string }).className
+            }`}
           >
-            {isPhoto ? (
+            {customBgUrl ? (
+              <>
+                <div className="absolute inset-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- user data URL */}
+                  <img
+                    src={customBgUrl}
+                    alt=""
+                    className="h-full w-full object-cover object-center"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(32,21,46,0.88) 0%, rgba(44,30,66,0.72) 50%, rgba(32,21,46,0.85) 100%)",
+                    }}
+                  />
+                </div>
+                <div aria-hidden className="noise pointer-events-none absolute inset-0 opacity-70" />
+              </>
+            ) : isPhoto ? (
               <>
                 <div className="absolute inset-0">
                   <Image
