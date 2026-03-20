@@ -271,7 +271,7 @@ export default async function TreatmentPage({ params }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Book now: ${name}`}
-                className="mt-7 flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-on-gold transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+                className="mt-7 flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-on-gold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                 style={{
                   background: "#C5A556",
                   boxShadow: "0 0 20px rgba(197,165,86,0.25)",

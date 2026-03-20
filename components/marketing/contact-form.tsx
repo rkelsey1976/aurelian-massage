@@ -58,7 +58,7 @@ export function ContactForm() {
           href={siteConfig.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-on-gold transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+          className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-on-gold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
           style={{ background: "#C5A556" }}
         >
           <CalendarCheck size={14} aria-hidden="true" />
@@ -186,7 +186,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-on-gold transition-all duration-300 hover:scale-[1.02] hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-royal disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-on-gold transition-all duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-royal disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
         style={{
           background: "#C5A556",
           boxShadow: "0 0 24px rgba(197,165,86,0.30), 0 4px 16px rgba(32,21,46,0.4)",

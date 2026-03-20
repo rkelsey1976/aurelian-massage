@@ -25,6 +25,10 @@ const stats = [
 ];
 
 export default function TreatmentsPage() {
+  const menuOrder = [...services].sort(
+    (a, b) => a.duration - b.duration || a.price - b.price || a.name.localeCompare(b.name),
+  );
+
   return (
     <>
       {/* ── Hero ── */}
@@ -157,7 +161,84 @@ export default function TreatmentsPage() {
           and we will help you decide.
         </p>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-accent">
+            Full treatment list
+          </p>
+          <p className="mt-2 max-w-xl text-sm leading-6 text-neutral-mid">
+            Durations and prices at a glance. Select a treatment for full details and FAQs.
+          </p>
+          <div className="mt-6 overflow-x-auto rounded-2xl border border-gold-accent/20 bg-[#2C1E42]/60 shadow-[0_4px_24px_rgba(32,21,46,0.45)]">
+            <table className="w-full min-w-[300px] border-collapse text-left text-sm">
+              <caption className="sr-only">
+                Full Aurelian Massage treatment menu: name, duration, and price per session
+              </caption>
+              <thead>
+                <tr className="border-b border-gold-accent/25 bg-purple-deep/90">
+                  <th
+                    scope="col"
+                    className="px-5 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold-accent"
+                  >
+                    Treatment
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-5 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold-accent"
+                  >
+                    Duration
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-5 py-4 text-right text-xs font-semibold uppercase tracking-[0.2em] text-gold-accent"
+                  >
+                    <span className="inline-flex items-center gap-1">
+                      <PoundSterling size={12} strokeWidth={2} aria-hidden="true" />
+                      Price
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-neutral-mid">
+                {menuOrder.map((service) => (
+                  <tr
+                    key={service.slug}
+                    className="border-b border-gold-accent/10 transition-colors last:border-b-0 hover:bg-purple-deep/40"
+                  >
+                    <td className="px-5 py-4">
+                      <Link
+                        href={`/treatments/${service.slug}`}
+                        className="group inline-flex flex-wrap items-baseline gap-x-2 gap-y-0.5 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+                      >
+                        <span className="font-serif font-medium text-neutral-light underline-offset-4 group-hover:text-gold-champagne group-hover:underline">
+                          {service.name}
+                        </span>
+                        {service.featured ? (
+                          <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold-accent">
+                            Signature
+                          </span>
+                        ) : null}
+                      </Link>
+                    </td>
+                    <td className="whitespace-nowrap px-5 py-4 text-neutral-mid/90">
+                      <span className="inline-flex items-center gap-1.5">
+                        <Clock size={13} strokeWidth={1.5} aria-hidden="true" />
+                        {service.duration} min
+                      </span>
+                    </td>
+                    <td className="whitespace-nowrap px-5 py-4 text-right font-serif text-base font-semibold text-gold-accent">
+                      £{service.price}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-xs text-neutral-mid/70">
+            Prices are per session unless stated otherwise. Your therapist adapts pressure and focus on the day.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <Link
               key={service.slug}

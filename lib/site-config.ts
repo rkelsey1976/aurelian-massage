@@ -21,6 +21,11 @@ export const siteConfig = {
     "https://www.google.com/maps/place/Aurelian+massage/data=!4m2!3m1!1s0x0:0xd43308dbf33709de",
   email: "ross@aurelianmassage.com",
   phone: "07388 007570",
+  /** Personal name / role for print materials (e.g. business card). */
+  owner: {
+    name: "Ross",
+    title: "Massage Therapist",
+  },
   defaultOgImage: "/api/og",
   address: {
     street: "16 St Peters Terrace",

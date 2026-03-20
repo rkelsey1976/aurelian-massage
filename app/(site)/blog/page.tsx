@@ -182,7 +182,7 @@ export default function BlogIndexPage() {
 
                 <Link
                   href={`/blog/${featured.slug}`}
-                  className="mt-7 inline-flex w-fit items-center gap-2 rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-on-gold transition-all duration-200 hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+                  className="mt-7 inline-flex w-fit items-center gap-2 rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-on-gold transition-all duration-200 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
                   style={{ background: "#C5A556" }}
                 >
                   Read article

@@ -6,8 +6,8 @@
   --color-purple-mid: #7a50b0;
   --color-purple-plum: #5c3d88;
   --color-purple-dark: #20152e;
-  /* Near-black for text on #C5A556 buttons — meets WCAG AA vs brand purple on gold */
-  --color-on-gold: #0d0812;
+  /* Black on #C5A556 — maximum contrast for WCAG AA on gold CTAs */
+  --color-on-gold: #000000;
   --color-gold-premium: #c5a556;
   --color-gold-accent: #c5a556;
   --color-gold-champagne: #dfc98a;

@@ -90,7 +90,7 @@ export default function ContactPage() {
               href={siteConfig.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-on-gold transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-on-gold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
               style={{ background: "#C5A556" }}
             >
               <CalendarCheck size={14} aria-hidden="true" />
@@ -250,7 +250,7 @@ export default function ContactPage() {
                 href={siteConfig.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold text-on-gold transition-all duration-300 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+                className="mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold text-on-gold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
                 style={{ background: "#C5A556" }}
               >
                 <CalendarCheck size={13} aria-hidden="true" />
