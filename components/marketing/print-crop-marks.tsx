@@ -1,22 +1,23 @@
 import type { CSSProperties, ReactNode } from "react";
 
-/** Corner crop marks: lines extend outward from trim by `gap` then `markLen`. */
+/** Corner crop marks on trim; lines extend outward from trim by `gap` then `markLen`. */
 function trimCornerLines(
-  t: number,
+  trimLeft: number,
+  trimTop: number,
   trimW: number,
   trimH: number,
   markLen: number,
   gap: number,
 ): Array<[number, number, number, number]> {
-  const x2 = t + trimW;
-  const y2 = t + trimH;
+  const x2 = trimLeft + trimW;
+  const y2 = trimTop + trimH;
   return [
-    [t - gap - markLen, t, t - gap, t],
-    [t, t - gap - markLen, t, t - gap],
-    [x2 + gap, t, x2 + gap + markLen, t],
-    [x2, t - gap - markLen, x2, t - gap],
-    [t - gap - markLen, y2, t - gap, y2],
-    [t, y2 + gap, t, y2 + gap + markLen],
+    [trimLeft - gap - markLen, trimTop, trimLeft - gap, trimTop],
+    [trimLeft, trimTop - gap - markLen, trimLeft, trimTop - gap],
+    [x2 + gap, trimTop, x2 + gap + markLen, trimTop],
+    [x2, trimTop - gap - markLen, x2, trimTop - gap],
+    [trimLeft - gap - markLen, y2, trimLeft - gap, y2],
+    [trimLeft, y2 + gap, trimLeft, y2 + gap + markLen],
     [x2 + gap, y2, x2 + gap + markLen, y2],
     [x2, y2 + gap, x2, y2 + gap + markLen],
   ];
@@ -51,30 +52,40 @@ function CropMarkLines({
 type PrintPackPxProps = {
   trimWidthPx: number;
   trimHeightPx: number;
-  /** Margin around trim where marks sit (default 24). */
+  /** ~3mm at this trim scale (3.5×2 in card). */
+  bleedPx: number;
+  /** Full-bleed layers (gradients, textures) — must fill behind trim. */
+  bleedBackdrop: ReactNode;
+  /** Margin outside bleed box for crop marks (default 24). */
   gutterPx?: number;
   markLengthPx?: number;
   gapPx?: number;
+  /** Trim-only content (stays inside final cut); padded automatically by `bleedPx`. */
   children: ReactNode;
-  /** Optional class on the trim (card) box. */
   trimClassName?: string;
   trimStyle?: CSSProperties;
 };
 
-/** Screen / raster sheet in pixels — light gutter + crop marks at trim. */
+/** Sheet: gutter + bleed box + gutter. Marks on trim; backdrop fills full bleed. */
 export function PrintPackPx({
   trimWidthPx,
   trimHeightPx,
+  bleedPx,
+  bleedBackdrop,
   gutterPx = 24,
   markLengthPx = 11,
   gapPx = 2,
   children,
-  trimClassName = "overflow-hidden rounded-md shadow-purple-depth",
+  trimClassName = "relative z-10 box-border min-h-0 min-w-0 overflow-hidden rounded-md shadow-purple-depth",
   trimStyle,
 }: PrintPackPxProps) {
-  const sheetW = trimWidthPx + 2 * gutterPx;
-  const sheetH = trimHeightPx + 2 * gutterPx;
-  const lines = trimCornerLines(gutterPx, trimWidthPx, trimHeightPx, markLengthPx, gapPx);
+  const bleedW = trimWidthPx + 2 * bleedPx;
+  const bleedH = trimHeightPx + 2 * bleedPx;
+  const sheetW = bleedW + 2 * gutterPx;
+  const sheetH = bleedH + 2 * gutterPx;
+  const trimLeft = gutterPx + bleedPx;
+  const trimTop = gutterPx + bleedPx;
+  const lines = trimCornerLines(trimLeft, trimTop, trimWidthPx, trimHeightPx, markLengthPx, gapPx);
 
   return (
     <div
@@ -83,16 +94,26 @@ export function PrintPackPx({
     >
       <CropMarkLines lines={lines} strokeWidth={1} viewBoxW={sheetW} viewBoxH={sheetH} />
       <div
-        className={`absolute ${trimClassName}`}
+        className="absolute overflow-hidden rounded-md"
         style={{
           left: gutterPx,
           top: gutterPx,
-          width: trimWidthPx,
-          height: trimHeightPx,
-          ...trimStyle,
+          width: bleedW,
+          height: bleedH,
         }}
       >
-        {children}
+        <div className="pointer-events-none absolute inset-0">{bleedBackdrop}</div>
+        <div
+          className={trimClassName}
+          style={{
+            margin: bleedPx,
+            width: trimWidthPx,
+            height: trimHeightPx,
+            ...trimStyle,
+          }}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
@@ -101,6 +122,9 @@ export function PrintPackPx({
 type PrintPackMmProps = {
   trimWidthMm: number;
   trimHeightMm: number;
+  /** Standard litho bleed (default 3mm). */
+  bleedMm: number;
+  bleedBackdrop: ReactNode;
   gutterMm?: number;
   markLengthMm?: number;
   gapMm?: number;
@@ -109,20 +133,26 @@ type PrintPackMmProps = {
   trimStyle?: CSSProperties;
 };
 
-/** ISO-style sheet in mm (e.g. A5 + gutter) with crop marks in document units. */
+/** ISO sheet: gutter + (trim + 2×bleed) + gutter. */
 export function PrintPackMm({
   trimWidthMm,
   trimHeightMm,
+  bleedMm,
+  bleedBackdrop,
   gutterMm = 4,
   markLengthMm = 2.5,
   gapMm = 0.75,
   children,
-  trimClassName = "overflow-hidden rounded-sm shadow-purple-depth",
+  trimClassName = "relative z-10 box-border min-h-0 min-w-0 overflow-hidden rounded-sm shadow-purple-depth",
   trimStyle,
 }: PrintPackMmProps) {
-  const sheetW = trimWidthMm + 2 * gutterMm;
-  const sheetH = trimHeightMm + 2 * gutterMm;
-  const lines = trimCornerLines(gutterMm, trimWidthMm, trimHeightMm, markLengthMm, gapMm);
+  const bleedW = trimWidthMm + 2 * bleedMm;
+  const bleedH = trimHeightMm + 2 * bleedMm;
+  const sheetW = bleedW + 2 * gutterMm;
+  const sheetH = bleedH + 2 * gutterMm;
+  const trimLeft = gutterMm + bleedMm;
+  const trimTop = gutterMm + bleedMm;
+  const lines = trimCornerLines(trimLeft, trimTop, trimWidthMm, trimHeightMm, markLengthMm, gapMm);
 
   return (
     <div
@@ -131,17 +161,32 @@ export function PrintPackMm({
     >
       <CropMarkLines lines={lines} strokeWidth={0.25} viewBoxW={sheetW} viewBoxH={sheetH} />
       <div
-        className={`absolute ${trimClassName}`}
+        className="absolute overflow-hidden rounded-sm"
         style={{
           left: `${gutterMm}mm`,
           top: `${gutterMm}mm`,
-          width: `${trimWidthMm}mm`,
-          height: `${trimHeightMm}mm`,
-          ...trimStyle,
+          width: `${bleedW}mm`,
+          height: `${bleedH}mm`,
         }}
       >
-        {children}
+        <div className="pointer-events-none absolute inset-0">{bleedBackdrop}</div>
+        <div
+          className={trimClassName}
+          style={{
+            margin: `${bleedMm}mm`,
+            width: `${trimWidthMm}mm`,
+            height: `${trimHeightMm}mm`,
+            ...trimStyle,
+          }}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
+}
+
+/** ~3mm bleed in px for a 3.5×2 in card at the given trim pixel width. */
+export function cardBleedPx(trimWidthPx: number, trimWidthInches = 3.5, bleedMm = 3) {
+  return Math.round((trimWidthPx / trimWidthInches) * (bleedMm / 25.4));
 }

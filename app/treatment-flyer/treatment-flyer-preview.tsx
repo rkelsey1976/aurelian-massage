@@ -7,9 +7,12 @@ import { PrintPackMm } from "@/components/marketing/print-crop-marks";
 
 const FLYER_TRIM_W_MM = 148;
 const FLYER_TRIM_H_MM = 210;
+const FLYER_BLEED_MM = 3;
 const FLYER_GUTTER_MM = 4;
-const FLYER_SHEET_W_MM = FLYER_TRIM_W_MM + 2 * FLYER_GUTTER_MM;
-const FLYER_SHEET_H_MM = FLYER_TRIM_H_MM + 2 * FLYER_GUTTER_MM;
+const FLYER_BLEED_W_MM = FLYER_TRIM_W_MM + 2 * FLYER_BLEED_MM;
+const FLYER_BLEED_H_MM = FLYER_TRIM_H_MM + 2 * FLYER_BLEED_MM;
+const FLYER_SHEET_W_MM = FLYER_BLEED_W_MM + 2 * FLYER_GUTTER_MM;
+const FLYER_SHEET_H_MM = FLYER_BLEED_H_MM + 2 * FLYER_GUTTER_MM;
 
 export type FlyerService = {
   slug: string;
@@ -46,7 +49,7 @@ export function TreatmentFlyerPreview({
       id="treatment-flyer-a5"
       filename="treatment-flyer-a5"
       title="Print preview"
-      note={`Trim ${FLYER_TRIM_W_MM}×${FLYER_TRIM_H_MM}mm A5, ${FLYER_GUTTER_MM}mm gutter + crop marks. Standard (2×) for proof; High-res (6×) for large print files.`}
+      note={`Trim ${FLYER_TRIM_W_MM}×${FLYER_TRIM_H_MM}mm + ${FLYER_BLEED_MM}mm bleed + crop marks. Standard (2×) or High-res (6×).`}
       dimensions={{ width: `${FLYER_SHEET_W_MM}mm`, height: `${FLYER_SHEET_H_MM}mm` }}
       highResFilename="treatment-flyer-a5-hires"
       highResPixelRatio={6}
@@ -54,38 +57,39 @@ export function TreatmentFlyerPreview({
       <PrintPackMm
         trimWidthMm={FLYER_TRIM_W_MM}
         trimHeightMm={FLYER_TRIM_H_MM}
+        bleedMm={FLYER_BLEED_MM}
         gutterMm={FLYER_GUTTER_MM}
+        bleedBackdrop={
+          <div className="absolute inset-0">
+            <Image
+              src="/back-massage.png"
+              alt=""
+              fill
+              priority
+              unoptimized
+              className="object-cover object-center"
+              sizes="600px"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(165deg, rgba(32,21,46,0.94) 0%, rgba(44,30,66,0.88) 45%, rgba(32,21,46,0.92) 100%)",
+              }}
+            />
+            <div aria-hidden className="noise absolute inset-0" />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-35"
+              style={{
+                background:
+                  "radial-gradient(ellipse 80% 60% at 100% 0%, rgba(122,80,176,0.4) 0%, transparent 55%)",
+              }}
+            />
+          </div>
+        }
       >
-        <div className="relative h-full w-full">
-        <div className="absolute inset-0">
-          <Image
-            src="/back-massage.png"
-            alt=""
-            fill
-            priority
-            unoptimized
-            className="object-cover object-center"
-            sizes="600px"
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(165deg, rgba(32,21,46,0.94) 0%, rgba(44,30,66,0.88) 45%, rgba(32,21,46,0.92) 100%)",
-            }}
-          />
-          <div aria-hidden className="noise absolute inset-0" />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 opacity-35"
-            style={{
-              background:
-                "radial-gradient(ellipse 80% 60% at 100% 0%, rgba(122,80,176,0.4) 0%, transparent 55%)",
-            }}
-          />
-        </div>
-
         <div className="relative z-10 flex h-full flex-col px-[9mm] pb-[7mm] pt-[8mm]">
           <div className="flex items-start justify-between gap-[3mm]">
             <div className="min-w-0 flex-1 pr-1">
@@ -184,7 +188,6 @@ export function TreatmentFlyerPreview({
             </div>
           </div>
         </div>
-      </div>
       </PrintPackMm>
     </DownloadableGraphic>
   );
