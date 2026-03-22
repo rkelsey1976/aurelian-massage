@@ -18,4 +18,5 @@ export const INTERNAL_ASSET_PATHS: readonly string[] = [
   "/google-business-cover-builder",
   "/google-business-photos-builder",
   "/instagram",
+  "/logo-assets",
 ];

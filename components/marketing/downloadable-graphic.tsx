@@ -18,6 +18,8 @@ type DownloadableGraphicProps = {
   highResPixelRatio?: number;
   /** Capture root classes (default rounded preview + shadow). Use square corners for print sheets. */
   frameClassName?: string;
+  /** Passed to html-to-image — use `"transparent"` for logo / alpha exports. */
+  exportBackgroundColor?: string;
 };
 
 function sanitizeFilename(name: string) {
@@ -100,6 +102,7 @@ export function DownloadableGraphic({
   pixelRatio = 2,
   highResPixelRatio = 5,
   frameClassName = "relative overflow-hidden rounded-lg shadow-purple-depth",
+  exportBackgroundColor,
 }: DownloadableGraphicProps) {
   const [busy, setBusy] = useState<false | "quick" | "high">(false);
   const [error, setError] = useState<string | null>(null);
@@ -116,12 +119,13 @@ export function DownloadableGraphic({
         pixelRatio: ratio,
         cacheBust: true,
         skipFonts: true,
+        ...(exportBackgroundColor !== undefined ? { backgroundColor: exportBackgroundColor } : {}),
       });
       const a = document.createElement("a");
       a.download = `${sanitizeFilename(fileBase)}.png`;
       a.href = dataUrl;
       a.click();
-  }, [id]);
+  }, [id, exportBackgroundColor]);
 
   const downloadQuick = useCallback(async () => {
     setError(null);

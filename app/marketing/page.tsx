@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ComponentType } from "react";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -13,6 +14,7 @@ import {
   Sparkles,
   Store,
   Ticket,
+  Gem,
 } from "lucide-react";
 
 import { siteConfig } from "@/lib/site-config";
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const assets = [
+const printAssets = [
   {
     href: "/business-card",
     title: "Business cards",
@@ -53,6 +55,15 @@ const assets = [
     title: "Treatment flyer builder",
     description: "Edit A5 menu copy, treatment rows, background, booking QR — export PNG.",
     icon: PenLine,
+  },
+] as const;
+
+const mediaAssets = [
+  {
+    href: "/logo-assets",
+    title: "Logo (PNG)",
+    description: "Transparent PNG — brand gold, grayscale, and black variants.",
+    icon: Gem,
   },
   {
     href: "/facebook",
@@ -98,6 +109,44 @@ const assets = [
   },
 ] as const;
 
+type HubAsset = {
+  href: string;
+  title: string;
+  description: string;
+  icon: ComponentType<{ size?: number; strokeWidth?: number; "aria-hidden"?: boolean }>;
+};
+
+function AssetList({ items, labelledBy }: { items: readonly HubAsset[]; labelledBy: string }) {
+  return (
+    <ul className="space-y-3" aria-labelledby={labelledBy}>
+      {items.map(({ href, title, description, icon: Icon }) => (
+        <li key={href}>
+          <Link
+            href={href}
+            className="group flex gap-4 rounded-xl border border-gold-premium/15 bg-purple-deep/40 px-5 py-4 transition hover:border-gold-premium/35 hover:bg-purple-deep/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-premium focus-visible:ring-offset-2 focus-visible:ring-offset-purple-royal"
+          >
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gold-premium/20 bg-purple-royal/80 text-gold-premium transition group-hover:border-gold-premium/40">
+              <Icon size={20} strokeWidth={1.5} aria-hidden />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="flex items-center gap-2 font-serif text-lg font-medium text-neutral-light group-hover:text-gold-champagne">
+                {title}
+                <ArrowUpRight
+                  size={16}
+                  strokeWidth={2}
+                  className="shrink-0 opacity-50 transition group-hover:opacity-100"
+                  aria-hidden
+                />
+              </span>
+              <span className="mt-1 block text-sm leading-relaxed text-neutral-gray">{description}</span>
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function MarketingHubPage() {
   const { name } = siteConfig;
 
@@ -117,41 +166,28 @@ export default function MarketingHubPage() {
                 Marketing hub
               </h1>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-neutral-gray">
-                Quick access to <strong className="text-neutral-light">{name}</strong> asset pages — cards,
-                flyers, and social templates. These URLs are hidden from search; bookmark this page for the
-                team.
+                Quick access to <strong className="text-neutral-light">{name}</strong> asset pages — print
+                materials, media (logo &amp; social), and Google Business tools. These URLs are hidden from
+                search; bookmark this page for the team.
               </p>
             </div>
           </div>
         </header>
 
-        <nav aria-label="Marketing asset pages">
-          <ul className="space-y-3">
-            {assets.map(({ href, title, description, icon: Icon }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="group flex gap-4 rounded-xl border border-gold-premium/15 bg-purple-deep/40 px-5 py-4 transition hover:border-gold-premium/35 hover:bg-purple-deep/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-premium focus-visible:ring-offset-2 focus-visible:ring-offset-purple-royal"
-                >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gold-premium/20 bg-purple-royal/80 text-gold-premium transition group-hover:border-gold-premium/40">
-                    <Icon size={20} strokeWidth={1.5} aria-hidden />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="flex items-center gap-2 font-serif text-lg font-medium text-neutral-light group-hover:text-gold-champagne">
-                      {title}
-                      <ArrowUpRight
-                        size={16}
-                        strokeWidth={2}
-                        className="shrink-0 opacity-50 transition group-hover:opacity-100"
-                        aria-hidden
-                      />
-                    </span>
-                    <span className="mt-1 block text-sm leading-relaxed text-neutral-gray">{description}</span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav aria-label="Marketing asset pages" className="space-y-10">
+          <section className="space-y-4">
+            <h2 id="hub-print" className="text-sm font-semibold uppercase tracking-[0.22em] text-gold-premium">
+              Print &amp; cards
+            </h2>
+            <AssetList items={printAssets} labelledBy="hub-print" />
+          </section>
+
+          <section className="space-y-4">
+            <h2 id="hub-media" className="text-sm font-semibold uppercase tracking-[0.22em] text-gold-premium">
+              Media
+            </h2>
+            <AssetList items={mediaAssets} labelledBy="hub-media" />
+          </section>
         </nav>
 
         <footer className="border-t border-gold-premium/15 pt-8 text-sm text-neutral-gray">

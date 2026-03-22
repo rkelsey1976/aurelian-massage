@@ -30,5 +30,6 @@ export const config = {
     "/google-business-cover-builder",
     "/google-business-photos-builder",
     "/instagram",
+    "/logo-assets",
   ],
 };
