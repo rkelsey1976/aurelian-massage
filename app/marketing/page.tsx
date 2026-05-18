@@ -66,6 +66,12 @@ const mediaAssets = [
     icon: Gem,
   },
   {
+    href: "/logo-builder",
+    title: "Logo builder",
+    description: "60×60 cm square export — choose background, logo colour, standard or print-ready PNG.",
+    icon: PenLine,
+  },
+  {
     href: "/facebook",
     title: "Facebook graphics",
     description: "Square and landscape feed assets; Download PNG on each block.",
