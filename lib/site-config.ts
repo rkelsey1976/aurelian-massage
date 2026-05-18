@@ -65,6 +65,10 @@ export const siteConfig = {
       schema: "We 10:00-21:00",
     },
     {
+      label: "Friday 10:00 AM to 5:00 PM",
+      schema: "Fr 10:00-17:00",
+    },
+    {
       label: "Sunday 10:00 AM to 4:00 PM",
       schema: "Su 10:00-16:00",
     },
