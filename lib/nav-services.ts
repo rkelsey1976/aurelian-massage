@@ -84,6 +84,18 @@ export const navServiceGroups: NavServiceGroup[] = [
       },
     ],
   },
+  {
+    title: "Specialist",
+    services: [
+      {
+        label: "Myofascial Cupping & Massage",
+        href: "/treatments/myofascial-cupping-and-massage",
+        description: "Cupping with therapeutic massage",
+        duration: 60,
+        price: 75,
+      },
+    ],
+  },
 ];
 
 export const megaMenuFeatured: MegaMenuFeatured = {

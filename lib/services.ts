@@ -334,4 +334,49 @@ export const services: Service[] = [
       },
     ],
   },
+  {
+    slug: "myofascial-cupping-and-massage",
+    name: "Myofascial Cupping and Massage",
+    duration: 60,
+    price: 75,
+    image: "/hot-stones.png",
+    gradient:
+      "linear-gradient(160deg, rgba(60,20,10,0.55) 0%, rgba(140,60,30,0.75) 100%)",
+    description:
+      "Experience unparalleled relaxation and tension relief with our myofascial cupping and massage service. By combining the age-old technique of cupping with skilled massage methods, this treatment effectively eases muscle tightness, improves flexibility, and promotes your overall wellbeing.",
+    idealFor: [
+      "Those seeking deep muscular release and improved flexibility",
+      "People with persistent muscle tightness or restricted movement",
+      "Anyone wanting a balanced therapy that cares for both body and mind",
+      "Those curious about cupping combined with therapeutic massage",
+    ],
+    benefits: [
+      "Effectively eases muscle tightness and tension across the body",
+      "Improves flexibility and range of movement",
+      "Promotes deep relaxation and mental calm",
+      "Supports overall physical and emotional wellbeing",
+    ],
+    faqs: [
+      {
+        question: "What is myofascial cupping and how does it feel?",
+        answer:
+          "Myofascial cupping uses suction cups to lift and release tension in the fascia and muscle tissue. It is often combined with flowing massage strokes to create a treatment that is both therapeutic and relaxing. Most clients feel a gentle pulling sensation followed by a noticeable release in tight areas.",
+      },
+      {
+        question: "Who should avoid this treatment?",
+        answer:
+          "This treatment is not suitable for individuals with bleeding conditions, those taking blood thinners, anyone with active skin conditions or open wounds, people with a history of DVT (deep vein thrombosis), pregnant clients, those with severe organ failure, people with uncontrolled diabetes, or anyone with a pacemaker. If you are unsure, please contact us before booking.",
+      },
+      {
+        question: "Will cupping leave marks on my skin?",
+        answer:
+          "Cupping can sometimes leave temporary circular marks where the cups have been placed. These are not bruises and typically fade within a few days to a week. Your therapist will explain this during your consultation and can adjust the suction to suit your comfort level.",
+      },
+      {
+        question: "What should I do after a cupping and massage session?",
+        answer:
+          "We recommend drinking plenty of water, avoiding intense exercise for the rest of the day, and keeping the treated area warm. Some clients feel deeply relaxed or slightly tired afterwards, which is a normal response as the body releases tension.",
+      },
+    ],
+  },
 ];

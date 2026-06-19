@@ -19,7 +19,7 @@ export const metadata = createPageMetadata({
 });
 
 const stats = [
-  { value: "7", label: "Treatments" },
+  { value: "8", label: "Treatments" },
   { value: "30–90", label: "Minutes" },
   { value: "From £30", label: "Per session" },
 ];
