@@ -40,7 +40,7 @@ export const navServiceGroups: NavServiceGroup[] = [
     ],
   },
   {
-    title: "Aromatherapy",
+    title: "Aromatherapy & Specialist",
     services: [
       {
         label: "Revitalising Aromatherapy",
@@ -56,11 +56,6 @@ export const navServiceGroups: NavServiceGroup[] = [
         duration: 60,
         price: 68,
       },
-    ],
-  },
-  {
-    title: "Specialist",
-    services: [
       {
         label: "Myofascial Cupping & Massage",
         href: "/treatments/myofascial-cupping-and-massage",
