@@ -40,32 +40,6 @@ export const navServiceGroups: NavServiceGroup[] = [
     ],
   },
   {
-    title: "Full Body",
-    services: [
-      {
-        label: "Signature Swedish Full Body",
-        href: "/treatments/signature-swedish-full-body",
-        description: "Classic relaxation head to toe",
-        duration: 60,
-        price: 60,
-      },
-      {
-        label: "Aurelian Signature Massage",
-        href: "/treatments/aurelian-signature-massage",
-        description: "Our definitive treatment",
-        duration: 75,
-        price: 72,
-      },
-      {
-        label: "Ultimate Relaxation Massage",
-        href: "/treatments/ultimate-relaxation-massage",
-        description: "Deeply indulgent full body session",
-        duration: 90,
-        price: 90,
-      },
-    ],
-  },
-  {
     title: "Aromatherapy",
     services: [
       {
@@ -93,6 +67,32 @@ export const navServiceGroups: NavServiceGroup[] = [
         description: "Cupping with therapeutic massage",
         duration: 60,
         price: 75,
+      },
+    ],
+  },
+  {
+    title: "Full Body",
+    services: [
+      {
+        label: "Signature Swedish Full Body",
+        href: "/treatments/signature-swedish-full-body",
+        description: "Classic relaxation head to toe",
+        duration: 60,
+        price: 60,
+      },
+      {
+        label: "Aurelian Signature Massage",
+        href: "/treatments/aurelian-signature-massage",
+        description: "Our definitive treatment",
+        duration: 75,
+        price: 72,
+      },
+      {
+        label: "Ultimate Relaxation Massage",
+        href: "/treatments/ultimate-relaxation-massage",
+        description: "Deeply indulgent full body session",
+        duration: 90,
+        price: 90,
       },
     ],
   },
