@@ -50,6 +50,11 @@ export type MassageBusiness = {
   knowsAbout: { "@type": "Place"; name: string; url: string }[];
   openingHours: string[];
   sameAs?: string[];
+  aggregateRating: {
+    "@type": "AggregateRating";
+    ratingValue: number;
+    reviewCount: number;
+  };
   makesOffer: {
     "@type": "Offer";
     itemOffered: {
@@ -106,6 +111,11 @@ function buildBathLocalBusinessSchema(): MassageBusiness {
     })),
     openingHours: siteConfig.openingHours.map((h) => h.schema),
     sameAs,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: siteConfig.reviews.ratingValue,
+      reviewCount: siteConfig.reviews.reviewCount,
+    },
     makesOffer: services.map((service) => ({
       "@type": "Offer",
       itemOffered: {

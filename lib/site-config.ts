@@ -57,22 +57,31 @@ export const siteConfig = {
   },
   openingHours: [
     {
-      label: "Tuesday 10:00 AM to 9:00 PM",
-      schema: "Tu 10:00-21:00",
+      label: "Monday 10:00 AM to 5:00 PM",
+      schema: "Mo 10:00-17:00",
     },
     {
-      label: "Wednesday 10:00 AM to 9:00 PM",
-      schema: "We 10:00-21:00",
+      label: "Thursday 10:00 AM to 5:00 PM",
+      schema: "Th 10:00-17:00",
     },
     {
       label: "Friday 10:00 AM to 5:00 PM",
       schema: "Fr 10:00-17:00",
     },
     {
-      label: "Sunday 10:00 AM to 4:00 PM",
-      schema: "Su 10:00-16:00",
+      label: "Saturday 10:00 AM to 5:00 PM",
+      schema: "Sa 10:00-17:00",
+    },
+    {
+      label: "Sunday 10:00 AM to 5:00 PM",
+      schema: "Su 10:00-17:00",
     },
   ] satisfies BusinessHours[],
+  /** Aggregate rating as shown on the Google Business Profile listing. */
+  reviews: {
+    ratingValue: 5.0,
+    reviewCount: 24,
+  },
   serviceAreas: [
     {
       city: "Bath",

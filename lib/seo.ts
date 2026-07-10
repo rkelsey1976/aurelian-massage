@@ -113,6 +113,11 @@ export function buildLocalBusinessSchema() {
     })),
     openingHours: siteConfig.openingHours.map((hours) => hours.schema),
     sameAs,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: siteConfig.reviews.ratingValue,
+      reviewCount: siteConfig.reviews.reviewCount,
+    },
   };
 }
 

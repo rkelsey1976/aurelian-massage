@@ -2,6 +2,7 @@ import { MapPin, Sparkles, UserCheck } from "lucide-react";
 import { ComingSoonHome } from "@/components/marketing/coming-soon";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { FaqAccordion } from "@/components/marketing/faq-accordion";
+import { GoogleReviewsBadge } from "@/components/marketing/google-reviews-badge";
 import { Hero } from "@/components/marketing/hero";
 import { ParallaxPhotoGrid } from "@/components/marketing/parallax-photo-grid";
 import { ServiceCarousel } from "@/components/marketing/service-carousel";
@@ -142,6 +143,7 @@ export default function HomePage() {
         title="Real Reviews from Real Clients"
         description="Hear directly from people who have visited Aurelian Massage at 16 St Peters Terrace, Bath."
       >
+        <GoogleReviewsBadge className="mb-8" />
         <Testimonials items={testimonials} />
       </Section>
 
