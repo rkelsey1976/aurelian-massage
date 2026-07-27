@@ -2,12 +2,17 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, Copy, Check, Sparkles } from "lucide-react";
 
-const STORAGE_KEY = "aurelian_offer_seen";
-const DISCOUNT_CODE = "WELCOME10";
+const STORAGE_KEY = "aurelian_offer_summer50_seen";
+const DISCOUNT_CODE = "SUMMER50";
 const DELAY_MS = 3500;
+// Offer expires at end of August 2026 (1 September 00:00 BST).
+// After this date the modal will not render at all — remove this
+// file's import from app/(site)/layout.tsx once expired.
+const OFFER_EXPIRES_AT = new Date("2026-09-01T00:00:00+01:00").getTime();
 
 export function DiscountModal() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,6 +23,8 @@ export function DiscountModal() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    // Hard expiry: offer is valid through August 2026 only.
+    if (Date.now() >= OFFER_EXPIRES_AT) return;
     if (localStorage.getItem(STORAGE_KEY)) return;
 
     const timer = setTimeout(() => {
@@ -122,28 +129,30 @@ export function DiscountModal() {
             exit={{ opacity: 0, scale: 0.94, y: 16 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Gold shimmer top bar */}
-            <div
-              aria-hidden="true"
-              className="h-1 w-full"
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent, #C5A556, #DFC98A, #C5A556, transparent)",
-              }}
-            />
-
             {/* Close button */}
             <button
               ref={closeButtonRef}
               type="button"
               onClick={() => dismiss(false)}
               aria-label="Close offer"
-              className="absolute right-4 top-4 flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full text-neutral-mid/70 transition-all duration-200 hover:bg-white/10 hover:text-neutral-light focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+              className="absolute right-4 top-4 z-10 flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-full bg-black/30 text-neutral-light/90 backdrop-blur transition-all duration-200 hover:bg-black/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
             >
               <X size={16} aria-hidden="true" />
             </button>
 
-            <div className="px-8 pb-9 pt-8">
+            {/* Promo image hero — full-width band at top of modal */}
+            <div className="relative">
+              <Image
+                src="/promos/summer-saver-50.jpg"
+                alt="Summer Saver 50% — August appointments only, book through the website with code SUMMER50"
+                width={1179}
+                height={569}
+                priority
+                className="block h-auto w-full"
+              />
+            </div>
+
+            <div className="px-8 pb-9 pt-7">
               {/* Eyebrow */}
               <div className="flex items-center gap-2">
                 <Sparkles
@@ -153,7 +162,7 @@ export function DiscountModal() {
                   strokeWidth={1.5}
                 />
                 <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-accent">
-                  Exclusive welcome offer
+                  August only — limited availability
                 </span>
               </div>
 
@@ -162,13 +171,15 @@ export function DiscountModal() {
                 id="offer-title"
                 className="mt-4 font-serif text-3xl font-semibold leading-tight text-gold-champagne sm:text-4xl"
               >
-                10% off your first treatment
+                50% off every treatment this August
               </h2>
 
               {/* Body */}
               <p id="offer-desc" className="mt-4 text-sm leading-7 text-neutral-mid">
-                Book any massage treatment at Aurelian Massage and save 10% when
-                you use this code at checkout. One use per customer.
+                Book any treatment at Aurelian Massage with code{" "}
+                <span className="font-semibold text-gold-champagne">SUMMER50</span>{" "}
+                at checkout and save 50%. Valid for appointments booked in August
+                2026 only.
               </p>
 
               {/* Code block */}
@@ -221,13 +232,13 @@ export function DiscountModal() {
                 <Link
                   href="/treatments"
                   onClick={() => dismiss(true)}
-                  className="flex flex-1 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-on-gold transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
+                  className="flex flex-1 items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-on-gold transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-purple-dark"
                   style={{
                     background: "#C5A556",
                     boxShadow: "0 0 20px rgba(197,165,86,0.30)",
                   }}
                 >
-                  Browse treatments
+                  Book an August treatment
                 </Link>
                 <button
                   type="button"
@@ -240,9 +251,9 @@ export function DiscountModal() {
 
               {/* Fine print */}
               <p className="mt-5 text-center text-[11px] leading-5 text-neutral-mid/60">
-                One use per customer. Cannot be combined with other offers.
+                Valid for appointments booked in August 2026 only.
                 <br />
-                Present code at time of booking.
+                One use per customer. Cannot be combined with other offers. Book via the website.
               </p>
             </div>
           </motion.div>
