@@ -99,11 +99,11 @@ export default async function TreatmentPage({ params }: Props) {
               {duration} minutes
             </span>
             <span
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-on-gold"
+              className="inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold text-on-gold"
               style={{ background: "#C5A556" }}
             >
               <PoundSterling size={14} aria-hidden="true" />
-              {price}
+              £{price}
             </span>
           </div>
           </div>

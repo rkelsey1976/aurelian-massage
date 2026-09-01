@@ -80,7 +80,7 @@ export const siteConfig = {
   /** Aggregate rating as shown on the Google Business Profile listing. */
   reviews: {
     ratingValue: 5.0,
-    reviewCount: 24,
+    reviewCount: 65,
   },
   serviceAreas: [
     {

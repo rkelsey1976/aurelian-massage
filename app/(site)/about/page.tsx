@@ -2,21 +2,56 @@ import Image from "next/image";
 import Link from "next/link";
 import { UserCheck, Sparkles, MapPin, Heart } from "lucide-react";
 
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, buildPersonSchema } from "@/lib/seo";
+import { buildFaqSchema } from "@/lib/faqs";
 import { siteConfig } from "@/lib/site-config";
+import { services } from "@/lib/services";
+import { FaqAccordion } from "@/components/marketing/faq-accordion";
 
 export const metadata = createPageMetadata({
-  title: "About Ross — Aurelian Massage, Bath",
+  title: "Ross — Massage Therapist in Bath",
   description:
-    "Meet Ross, the therapist behind Aurelian Massage in Bath. Expert Swedish and aromatherapy massage treatments with high-quality oils and a personalised, luxurious experience.",
+    "Meet Ross, the massage therapist behind Aurelian Massage in Bath city centre. Swedish, aromatherapy, deep tissue, hot stone and cupping treatments at 16 St Peters Terrace, Bath.",
   path: "/about",
   keywords: [
-    "about Aurelian Massage",
-    "massage therapist Bath",
+    "massage therapist bath",
+    "massage therapist in bath",
+    "massage therapy in bath",
+    "massage therapist near me",
+    "massage bath somerset",
     "Ross Aurelian Massage",
     "Swedish massage Bath",
+    "Aurelian Massage",
   ],
 });
+
+const therapistFaqs = [
+  {
+    question: "Who is the massage therapist at Aurelian Massage?",
+    answer:
+      "Ross is the massage therapist behind Aurelian Massage. Every treatment at the studio is delivered by Ross personally, from the initial consultation through to aftercare advice, so you see the same therapist at every visit.",
+  },
+  {
+    question: "What types of massage does Ross offer?",
+    answer:
+      "Ross offers Swedish massage, aromatherapy massage, deep tissue and sports-style work, hot stone treatments, and myofascial cupping combined with massage. Each session is adapted to your needs on the day, and treatments blend techniques where appropriate.",
+  },
+  {
+    question: "Where is the treatment room in Bath?",
+    answer:
+      "Aurelian Massage is at 16 St Peters Terrace, Bath, BA2 3BT — a short walk from the city centre, easy to reach whether you live locally or are visiting Bath. Full directions are on the contact page.",
+  },
+  {
+    question: "What do clients say about treatments at Aurelian Massage?",
+    answer:
+      "Aurelian Massage holds a 5.0 star rating from 65 Google reviews. Clients regularly mention the calm atmosphere, the therapist's skill and attention, and leaving feeling completely relaxed, refreshed, and pain-free.",
+  },
+  {
+    question: "How do I book a session with Ross?",
+    answer:
+      "All treatments are by appointment only and can be booked online through Fresha using the Book now links on this site. A 25% deposit is taken at the time of booking. If you have a question before booking, use the contact form or email ross@aurelianmassage.com.",
+  },
+];
 
 const values = [
   {
@@ -105,6 +140,21 @@ export default function AboutPage() {
             At Aurelian Massage I create luxurious, personalised massage experiences
             designed to leave your body restored, your mind calm, and your spirit refreshed.
           </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            {services.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/treatments/${s.slug}`}
+                className="rounded-full border border-gold-accent/40 px-4 py-1.5 text-xs font-medium text-neutral-mid transition-colors hover:border-gold-accent hover:text-gold-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent"
+              >
+                {s.name}
+              </Link>
+            ))}
+            <span className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-semibold text-on-gold" style={{ background: "#C5A556" }}>
+              ★ 5.0 · 65 Google reviews
+            </span>
+          </div>
           </div>
 
           {/* Right — logo */}
@@ -133,25 +183,29 @@ export default function AboutPage() {
           {/* Text */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-accent">
-              About me
+              Your therapist in Bath
             </p>
             <h2 className="mt-3 font-serif text-3xl font-semibold text-neutral-light">
-              Pure Gold Relaxation in the Heart of Bath
+              Massage therapy in the heart of Bath, tailored to you
             </h2>
             <div className="mt-5 space-y-5 text-base leading-8 text-neutral-mid">
               <p>
-                Every session I deliver combines expert Swedish and holistic techniques
-                with high-quality oils, a soothing environment, and thoughtful touches
-                that make you feel truly looked after.
+                I&apos;m Ross, a massage therapist based at 16 St Peters Terrace in Bath
+                city centre. Every session I deliver combines expert Swedish and holistic
+                techniques with high-quality oils, a soothing environment, and thoughtful
+                touches that make you feel truly looked after.
               </p>
               <p>
-                Whether you&apos;re seeking deep relaxation, gentle rejuvenation, or a
-                moment of calm in your day, my treatments are tailored to your needs —
-                giving you the ultimate spa experience without leaving Bath.
+                Every treatment begins with a brief consultation so the pressure, pace,
+                and focus are adapted to your body on the day — whether you&apos;re seeking
+                deep relaxation, gentle rejuvenation, or relief from stubborn muscular
+                tension.
               </p>
               <p>
-                Treat yourself, unwind, and discover how small, thoughtful details can
-                make all the difference.
+                Clients travel from across Bath and Somerset for treatments that feel
+                like the ultimate spa experience without leaving the city. Treat yourself,
+                unwind, and discover how small, thoughtful details can make all the
+                difference.
               </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -239,8 +293,9 @@ export default function AboutPage() {
           Book your first treatment today
         </h2>
         <p className="mx-auto mt-5 max-w-md text-base leading-7 text-neutral-mid">
-          Use code <span className="font-semibold text-gold-accent">WELCOME10</span> for 10% off your first
-          session. One use per customer.
+          New to Aurelian Massage? Use code{" "}
+          <span className="font-semibold text-gold-accent">AURELIAN50</span> for 50% off
+          your first session, available from September to January. One use per customer.
         </p>
         <Link
           href={siteConfig.bookingUrl}
@@ -252,6 +307,33 @@ export default function AboutPage() {
           Book a treatment
         </Link>
       </div>
+
+      {/* ── FAQ ── */}
+      <div
+        className="py-16 lg:py-20"
+        style={{ background: "#2C1E42", borderTop: "1px solid rgba(122,80,176,0.20)" }}
+      >
+        <div className="mx-auto max-w-3xl px-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-accent">
+            Common questions
+          </p>
+          <h2 className="mt-3 font-serif text-3xl font-semibold text-neutral-light">
+            About your therapist
+          </h2>
+          <div className="mt-8">
+            <FaqAccordion items={therapistFaqs} />
+          </div>
+        </div>
+      </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildPersonSchema()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(therapistFaqs)) }}
+      />
     </>
   );
 }

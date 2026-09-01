@@ -122,6 +122,32 @@ export function buildLocalBusinessSchema() {
 }
 
 /**
+ * Person schema for the named therapist — the "who is the therapist" signal
+ * Google reads for "massage therapist bath" style queries. Used on /about.
+ */
+export function buildPersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SCHEMA_BASE_URL}/#therapist`,
+    name: siteConfig.owner.name,
+    jobTitle: siteConfig.owner.title,
+    description: `Ross is the massage therapist behind Aurelian Massage in Bath, offering Swedish massage, aromatherapy, deep tissue and myofascial cupping treatments in Bath city centre.`,
+    image: getCanonicalUrl("/therapist-hero.png"),
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    worksFor: { "@id": MAIN_ENTITY_ID },
+    knowsAbout: [
+      "Swedish massage",
+      "Aromatherapy massage",
+      "Deep tissue massage",
+      "Myofascial cupping",
+      "Hot stone massage",
+    ],
+  };
+}
+
+/**
  * Page-level schema for an individual treatment page: Service (this treatment) + BreadcrumbList.
  * Use alongside the site-wide HealthAndBeautyBusiness from layout.
  */

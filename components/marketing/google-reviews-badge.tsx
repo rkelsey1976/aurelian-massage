@@ -24,7 +24,7 @@ function GoogleIcon({ className }: { className?: string }) {
   );
 }
 
-/** "5.0 ★★★★★ · 24 Google reviews" badge — mirrors the live Google Business Profile listing. */
+/** "5.0 ★★★★★ · 65 Google reviews" badge — mirrors the live Google Business Profile listing. */
 export function GoogleReviewsBadge({ className = "" }: { className?: string }) {
   const { ratingValue, reviewCount } = siteConfig.reviews;
 
