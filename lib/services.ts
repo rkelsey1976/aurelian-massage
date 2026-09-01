@@ -339,7 +339,7 @@ export const services: Service[] = [
     name: "Myofascial Cupping and Massage",
     duration: 60,
     price: 75,
-    image: "/hot-stones.png",
+    image: "/myofascial-cupping.jpg",
     gradient:
       "linear-gradient(160deg, rgba(60,20,10,0.55) 0%, rgba(140,60,30,0.75) 100%)",
     description:
