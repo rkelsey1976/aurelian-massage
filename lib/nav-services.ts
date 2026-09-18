@@ -76,6 +76,13 @@ export const navServiceGroups: NavServiceGroup[] = [
         price: 60,
       },
       {
+        label: "Aurelian Deep Release Massage",
+        href: "/treatments/aurelian-deep-release-full-body",
+        description: "Firmer pressure, deep tissue focus",
+        duration: 45,
+        price: 55,
+      },
+      {
         label: "Aurelian Signature Massage",
         href: "/treatments/aurelian-signature-massage",
         description: "Our definitive treatment",

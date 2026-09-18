@@ -379,4 +379,49 @@ export const services: Service[] = [
       },
     ],
   },
+  {
+    slug: "aurelian-deep-release-full-body",
+    name: "Aurelian Deep Release Massage",
+    duration: 45,
+    price: 55,
+    image: "/intro-3.png",
+    gradient:
+      "linear-gradient(160deg, rgba(45,12,16,0.60) 0%, rgba(150,45,45,0.78) 100%)",
+    description:
+      "A deeply focused massage designed to ease muscular tension, release tightness and leave you feeling lighter, looser and completely relaxed. Using a combination of deep tissue and flowing massage techniques, this 45-minute treatment focuses on the back, shoulders, neck, legs and glutes, finishing with a soothing head massage.",
+    idealFor: [
+      "Those who enjoy a firmer pressure or prefer deep tissue work",
+      "Anyone with areas of built-up muscular tension needing focused attention",
+      "Clients wanting a full body treatment without a full ninety minutes",
+      "Those who want deep, effective work within the calm, luxurious Aurelian experience",
+    ],
+    benefits: [
+      "Effectively eases muscular tightness and releases deep-seated tension",
+      "Combines deep tissue and flowing techniques for a balanced, thorough treatment",
+      "Covers the back, shoulders, neck, legs and glutes in a single focused session",
+      "Finishes with a soothing head massage, leaving you lighter and completely relaxed",
+    ],
+    faqs: [
+      {
+        question: "How is this different from your other full body massages?",
+        answer:
+          "The Aurelian Deep Release combines deep tissue techniques with flowing Swedish strokes, using firmer pressure than our Signature Swedish Full Body Massage. It is designed for those who want genuine depth of work on areas of built-up tension, while still delivering the calm, luxurious experience that defines an Aurelian treatment.",
+      },
+      {
+        question: "Is the pressure too firm if I don't usually have deep tissue massage?",
+        answer:
+          "Not at all. Your therapist will check your preferences before the session begins and can adjust pressure throughout to suit your comfort. This treatment is well suited to firmer pressure, but it is always tailored to you rather than applied at a fixed intensity.",
+      },
+      {
+        question: "Which areas does this treatment focus on?",
+        answer:
+          "This forty-five-minute session concentrates on the back, shoulders, neck, legs and glutes, where muscular tension tends to build up most, and finishes with a soothing head massage to complete the treatment.",
+      },
+      {
+        question: "How will I feel afterwards, and how often should I book?",
+        answer:
+          "Most clients feel noticeably lighter, looser and completely relaxed after this treatment, though some mild tenderness in worked areas is normal for a day or so. For persistent tension, booking every three to four weeks tends to give the best ongoing results.",
+      },
+    ],
+  },
 ];
