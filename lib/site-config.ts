@@ -121,6 +121,7 @@ export const navigationItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/treatments", label: "Treatments" },
+  { href: "/memberships", label: "Memberships" },
   { href: "/products", label: "Products" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
