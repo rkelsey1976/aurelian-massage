@@ -4,7 +4,7 @@ export const homepageFaqs: FaqItem[] = [
   {
     question: "Where is Aurelian Massage located?",
     answer:
-      "We are at 16 St Peters Terrace, Bath, BA2 3BT — a short walk from the city centre, easy to reach whether you live locally or are visiting Bath. Use our contact page if you would like directions or help planning your visit.",
+      "We are at 11 St James's Parade, Bath, BA1 1UL — in the centre of Bath, a few minutes' walk from Bath Spa station and easy to reach whether you live locally or are visiting Bath. Use our contact page if you would like directions or help planning your visit.",
   },
   {
     question: "Do I need to book in advance?",

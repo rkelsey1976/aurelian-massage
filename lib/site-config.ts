@@ -45,15 +45,15 @@ export const siteConfig = {
   },
   defaultOgImage: "/api/og",
   address: {
-    street: "16 St Peters Terrace",
+    street: "11 St James's Parade",
     city: "Bath",
     region: "Somerset",
-    postalCode: "BA2 3BT",
+    postalCode: "BA1 1UL",
     country: "GB",
   },
   geo: {
-    latitude: 51.3837,
-    longitude: -2.3599,
+    latitude: 51.3793,
+    longitude: -2.361,
   },
   openingHours: [
     {

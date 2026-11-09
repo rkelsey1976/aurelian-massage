@@ -141,7 +141,7 @@ export default function HomePage() {
       <Section
         eyebrow="What our clients say"
         title="Real Reviews from Real Clients"
-        description="Hear directly from people who have visited Aurelian Massage at 16 St Peters Terrace, Bath."
+        description="Hear directly from people who have visited Aurelian Massage at 11 St James's Parade, Bath."
       >
         <GoogleReviewsBadge className="mb-8" />
         <Testimonials items={testimonials} />

@@ -11,7 +11,7 @@ import { FaqAccordion } from "@/components/marketing/faq-accordion";
 export const metadata = createPageMetadata({
   title: "Ross — Massage Therapist in Bath",
   description:
-    "Meet Ross, the massage therapist behind Aurelian Massage in Bath city centre. Swedish, aromatherapy, deep tissue, hot stone and cupping treatments at 16 St Peters Terrace, Bath.",
+    "Meet Ross, the massage therapist behind Aurelian Massage in Bath city centre. Swedish, aromatherapy, deep tissue, hot stone and cupping treatments at 11 St James's Parade, Bath.",
   path: "/about",
   keywords: [
     "massage therapist bath",
@@ -39,7 +39,7 @@ const therapistFaqs = [
   {
     question: "Where is the treatment room in Bath?",
     answer:
-      "Aurelian Massage is at 16 St Peters Terrace, Bath, BA2 3BT — a short walk from the city centre, easy to reach whether you live locally or are visiting Bath. Full directions are on the contact page.",
+      "Aurelian Massage is at 11 St James's Parade, Bath, BA1 1UL — in the centre of Bath, a few minutes' walk from Bath Spa station and easy to reach whether you live locally or are visiting Bath. Full directions are on the contact page.",
   },
   {
     question: "What do clients say about treatments at Aurelian Massage?",
@@ -67,7 +67,7 @@ const values = [
   {
     icon: MapPin,
     title: "Bath City Centre",
-    body: "Based at 16 St Peters Terrace, Bath — the ultimate spa experience without leaving the city. Easy to reach whether you live locally or are visiting.",
+    body: "Based at 11 St James's Parade, Bath — the ultimate spa experience without leaving the city. Easy to reach whether you live locally or are visiting.",
   },
   {
     icon: Heart,
@@ -190,7 +190,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-5 space-y-5 text-base leading-8 text-neutral-mid">
               <p>
-                I&apos;m Ross, a massage therapist based at 16 St Peters Terrace in Bath
+                I&apos;m Ross, a massage therapist based at 11 St James&apos;s Parade in Bath
                 city centre. Every session I deliver combines expert Swedish and holistic
                 techniques with high-quality oils, a soothing environment, and thoughtful
                 touches that make you feel truly looked after.
