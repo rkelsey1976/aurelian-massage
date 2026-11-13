@@ -52,6 +52,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <CookieBanner />
         <ConsentGatedGoogleAnalytics />
         <ClickTracking />
+        {/* SEO Kings click counter: page views and taps on phone, email and quote buttons. No cookies. */}
+        <script src="https://seo-kings-portal.netlify.app/clicks.js" data-site="hUUAYrnS86P2GqY3-53Y" defer />
       </body>
     </html>
   );
