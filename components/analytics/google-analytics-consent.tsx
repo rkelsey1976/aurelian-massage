@@ -22,8 +22,12 @@ function injectGoogleAnalytics(measurementId: string) {
   if (document.getElementById("ga-gtag-js")) return;
 
   window.dataLayer = window.dataLayer ?? [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer!.push(args);
+  // gtag.js only treats an `arguments` object in dataLayer as a command. Pushing a
+  // plain array (e.g. from `...args`) is silently ignored, so no config and no
+  // page_view are ever sent. Keep `arguments` here.
+  window.gtag = function gtag() {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer!.push(arguments);
   };
 
   // User has already accepted analytics via the cookie banner ("Accept all cookies").

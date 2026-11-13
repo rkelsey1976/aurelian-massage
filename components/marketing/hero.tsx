@@ -49,7 +49,7 @@ export function Hero({
   });
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" data-track-location="hero">
       {/* Background image — parallax layer */}
       <motion.div
         aria-hidden="true"

@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function CtaBanner() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" data-track-location="cta_banner">
       {/* Background */}
       <div
         aria-hidden="true"

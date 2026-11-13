@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import { ClickTracking } from "@/components/analytics/click-tracking";
 import { ConsentGatedGoogleAnalytics } from "@/components/analytics/google-analytics-consent";
 import { CookieBanner } from "@/components/marketing/cookie-banner";
 import { BathLocalBusinessSchema } from "@/components/seo/BathLocalBusinessSchema";
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {children}
         <CookieBanner />
         <ConsentGatedGoogleAnalytics />
+        <ClickTracking />
       </body>
     </html>
   );
