@@ -159,7 +159,7 @@ export function Footer() {
           <p className="text-center text-xs text-neutral-mid/90">
             Website designed &amp; built by{" "}
             <a
-              href="https://seo-kings.co.uk"
+              href="https://seo-kings.co.uk/web-design/small-business/bath/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-light/90 underline decoration-neutral-mid/50 underline-offset-2 transition-colors hover:text-gold-accent hover:decoration-gold-accent/50 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-accent rounded"
