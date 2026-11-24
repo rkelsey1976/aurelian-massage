@@ -207,6 +207,13 @@ export default function AboutPage() {
                 unwind, and discover how small, thoughtful details can make all the
                 difference.
               </p>
+              <p>
+                My website was designed and built by{" "}
+                <a href="https://seo-kings.co.uk/web-design/bath/" className="text-gold-accent underline underline-offset-4 hover:text-neutral-light">
+                  SEO Kings
+                </a>
+                , a family-run web design studio in Keynsham, just along the A4 from Bath.
+              </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
